@@ -1,11 +1,8 @@
 const mongoose = require("mongoose");
+require('dotenv/config');
 
-// making connection to the mongoDB via mongoose connect function.
 const connectDB = async () => {
-  const database = "esion";
-
-  const MONGO_URI = 
-  `mongodb+srv://Tanmayesion:Tanmay@cluster0.zmu92ca.mongodb.net/${database}?retryWrites=true&w=majority`
+  const MONGO_URI = process.env.DB_PWD;
   try {
     const connection = await mongoose.connect(MONGO_URI);
     
