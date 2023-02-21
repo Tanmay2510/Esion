@@ -1,9 +1,10 @@
 import Nav from "./component/nav/Nav";
+import Front from "./pages/Front";
 
 function App() {
   return (
     <div className="App">
-    <Nav />
+      <Front />
     </div>
   );
 }
