@@ -4,3 +4,6 @@
     /* USe padding for now */
     padding-bottom: 35%;
 }
+.UnderNavCont{
+    display: flex;
+}
