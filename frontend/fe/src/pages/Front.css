@@ -2,8 +2,10 @@
     background-image: url("../assets/NavBG.png");
 
     /* USe padding for now */
-    padding-bottom: 35%;
+    padding-bottom: 110px;
 }
 .UnderNavCont{
     display: flex;
+    justify-content: space-evenly;
+    margin-top: 75px;
 }
