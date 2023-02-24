@@ -1,8 +1,7 @@
 .UpperSection{
     background-image: url("../assets/NavBG.png");
-
-    /* USe padding for now */
-    padding-bottom: 110px;
+    background-repeat:no-repeat;
+    padding-bottom: 20px;
 }
 .UnderNavCont{
     display: flex;

@@ -1,25 +1,34 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
-
-function Login() {
+import {motion} from "framer-motion"
+function Login({setIsFlipped,isFlipped}) {
+  const [ user, setUser] = useState({
+    email:"",
+    password:""
+})
+const handleChange = e => {
+  const { name, value } = e.target
+  setUser({
+      ...user,
+      [name]: value
+  })
+}
   return (
-    <div>
-    <h1 style={{textAlign:"center"}}>Login User</h1>
+    <motion.div
+    initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{duration:0.5}}>
+    <h1 style={{textAlign:"center"}} className="hh">Login User</h1>
     <Form classname='Reglog'>
     <Form.Group className="mb-3 stl" controlId="formBasicEmail">
       <Form.Label >Email address</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
-      <Form.Text className="text-muted stl">
-        We'll never share your email with anyone else.
-      </Form.Text>
+      <Form.Control type="email" name="email" value={user.email} onChange={handleChange}  placeholder="Enter email" />
     </Form.Group>
-
     <Form.Group className="mb-3 stl" controlId="formBasicPassword">
       <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" />
+      <Form.Control type="password" placeholder="Password"  name="password" value={user.password} onChange={handleChange}/>
     </Form.Group>
     <div className="d-grid gap-2">
-
     <button 
     className='but stl'
     type="submit" >
@@ -27,15 +36,13 @@ function Login() {
     </button>
     <h4 style={{textAlign:"center",margin:"1px"}}>OR</h4>
     <button 
-    onClick={() => setFlip(!flip)}
     className='but stl'
-    type="submit" >
+    onClick={()=> setIsFlipped(!isFlipped)}>
     Register
-  </button>
+    </button>
     </div>
-  
   </Form>
-  </div>
+  </motion.div>
   )
 }
 
