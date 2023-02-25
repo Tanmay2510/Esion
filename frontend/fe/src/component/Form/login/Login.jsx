@@ -13,13 +13,19 @@ const handleChange = e => {
       [name]: value
   })
 }
+const login = e => {
+  e.preventDefault();
+  axios.post("http://localhost:3001/login",user,{withCredentials:true})
+  
+}
   return (
     <motion.div
     initial={{opacity:0}}
         animate={{opacity:1}}
         transition={{duration:0.5}}>
     <h1 style={{textAlign:"center"}} className="hh">Login User</h1>
-    <Form classname='Reglog'>
+    <Form classname='Reglog'
+    onSubmit={login}>
     <Form.Group className="mb-3 stl" controlId="formBasicEmail">
       <Form.Label >Email address</Form.Label>
       <Form.Control type="email" name="email" value={user.email} onChange={handleChange}  placeholder="Enter email" />

@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import {motion } from 'framer-motion'
+import axios from 'axios';
 function Register({setIsFlipped,isFlipped}) {
   const [ user, setUser] = useState({
     email:"",
@@ -17,14 +18,31 @@ const handleChange = e => {
         [name]: value
     })
 }
-console.log(user)
+const register = (e) => {
+  e.preventDefault();
+  const {  email, name,password, reEnterPassword,} = user;
+  if(  email && name && password && (password === reEnterPassword) ){
+    axios.post("http://localhost:3001/register",user,{withCredentials:true})
+      // handleregister(user,dispatch)
+  } else {
+      alert("invalid input")
+  }
+  setUser({
+      email:"",
+      name:"",
+      password:"",
+      reEnterPassword: "",
+  })
+}
   return (
     <motion.div
     initial={{opacity:0}}
         animate={{opacity:1}}
         transition={{duration:0.5}}>
        <h1 style={{textAlign:"center"}} className="hh" >Register User</h1>
-    <Form classname='Reglog'>
+    <Form classname='Reglog'
+    onSubmit={register}
+    >
     <Form.Group className="mb-3 stl" controlId="formBasicEmail">
       <Form.Label >Email address</Form.Label>
       <Form.Control type="email" placeholder="Enter email" name="email" value={user.email} onChange={handleChange} />
@@ -47,7 +65,7 @@ console.log(user)
   
     <button 
     className='but stl'
-    type="submit" >
+    >
       Submit
     </button>
     <h4 style={{textAlign:"center",margin:"1px"}}>OR</h4>

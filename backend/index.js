@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+const router = require("./routes/router")
 const connectDB = require("./config/db");
+const bp = require('body-parser')
 require('dotenv/config');
 
 const port = process.env.PORT || 3001;
@@ -11,7 +13,15 @@ connectDB();
 const app = express();
 
 
-app.use(cors({ origin: "*" }));
+app.use(cors({
+  origin:"http://localhost:3000",
+  credentials:true
+}));
+app.use(bp.urlencoded({extended:true}));
+app.use(bp.json());
+// app.use(session)
+app.use("/",router)
+
 
 app.get("/", (req, res) => {
     res.send("APIs working properly");
