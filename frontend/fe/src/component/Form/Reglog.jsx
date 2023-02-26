@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Reglog.css"
 import Register from './register/Register';
 import Login from './login/Login'
+import { UserStoreContext } from '../../context/userContext';
 
 function Reglog() {
+  const {userDipatch} = useContext(UserStoreContext)
   const [isFlipped,setIsFlipped] = useState(false);
 
   return (
@@ -11,11 +13,13 @@ function Reglog() {
    {
       isFlipped ? 
       <Register 
+      dispatch={userDipatch}
       setIsFlipped={setIsFlipped}
       isFlipped={isFlipped}
       />
       :
       <Login 
+      dispatch={userDipatch}
       setIsFlipped={setIsFlipped}
       isFlipped={isFlipped}/>
    }

@@ -11,6 +11,7 @@
     border-radius: 10px;
     backdrop-filter: blur(2px);
     box-shadow: rgba(192, 10, 224, 0.874) 0px 30px 90px;
+    transition: 0.4s;
 }
 .Reglog{
     display: inline-grid;
@@ -21,8 +22,9 @@
     border:0;
     border-radius: 50px;
     background-color:rgba(209, 106, 202, 0.603);
+
 }
-.stl , .hh{
+.stl , .hh , .hh4{
     
     color:whitesmoke;
     font-family: 'Pacifico', cursive;

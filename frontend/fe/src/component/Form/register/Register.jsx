@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import {motion } from 'framer-motion'
 import axios from 'axios';
-function Register({setIsFlipped,isFlipped}) {
+import { handleregister } from '../../../managerAPI/API';
+function Register({dispatch,setIsFlipped,isFlipped}) {
   const [ user, setUser] = useState({
     email:"",
     name:"",
@@ -22,8 +23,7 @@ const register = (e) => {
   e.preventDefault();
   const {  email, name,password, reEnterPassword,} = user;
   if(  email && name && password && (password === reEnterPassword) ){
-    axios.post("http://localhost:3001/register",user,{withCredentials:true})
-      // handleregister(user,dispatch)
+      handleregister(user,dispatch)
   } else {
       alert("invalid input")
   }
@@ -68,7 +68,7 @@ const register = (e) => {
     >
       Submit
     </button>
-    <h4 style={{textAlign:"center",margin:"1px"}}>OR</h4>
+    <h4 style={{textAlign:"center",margin:"1px"}} className="hh4">OR</h4>
     <button 
       className='but stl'
       onClick={()=> setIsFlipped(!isFlipped)}

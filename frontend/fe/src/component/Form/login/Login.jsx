@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import {motion} from "framer-motion"
-function Login({setIsFlipped,isFlipped}) {
+import axios from 'axios';
+import { handlelogin } from '../../../managerAPI/API';
+function Login({dispatch,setIsFlipped,isFlipped}) {
   const [ user, setUser] = useState({
     email:"",
     password:""
@@ -15,7 +17,16 @@ const handleChange = e => {
 }
 const login = e => {
   e.preventDefault();
-  axios.post("http://localhost:3001/login",user,{withCredentials:true})
+  const {email,password} = user;
+  if(!email || !password){
+    alert("Invalid Input");
+  }else{
+  handlelogin(user,dispatch);
+  setUser({
+    email:"",
+    password:""
+  })
+}
   
 }
   return (
@@ -37,10 +48,10 @@ const login = e => {
     <div className="d-grid gap-2">
     <button 
     className='but stl'
-    type="submit" >
+     >
       Submit
     </button>
-    <h4 style={{textAlign:"center",margin:"1px"}}>OR</h4>
+    <h4 style={{textAlign:"center",margin:"1px"}} className="hh4">OR</h4>
     <button 
     className='but stl'
     onClick={()=> setIsFlipped(!isFlipped)}>
