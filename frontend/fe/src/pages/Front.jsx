@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from '../component/nav/Nav'
-import US from '../component/uppserSection/US'
+import US from '../component/uppserSideSection/US'
 import "./Front.css"
 import Reglog from '../component/Form/Reglog'
 function Front() {
@@ -13,7 +13,9 @@ function Front() {
     <Reglog />
     </div>
     </div>
-    
+    <div className='bottomSection'>
+    <h1>h</h1>
+    </div>
     </div>
   )
 }
