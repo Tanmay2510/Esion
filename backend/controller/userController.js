@@ -31,7 +31,9 @@ const handleRegister = (req,res) =>{
                     }else{
                         res.json({
                             login:true,
-                             message:"User  registered"
+                            message:"User  registered",
+                            Name:name,
+
 
                         })
                     }
@@ -50,6 +52,7 @@ const handleLogin = (req,res) =>{
                         res.json({
                             login:true,
                             message:"User Found!!",
+                            Name:user.Name
                             // email:req.session.email
                     })
                     }else{

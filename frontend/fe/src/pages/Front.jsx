@@ -5,7 +5,7 @@ import "./Front.css"
 import Reglog from '../component/Form/Reglog'
 function Front() {
   return (
-    <div>
+    <div className='Whole'>
     <div className='UpperSection'>
     <Nav />
     <div className='UnderNavCont'>
