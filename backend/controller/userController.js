@@ -1,10 +1,9 @@
 // const bcrypt = require('bcrypt');
 require('dotenv/config');
-
 const saltRounds =  9;
-
 const {User} = require("../model/userModel")
 const bcrypt = require("bcrypt")
+
 const handleRegister = (req,res) =>{
     const {email,password,name} = req.body;
     bcrypt.hash(password,saltRounds,function(err,hash){
@@ -31,10 +30,8 @@ const handleRegister = (req,res) =>{
                     }else{
                         res.json({
                             login:true,
-                            message:"User  registered",
+                            message:"User registered",
                             Name:name,
-
-
                         })
                     }
                 })

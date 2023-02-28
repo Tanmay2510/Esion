@@ -5,9 +5,8 @@ import Login from './login/Login'
 import { UserStoreContext } from '../../context/userContext';
 
 function Reglog() {
-  const {userDipatch} = useContext(UserStoreContext)
+  const {email,name,userDipatch} = useContext(UserStoreContext);
   const [isFlipped,setIsFlipped] = useState(false);
-
   return (
    <div className='ReglogCont'>
    {

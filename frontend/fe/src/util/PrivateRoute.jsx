@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Outlet,Navigate} from 'react-router-dom'
+import { UserStoreContext } from '../context/userContext'
+
 function PrivateRoute() {
-    let auth = {'token':false}
+    let auth = {'login':false}
   return (
-    auth.token ? <Outlet/> : <Navigate to ="/"/>
+    auth.login ? <Outlet/> : <Navigate to ="/"/>
   )
 }
 

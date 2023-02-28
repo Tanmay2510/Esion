@@ -3,7 +3,7 @@ export const UserStoreContext = createContext();
 
 const initialState ={
     login:"",
-    email:"",
+    name:""
 }
 const userStoreReducer = (state, action) => {
     try {
