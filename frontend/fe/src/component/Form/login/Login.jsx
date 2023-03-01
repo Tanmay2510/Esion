@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import {motion} from "framer-motion"
-import axios from 'axios';
-import { handlelogin } from '../../../managerAPI/API';
+import { handlelogin } from '../../../manager/API';
+import { useNavigate } from 'react-router-dom';
 function Login({dispatch,setIsFlipped,isFlipped}) {
+  let nav = useNavigate();
   const [ user, setUser] = useState({
     email:"",
     password:""
@@ -22,6 +23,7 @@ const login = e => {
     alert("Invalid Input");
   }else{
   handlelogin(user,dispatch);
+  nav("/Dash")
   setUser({
     email:"",
     password:""

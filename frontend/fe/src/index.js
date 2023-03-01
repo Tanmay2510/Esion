@@ -6,13 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UserStore from './context/userContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
 
   <React.StrictMode>
+  <UserStore>
     <App />
+  </UserStore>
+
   </React.StrictMode>
   </BrowserRouter>
 );

@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import {Outlet,Navigate} from 'react-router-dom'
 import { UserStoreContext } from '../context/userContext'
+import useAuth from '../manager/UAuth';
 
 function PrivateRoute() {
-    let auth = {'login':false}
+    let auth = useAuth();
+    console.log(auth)
   return (
-    auth.login ? <Outlet/> : <Navigate to ="/"/>
+    auth ? <Outlet/> : <Navigate to ="/"/>
   )
 }
 

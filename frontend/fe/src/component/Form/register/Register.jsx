@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import {motion } from 'framer-motion'
-import axios from 'axios';
-import { handleregister } from '../../../managerAPI/API';
+import { handleregister } from '../../../manager/API';
+import { useNavigate } from 'react-router-dom';
 function Register({dispatch,setIsFlipped,isFlipped}) {
+  let nav = useNavigate();
   const [ user, setUser] = useState({
     email:"",
     name:"",
@@ -27,6 +28,8 @@ const register = (e) => {
   } else {
       alert("invalid input")
   }
+  nav("/Dash")
+
   setUser({
       email:"",
       name:"",

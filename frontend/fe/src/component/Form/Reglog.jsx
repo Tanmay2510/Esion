@@ -5,20 +5,20 @@ import Login from './login/Login'
 import { UserStoreContext } from '../../context/userContext';
 
 function Reglog() {
-  const {email,name,userDipatch} = useContext(UserStoreContext);
+  const {login,userDispatch} = useContext(UserStoreContext);
   const [isFlipped,setIsFlipped] = useState(false);
   return (
    <div className='ReglogCont'>
    {
       isFlipped ? 
       <Register 
-      dispatch={userDipatch}
+      dispatch={userDispatch}
       setIsFlipped={setIsFlipped}
       isFlipped={isFlipped}
       />
       :
       <Login 
-      dispatch={userDipatch}
+      dispatch={userDispatch}
       setIsFlipped={setIsFlipped}
       isFlipped={isFlipped}/>
    }
