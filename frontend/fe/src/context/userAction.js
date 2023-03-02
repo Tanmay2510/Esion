@@ -1,3 +1,4 @@
+
 export const setRegister = (data) =>{
     return (state)=>{
         return{

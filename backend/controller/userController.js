@@ -19,7 +19,6 @@ const handleRegister = (req,res) =>{
                     email:email,
                     password:hash,
                 })
-                
                 user.save(err=>{
                     if(err){
                         console.log(err)
@@ -28,6 +27,8 @@ const handleRegister = (req,res) =>{
                             message:"Error"
                         })
                     }else{
+                        req.session.name = user.Name;
+                        req.session.email = email;
                         res.json({
                             login:true,
                             message:"User registered",
@@ -38,7 +39,6 @@ const handleRegister = (req,res) =>{
             }
         })
     })
-    
 }
 const handleLogin = (req,res) =>{
         const {email,password} = req.body;
@@ -46,11 +46,12 @@ const handleLogin = (req,res) =>{
             if(user){
                 bcrypt.compare(password,user.password,function(err,result){
                     if(result===true){
+                        req.session.name = user.Name;
+                        req.session.email = email;
                         res.json({
                             login:true,
                             message:"User Found!!",
                             Name:user.Name
-                            // email:req.session.email
                     })
                     }else{
                         res.json({
@@ -67,6 +68,5 @@ const handleLogin = (req,res) =>{
                 })
         }
         })
-
 }
 module.exports={handleRegister,handleLogin};

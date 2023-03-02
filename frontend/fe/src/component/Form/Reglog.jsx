@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, {  useState } from 'react'
 import "./Reglog.css"
 import Register from './register/Register';
 import Login from './login/Login'
-import { UserStoreContext } from '../../context/userContext';
+import useAuth from '../hook/useAuth';
 
 function Reglog() {
-  const {login,userDispatch} = useContext(UserStoreContext);
+  const {userDispatch} = useAuth();
   const [isFlipped,setIsFlipped] = useState(false);
   return (
    <div className='ReglogCont'>

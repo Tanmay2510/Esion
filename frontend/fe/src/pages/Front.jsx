@@ -4,6 +4,7 @@ import US from '../component/uppserSideSection/US'
 import "./Front.css"
 import Reglog from '../component/Form/Reglog'
 function Front() {
+
   return (
     <div className='Whole'>
     <div className='UpperSection'>

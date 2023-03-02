@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const router = require("./routes/router")
+const session = require('./middleware/session');
 const connectDB = require("./config/db");
 const bp = require('body-parser')
 require('dotenv/config');
@@ -19,7 +20,7 @@ app.use(cors({
 }));
 app.use(bp.urlencoded({extended:true}));
 app.use(bp.json());
-// app.use(session)
+app.use(session)
 app.use("/",router)
 
 
