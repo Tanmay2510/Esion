@@ -48,6 +48,7 @@ const handleLogin = (req,res) =>{
                     if(result===true){
                         req.session.name = user.Name;
                         req.session.email = email;
+                
                         res.json({
                             login:true,
                             message:"User Found!!",
