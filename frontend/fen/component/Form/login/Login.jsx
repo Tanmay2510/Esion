@@ -2,10 +2,7 @@ import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import {motion} from "framer-motion"
 import { handlelogin } from '../../../manager/API';
-// import { useNavigate } from 'react-router-dom';
-// import PrivateRoute from '../../../util/PrivateRoute';
 function Login({dispatch,setIsFlipped,isFlipped}) {
-  // let nav = useNavigate();
   const [ user, setUser] = useState({
     email:"",
     password:""

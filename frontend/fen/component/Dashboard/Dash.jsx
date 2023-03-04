@@ -1,8 +1,10 @@
 import React from 'react'
-
+import SoundIcon from "../../assets/soundIcon/SoundIcon"
 function Dash() {
   return (
-    <div>Dash</div>
+    <div>
+      <SoundIcon />
+    </div>
   )
 }
 
