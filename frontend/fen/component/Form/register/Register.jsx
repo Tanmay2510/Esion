@@ -28,8 +28,6 @@ const register = (e) => {
   } else {
       alert("invalid input")
   }
-  // nav("/Dash")
-
   setUser({
       email:"",
       name:"",

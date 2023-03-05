@@ -21,8 +21,7 @@ const login = e => {
     alert("Invalid Input");
   }else{
   handlelogin(user,dispatch);
-  // PrivateRoute();
-  // nav("/Dash")
+ 
   setUser({
     email:"",
     password:""
