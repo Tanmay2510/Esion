@@ -8,7 +8,7 @@ function Nav() {
         <h1>ESION</h1>
         <img src={logo.src} style={{width:"5%"}}></img>
         <div className='innerNav'>
-        <button >TExt HEre 1</button>
+        <button>Sample</button>
         </div>
 
     </nav>

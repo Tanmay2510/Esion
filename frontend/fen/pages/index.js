@@ -1,7 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import Nav from '@/component/nav/Nav'
 import US from '@/component/uppserSideSection/US'
 import Reglog from '../component/Form/Reglog'
@@ -22,6 +19,7 @@ export default function Home() {
     </div>
     <div className='bottomSection'>
     <h1>h</h1>
+
     </div>
     </div>      
     </>

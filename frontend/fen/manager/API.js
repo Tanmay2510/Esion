@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setLogin, setRegister } from "../context/userAction";
+import { setLogin, setRegister , setLogout} from "../context/userAction";
 
 const BASE_URL = "http://localhost:3001";
 
@@ -9,6 +9,12 @@ export const handleregister = (user,dispatch) =>{
                 dispatch(setRegister(res.data))
             })
 
+}
+
+export const hanldeLogout = (dispatch) =>{
+    axios.get(BASE_URL+"/logout",{withCredentials:true}).then((res)=>{
+        dispatch(setLogout(res));
+    })
 }
 
 

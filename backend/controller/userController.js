@@ -69,4 +69,12 @@ const handleLogin = (req,res) =>{
         }
         })
 }
-module.exports={handleRegister,handleLogin};
+const handleLogout = (req,res)=>{
+    res.clearCookie('sessionId')
+    req.session.destroy();
+    res.send({
+            login:false,
+            message:"User logged out"
+    })
+}
+module.exports={handleRegister,handleLogin,handleLogout};

@@ -11,6 +11,17 @@ export const setRegister = (data) =>{
         }
     }
 }
+export const setLogout = (data)=>{
+    console.log(data)
+    router.push("/")
+    return (state) =>{
+        return {
+            ...state,
+            login:data.login,
+            email:" ",
+        }
+    }
+}
 export const setLogin = (data) =>{
     router.push("/Dashboard")
 
