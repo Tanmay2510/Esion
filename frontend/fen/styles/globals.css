@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&family=Shantell+Sans&family=Tilt+Prism&display=swap');
+
 .UpperSection{
   background-image: url("../assets/images/land.png");
   background-repeat:no-repeat;
@@ -5,19 +9,12 @@
   padding-top: 5px;
   padding-bottom: 55px;
   border-bottom:5px solid rgb(5, 237, 133);
-  /* border-radius: 0 0 75px 75px; */
-
 }
 .UnderNavCont{
   display: flex;
   justify-content: space-evenly;
   margin-top: 60px;
 }
-
-
-
-  
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Pacifico&display=swap');
 .ReglogCont{
     width:450px;
     padding:20px;
@@ -42,7 +39,6 @@
     transition: 0.4s;
 }
 .stl , .hh , .hh4{
-    
     color:whitesmoke;
     font-family: 'Pacifico', cursive;
 }
@@ -58,11 +54,7 @@
     background: rgba(107, 223, 153, 0.613);
     border: 2px solid rgba(245, 241, 245, 0.968);
     box-shadow: rgba(15, 225, 169, 0.874) 0px 22px 70px 4px;
-
-
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Pacifico&display=swap');
-
 .navv{
     border-bottom: 2px dotted rgba(9, 243, 95, 0.72);
     display: flex;
@@ -75,8 +67,6 @@
     padding-right: 5%;
     justify-content: space-between;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Rampart+One&family=Shantell+Sans&family=Tilt+Prism&display=swap');
 .Usection {
     width: 500px;
     margin-right: 10px;
