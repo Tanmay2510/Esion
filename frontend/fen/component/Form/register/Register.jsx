@@ -2,17 +2,13 @@ import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import {motion } from 'framer-motion'
 import { handleregister } from '../../../manager/API';
-// import { useNavigate } from 'react-router-dom';
 function Register({dispatch,setIsFlipped,isFlipped}) {
-  // let nav = useNavigate();
   const [ user, setUser] = useState({
     email:"",
     name:"",
     password:"",
     reEnterPassword: "",
-
 })
-
 const handleChange = e => {
     const { name, value } = e.target
     setUser({
@@ -47,7 +43,6 @@ const register = (e) => {
     <Form.Group className="mb-3 stl" controlId="formBasicEmail">
       <Form.Label >Email address</Form.Label>
       <Form.Control type="email" placeholder="Enter email" name="email" value={user.email} onChange={handleChange} />
-   
     </Form.Group>
     <Form.Group className="mb-3 stl" controlId="formBasicPassword">
       <Form.Label>Name</Form.Label>
@@ -57,13 +52,11 @@ const register = (e) => {
       <Form.Label>Password</Form.Label>
       <Form.Control type="password" placeholder="Password" name="password" value={user.password} onChange={handleChange}/>
     </Form.Group>
-  
     <Form.Group className="mb-3 stl" controlId="formBasicPassword">
       <Form.Label>Re-Enter Password</Form.Label>
       <Form.Control type="password" placeholder="Re-Enter Password" name="reEnterPassword" value={user.reEnterPassword} onChange={handleChange}/>
     </Form.Group>
     <div className="d-grid gap-2">
-  
     <button 
     className='but stl'
     >
@@ -81,5 +74,4 @@ const register = (e) => {
   </Form></motion.div>
   )
 }
-
 export default Register

@@ -1,9 +1,7 @@
 import React, {  useState } from 'react'
-// import "./Reglog.css"
 import Register from './register/Register';
 import Login from './login/Login'
 import useAuth from '../../hook/useAuth';
-
 function Reglog() {
   const {userDispatch} = useAuth();
   const [isFlipped,setIsFlipped] = useState(false);
@@ -25,5 +23,4 @@ function Reglog() {
    </div>
   )
 }
-
 export default Reglog

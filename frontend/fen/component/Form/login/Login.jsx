@@ -21,13 +21,11 @@ const login = e => {
     alert("Invalid Input");
   }else{
   handlelogin(user,dispatch);
- 
   setUser({
     email:"",
     password:""
   })
 }
-  
 }
   return (
     <motion.div
@@ -62,5 +60,4 @@ const login = e => {
   </motion.div>
   )
 }
-
 export default Login

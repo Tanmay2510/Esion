@@ -1,4 +1,3 @@
-// const bcrypt = require('bcrypt');
 require('dotenv/config');
 const saltRounds =  9;
 const {User} = require("../model/userModel")
@@ -48,7 +47,6 @@ const handleLogin = (req,res) =>{
                     if(result===true){
                         req.session.name = user.Name;
                         req.session.email = email;
-                
                         res.json({
                             login:true,
                             message:"User Found!!",

@@ -5,7 +5,6 @@ import Reglog from '../component/Form/Reglog'
 
 
 const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   return (
     <>
@@ -19,7 +18,6 @@ export default function Home() {
     </div>
     <div className='bottomSection'>
     <h1>h</h1>
-
     </div>
     </div>      
     </>

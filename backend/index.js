@@ -10,10 +10,7 @@ const port = process.env.PORT || 3001;
 
 // connecting to database
 connectDB();
-
 const app = express();
-
-
 app.use(cors({
   origin:"http://localhost:3000",
   credentials:true

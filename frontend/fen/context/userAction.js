@@ -7,7 +7,6 @@ export const setRegister = (data) =>{
             ...state,
             login:data.login,
             name:data.Name
-            
         }
     }
 }
@@ -30,7 +29,6 @@ export const setLogin = (data) =>{
             ...state,
             login:data.login,
             name:data.Name
-            
         }
     }
 }
