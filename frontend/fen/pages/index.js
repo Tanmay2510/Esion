@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import Nav from '@/component/nav/Nav'
 import US from '@/component/uppserSideSection/US'
 import Reglog from '../component/Form/Reglog'
+import Sample from '@/component/middle/Sample'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,7 +18,7 @@ export default function Home() {
     </div>
     </div>
     <div className='bottomSection'>
-    <h1>h</h1>
+    <Sample />
     </div>
     </div>      
     </>

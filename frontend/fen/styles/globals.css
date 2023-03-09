@@ -81,3 +81,19 @@
     font-size: 75px;
     font-family: 'Rampart One', cursive;
 }
+.middleSection{
+    margin:50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+/* .lbgimg{
+    aspect-ratio: 960/400;
+     background-repeat:no-repeat;
+     width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.lbg{
+    background-image: url("../assets/svgs/layers.svg"); 
+} */
