@@ -1,4 +1,3 @@
-import { Racing_Sans_One } from 'next/font/google'
 import React from 'react'
 import { BsCloudSnow, BsFire } from 'react-icons/bs'
 import { MdForest } from 'react-icons/md'
