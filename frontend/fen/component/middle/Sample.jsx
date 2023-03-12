@@ -3,7 +3,6 @@ import { BsCloudSnow, BsFire } from 'react-icons/bs'
 import { MdForest } from 'react-icons/md'
 import rain from "../../assets/sounds/rain.mp3"
 function Sample() {
-  
   const play = () => {
     var audio = new Audio(rain);
     audio.play();
