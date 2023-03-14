@@ -1,17 +1,23 @@
+import { data } from '@/util/SData'
 import React from 'react'
-import { BsCloudSnow, BsFire } from 'react-icons/bs'
-import { MdForest } from 'react-icons/md'
-import rain from "../../assets/sounds/rain.mp3"
+
+
 function Sample() {
-  const play = () => {
-    var audio = new Audio(rain);
-    audio.play();
-  }
+ 
   return (
     <div className='middleSection'>
-    <BsFire size = {70} />
-    <BsCloudSnow  size = {70} />
-    <MdForest size = {70}  onClick={play}/>
+    {
+      data.map((el,i)=>{
+        return (
+          <div onClick={()=>{
+            var audio = new Audio(el.uri);
+            audio.play();
+          }}>
+            {el.logo}
+          </div>
+        )
+      })
+    }
     </div>
   )
 }
