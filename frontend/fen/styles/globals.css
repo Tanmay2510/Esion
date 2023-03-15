@@ -9,6 +9,9 @@
   padding-top: 5px;
   padding-bottom: 55px;
   border-bottom:5px solid rgb(5, 237, 133);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
 }
 .UnderNavCont{
   display: flex;
@@ -22,7 +25,7 @@
     height: auto;
     background: rgba(127, 163, 141, 0.249);
     border: 2px solid rgba(6, 163, 116, 0.66);
-    border-radius: 10px;
+    border-radius: 50px;
     backdrop-filter: blur(2px);
     box-shadow: rgba(10, 231, 65, 0.905) 0px 22px 70px 4px;
     transition: 0.4s;
@@ -81,12 +84,21 @@
     font-size: 75px;
     font-family: 'Rampart One', cursive;
 }
+.middleSample:hover{
+    cursor: pointer;
+}
 .middleSection{
-    margin:50px auto;
+    /* margin:50px auto; */
     display: flex;
+    min-height: 100vh;
     align-items: center;
     justify-content: space-evenly;
+    background: rgb(138, 250, 157);
+    background: radial-gradient(circle, rgba(193,247,201,1) 0%, rgba(255,255,255,0) 100%);
 }
+/* .bottomSection{ */
+  
+/* } */
 /* .lbgimg{
     aspect-ratio: 960/400;
      background-repeat:no-repeat;
