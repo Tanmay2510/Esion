@@ -1,47 +1,38 @@
 import { data } from '@/util/SData'
-import React, { useState } from 'react'
-import {BsPauseFill} from 'react-icons/bs'
+import React, { useRef, useState,useMemo } from 'react'
 function Sample() {
-  // const [isplay,setisplay] = useState(false);
+  const [isplay,setisplay] = useState(false);
   const [clickedIndex, setClickedIndex] = useState({});
-  const [isAudio,setIsAudio] = useState(null);
-  var audio;
+
   const hanldeSound = (i) => ( )=>{
-    // setisplay(!isplay)
+    setisplay(!isplay)
     setClickedIndex(state => ({
       ...state, 
       [i]: !state[i] 
     }));
-   audio = new Audio(data[i].uri);
-    if(clickedIndex){
-    audio.play();
-    }
+    let aud = new Audio()
+  aud.src = data[i].uri;
+  if(!isplay){
+  aud.play();
+  }else{
+    alert("pause")
+    aud.pause();
   }
-  const handlePause = (i) => () =>{
-    setIsAudio(i)
-  
-    // console.log(clickedIndex)
-    // audio = new Audio(data[i].uri);
-    // audio.pause();
   }
+
   return (
     <div className='middleSection'>
     {
       data.map((el,i)=>{
         return (
           <div
+          key={i}
           className='middleSample'
           onClick={hanldeSound(i)}>
             {el.logo}
             {
               clickedIndex[i] ? 
               <div>
-              <BsPauseFill onClick={()=>{
-                let aud = new Audio(el.uri);
-                aud.pause();
-              {/*handlePause(i)*/}
-
-              }}/>
               <input type="range"></input>
               </div>
               : null
