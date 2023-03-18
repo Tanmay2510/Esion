@@ -1,23 +1,28 @@
 import { data } from '@/util/SData'
-import React, { useRef, useState,useMemo } from 'react'
+import React, { useRef, useState,useMemo, useEffect } from 'react'
 function Sample() {
-  const [isplay,setisplay] = useState(false);
   const [clickedIndex, setClickedIndex] = useState({});
+  const [audioIndex,setAudioIndex] = useState(0);
+  const [audio,setAudio] = useState(null)
+  const audioRef = useRef();
+  useEffect(()=>{
+    setAudio(new Audio(data[audioIndex].uri))
+  },[audioIndex])
 
   const hanldeSound = (i) => ( )=>{
-    setisplay(!isplay)
+    setAudioIndex(i)
     setClickedIndex(state => ({
       ...state, 
       [i]: !state[i] 
     }));
-    let aud = new Audio()
-  aud.src = data[i].uri;
-  if(!isplay){
-  aud.play();
-  }else{
-    alert("pause")
-    aud.pause();
   }
+
+  
+  if(clickedIndex[audioIndex]){
+  console.log("play")
+  audio.play();
+  }else if(!clickedIndex[audioIndex]){
+    console.log("pause")
   }
 
   return (
@@ -26,18 +31,23 @@ function Sample() {
       data.map((el,i)=>{
         return (
           <div
+          ref={audioRef}
           key={i}
           className='middleSample'
           onClick={hanldeSound(i)}>
+          
             {el.logo}
+
             {
               clickedIndex[i] ? 
-              <div>
-              <input type="range"></input>
-              </div>
+       
+              <h1>h</h1>
               : null
             }
+
           </div>
+
+
         )
       })
     }
