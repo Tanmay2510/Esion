@@ -34,16 +34,22 @@ function Sample() {
           ref={audioRef}
           key={i}
           className='middleSample'
-          onClick={hanldeSound(i)}>
-          
-            {el.logo}
+          >
+          {el.logo}
+
+          <audio
+          controls
+          src={el.uri}
+          onClick={hanldeSound(i)}
+          >
 
             {
-              clickedIndex[i] ? 
+              // clickedIndex[i] ? 
        
-              <h1>h</h1>
-              : null
+              // <h1>h</h1>
+              // : null
             }
+            </audio>
 
           </div>
 

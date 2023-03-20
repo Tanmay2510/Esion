@@ -79,11 +79,13 @@
 .Usection p{
     font-size: 30px;
 }
+
 .Usection h2{
     color: rgb(38, 133, 33);
     font-size: 75px;
     font-family: 'Rampart One', cursive;
 }
+
 .middleSample:hover{
     cursor: pointer;
 }
