@@ -1,30 +1,69 @@
 import { data } from '@/util/SData'
 import React, { useRef, useState,useEffect } from 'react'
-import {RxSpeakerLoud} from 'react-icons/rx'
+import {BsPlay,BsPause} from 'react-icons/bs'
 function Sample() {
   const [play, setPlay] = useState(false);
-  const oceanRef = useRef(null);
+  const [clickedIndex, setClickedIndex] = useState({});
+
+  const audioRef = useRef(null);
   const MAX = 20;
-  
+  const toggleAudio = (i) => ()=> {
+    setClickedIndex(state => ({
+          ...state, 
+          [i]: !state[i] 
+        }));
+    if (play) {
+      audioRef.current.pause();
+      setPlay(false);
+    } else {
+      audioRef.current.play();
+      setPlay(true);
+    }
+  }
+  function handleVolume(e) {
+    const { value } = e.target;
+    const volume = Number(value) / MAX;
+    audioRef.current.volume = volume;
+  }
   return (
     <div className='middleSection'>
-      <div className='cardSection'>
-      <div className='audioLogo'>
-      {data[0].logo}
+      {
+        data.map((el,i)=>{
+          return (
+      <div className='cardSection' >
+
+            <div className='audioLogo' onClick={toggleAudio(i)}>
+            {el.logo}
+            </div>
+            <h4 align="center" style={{margin:"15px"}}>{el.name}</h4>
+            <div className='audioControls'>
+            <input
+            min={0}
+            max={MAX}
+            onChange={(e) => handleVolume(e)} 
+            type="range"></input>
+            {!clickedIndex[i] ? (
+              <BsPlay />
+            ) : (
+              <BsPause />
+            )}
+            
+            </div>
+      <audio src={data[i].uri} ref={audioRef} loop></audio>
+
       </div>
-      <div className='audioControls'>
-      <input type="range"></input>
-      <RxSpeakerLoud />
-      </div>
-      <audio src={data[0].uri} loop></audio>
-      </div>
+
+          )
+        })
+      }
+ 
+      
     </div>
   )
 }
 export default Sample
 
 
-// const [clickedIndex, setClickedIndex] = useState({});
   // const [audioIndex,setAudioIndex] = useState(0);
   // const [audio,setAudio] = useState(null)
   // const audioRef = useRef();
