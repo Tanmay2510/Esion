@@ -4,6 +4,8 @@ import {BsPlay,BsPause} from 'react-icons/bs'
 function Sample() {
   const [play, setPlay] = useState(false);
   const [clickedIndex, setClickedIndex] = useState({});
+  const [audioIndex,setAudioIndex] = useState(0);
+  const [istrack,setIsTrack] = useState({});
 
   const audioRef = useRef(null);
   const MAX = 20;
@@ -12,6 +14,7 @@ function Sample() {
           ...state, 
           [i]: !state[i] 
         }));
+    setAudioIndex(i)
     if (play) {
       audioRef.current.pause();
       setPlay(false);
@@ -20,6 +23,23 @@ function Sample() {
       setPlay(true);
     }
   }
+//   console.log(play)
+// useEffect(()=>{
+//   if (!clickedIndex[audioIndex]) {
+//     audioRef.current.pause();
+
+//     setPlay(false);
+//   } else {
+//     audioRef.current.play();
+//     // setIsTrack(track => ({
+//     //   ...track, 
+//     //   [i]: !track[i] 
+//     // }));
+//     setPlay(true);
+//   }
+// },[audioIndex])
+  
+  
   function handleVolume(e) {
     const { value } = e.target;
     const volume = Number(value) / MAX;
@@ -31,7 +51,6 @@ function Sample() {
         data.map((el,i)=>{
           return (
       <div className='cardSection' >
-
             <div className='audioLogo' onClick={toggleAudio(i)}>
             {el.logo}
             </div>
@@ -47,9 +66,10 @@ function Sample() {
             ) : (
               <BsPause />
             )}
+
             
             </div>
-      <audio src={data[i].uri} ref={audioRef} loop></audio>
+            <audio src={data[audioIndex].uri} ref={audioRef} loop></audio>
 
       </div>
 
