@@ -14,32 +14,36 @@ function Sample() {
           ...state, 
           [i]: !state[i] 
         }));
+        setIsTrack((track =>({
+          ...track,
+          [i] : data[i].uri 
+        })))
     setAudioIndex(i)
-    if (play) {
-      audioRef.current.pause();
-      setPlay(false);
-    } else {
-      audioRef.current.play();
-      setPlay(true);
-    }
-  }
+  //   if (play) {
+  //     audioRef.current.pause();
+  //     setPlay(false);
+  //   } else {
+  //     audioRef.current.play();
+  //     setPlay(true);
+  //   }
+  // }
+      }
 //   console.log(play)
-// useEffect(()=>{
-//   if (!clickedIndex[audioIndex]) {
-//     audioRef.current.pause();
+useEffect(()=>{
+  if (!clickedIndex[audioIndex]) {
+    audioRef.current.pause();
 
-//     setPlay(false);
-//   } else {
-//     audioRef.current.play();
-//     // setIsTrack(track => ({
-//     //   ...track, 
-//     //   [i]: !track[i] 
-//     // }));
-//     setPlay(true);
-//   }
-// },[audioIndex])
-  
-  
+    setPlay(false);
+  } else {
+    audioRef.current.play();
+    // setIsTrack(track => ({
+    //   ...track, 
+    //   [i]: !track[i] 
+    // }));
+    setPlay(true);
+  }
+},[audioIndex])
+
   function handleVolume(e) {
     const { value } = e.target;
     const volume = Number(value) / MAX;
@@ -62,21 +66,27 @@ function Sample() {
             onChange={(e) => handleVolume(e)} 
             type="range"></input>
             {!clickedIndex[i] ? (
+              <div>
+        <audio src={data[i].uri} ref={audioRef} loop></audio>
+
               <BsPlay />
+              </div>
+
             ) : (
+              <div>
+              <audio ref={audioRef} loop></audio>
               <BsPause />
+                    </div>
             )}
-
-            
             </div>
-            <audio src={data[audioIndex].uri} ref={audioRef} loop></audio>
-
       </div>
 
           )
         })
       }
- 
+      
+
+       
       
     </div>
   )
