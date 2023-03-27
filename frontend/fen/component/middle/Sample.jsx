@@ -5,19 +5,31 @@ function Sample() {
   const [play, setPlay] = useState(false);
   const [clickedIndex, setClickedIndex] = useState({});
   const [audioIndex,setAudioIndex] = useState(0);
-  const [istrack,setIsTrack] = useState({});
+  const [currentSoundIndex, setCurrentSoundIndex] = useState([])
+  const [playingSounds, setPlayingSounds] = useState({})
+
 
   const audioRef = useRef(null);
   const MAX = 20;
+
+  useEffect(() => {
+    setPlayingSounds(
+      currentSoundIndex.reduce(
+        (newPlayingSounds, audioIndex) => {
+          newPlayingSounds[audioIndex] = true
+          return newPlayingSounds
+        },
+        {}
+      )
+    )
+  }, [currentSoundIndex])
   const toggleAudio = (i) => ()=> {
     setClickedIndex(state => ({
           ...state, 
           [i]: !state[i] 
         }));
-        setIsTrack((track =>({
-          ...track,
-          [i] : data[i].uri 
-        })))
+        setPlayingSounds({ ...playingSounds, [i]: true })
+       
     setAudioIndex(i)
   //   if (play) {
   //     audioRef.current.pause();
@@ -28,18 +40,15 @@ function Sample() {
   //   }
   // }
       }
-//   console.log(play)
 useEffect(()=>{
   if (!clickedIndex[audioIndex]) {
     audioRef.current.pause();
-
+    const newPlayingSounds = { ...playingSounds }
+    delete newPlayingSounds[audioIndex]
+    setPlayingSounds(newPlayingSounds)
     setPlay(false);
   } else {
     audioRef.current.play();
-    // setIsTrack(track => ({
-    //   ...track, 
-    //   [i]: !track[i] 
-    // }));
     setPlay(true);
   }
 },[audioIndex])
@@ -49,6 +58,7 @@ useEffect(()=>{
     const volume = Number(value) / MAX;
     audioRef.current.volume = volume;
   }
+  
   return (
     <div className='middleSection'>
       {
@@ -66,19 +76,13 @@ useEffect(()=>{
             onChange={(e) => handleVolume(e)} 
             type="range"></input>
             {!clickedIndex[i] ? (
-              <div>
-        <audio src={data[i].uri} ref={audioRef} loop></audio>
-
               <BsPlay />
-              </div>
-
             ) : (
-              <div>
-              <audio ref={audioRef} loop></audio>
               <BsPause />
-                    </div>
             )}
             </div>
+        <audio src={el.uri} ref={audioRef} loop></audio>
+
       </div>
 
           )
