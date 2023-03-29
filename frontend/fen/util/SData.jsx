@@ -1,22 +1,22 @@
-import rain from "../assets/sounds/rain.mp3"
-import stream from "../assets/sounds/stream.mp3"
-
+import fire from "../assets/sounds/fire_sound.mp3"
+import snow from "../assets/sounds/snow_sound.mp3"
+import forest from "../assets/sounds/forest_sound.mp3"
 import { BsCloudSnow, BsFire } from 'react-icons/bs'
 import { MdForest } from 'react-icons/md'
 export const data = [
     {
         logo:<BsFire size={110} color="white"/>,
         name:"Fire" ,
-        uri:rain
+        uri:fire
     },
     {
         logo:<BsCloudSnow size={110} color="white"/>,
         name:"Snow" ,
-        uri:rain
+        uri:snow
     },
     {
         logo:<MdForest size={110} color="white"/>,
         name:"Forest" ,
-        uri:stream
+        uri:forest
     }
 ];
