@@ -94,9 +94,9 @@
 
 .cardSection{
     height: 250px;
-    border-radius: 20px;
+    border-radius: 50px;
     width:200px;
-    background-color: rgb(144, 220, 144);
+    background: radial-gradient(circle, rgb(198, 244, 205) 0%, rgba(255,255,255,0) 100%);
 }
 .audioControls{
     display: flex;
@@ -106,12 +106,15 @@
 .middleSample:hover{
     cursor: pointer;
 }
+.middleBG{
+    background: radial-gradient(circle, rgb(127, 255, 146) 0%, rgba(255,255,255,0) 100%);
+
+}
 .middleSection{
-    /* margin:50px auto; */
-    display: flex;
+    display: grid;
     min-height: 100vh;
-    align-items: center;
-    justify-content: space-evenly;
-    background: rgb(138, 250, 157);
-    background: radial-gradient(circle, rgba(193,247,201,1) 0%, rgba(255,255,255,0) 100%);
+    column-gap: 150px;
+    grid-template-columns: repeat(auto-fit,15rem);
+    justify-content: center; 
+    align-items: center; 
 }

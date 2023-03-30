@@ -14,7 +14,7 @@ function Nav({logout}) {
         <div className='innerNav'>
         {
           logout ? <button onClick={log}>Logout</button>: 
-        <button>Sample</button>
+        <button ><a href="#sample" style={{textDecoration:"none",color:"green"}}>Sample</a></button>
 
         }
         </div>

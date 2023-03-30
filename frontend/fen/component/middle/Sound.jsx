@@ -62,7 +62,6 @@ function Sound({
 
   return (
     <div className='cardSection'>
-    
     <div className='audioLogo' onClick={handleSoundPlay(key)}>
     {logo}
     </div>
