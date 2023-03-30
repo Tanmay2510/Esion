@@ -33,7 +33,7 @@ const login = e => {
         animate={{opacity:1}}
         transition={{duration:0.5}}>
     <h1 style={{textAlign:"center"}} className="hh">Login User</h1>
-    <Form className='Reglog'
+    <Form classname='Reglog'
     onSubmit={login}>
     <Form.Group className="mb-3 stl" controlId="formBasicEmail">
       <Form.Label >Email address</Form.Label>

@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&family=Shantell+Sans&family=Tilt+Prism&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
 .UpperSection{
   background-image: url("../assets/images/land.png");
   background-repeat:no-repeat;
@@ -41,9 +39,11 @@
     background-color:rgba(83, 230, 125, 0.8);
     transition: 0.4s;
 }
-.stl , .hh , .hh4{
+
+.hh,.stl , .hh4{
+    font-weight: 800;
     color:whitesmoke;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Mukta', sans-serif;
 }
 .stl{
     font-size: 17px;
@@ -115,16 +115,3 @@
     background: rgb(138, 250, 157);
     background: radial-gradient(circle, rgba(193,247,201,1) 0%, rgba(255,255,255,0) 100%);
 }
-/* .bottomSection{ */
-  
-/* } */
-/* .lbgimg{
-    aspect-ratio: 960/400;
-     background-repeat:no-repeat;
-     width: 100%;
-    background-size: cover;
-    background-position: center;
-}
-.lbg{
-    background-image: url("../assets/svgs/layers.svg"); 
-} */

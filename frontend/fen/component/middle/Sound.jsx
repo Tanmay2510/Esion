@@ -62,10 +62,11 @@ function Sound({
 
   return (
     <div className='cardSection'>
+    
     <div className='audioLogo' onClick={handleSoundPlay(key)}>
     {logo}
     </div>
-    <h4 align="center" style={{margin:"15px"}}>{title}</h4>
+    <h4 align="center" style={{margin:"15px",color:"whitesmoke"}}>{title}</h4>
     <div className='audioControls'>
     <input
     min={0}
