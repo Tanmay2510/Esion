@@ -74,9 +74,9 @@ function Sound({
     type="range"
     ></input>
     {!clickedIndex[key] ? (
-    <BsPlay />
+    <BsPlay color="grey"/>
     ) : (
-    <BsPause />
+    <BsPause color="grey"/>
     )}
     
 </div>
