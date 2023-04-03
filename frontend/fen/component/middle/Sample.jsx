@@ -1,6 +1,6 @@
 import { data } from '@/util/SData'
-import React, { useRef, useState,useEffect } from 'react'
-import Sound from './Sound'
+import React, {  useState,useEffect } from 'react'
+import Sound from '../soundS/Sound'
 function Sample() {
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
@@ -25,7 +25,7 @@ function Sample() {
         data.map((el,i)=>{
           return (
              <Sound 
-              key = {i}
+              keyy = {i}
               {...el}
               src={el.uri}
               title={el.name}

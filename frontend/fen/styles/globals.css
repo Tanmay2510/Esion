@@ -64,12 +64,13 @@
     z-index: 1;
     width: 100%;
     align-items: center;
+    justify-content: space-between;
     top:0;
     font-family: 'Rampart One', cursive;
-    padding-left: 5%;
+    padding-left: 2%;
+    padding-top:10px;
     padding-right: 5%;
     transition: 0.5s;
-    justify-content: space-between;
 }
 .navv.active{
     border-bottom: 2px dotted rgba(9, 243, 95, 0.72);
@@ -113,10 +114,10 @@
 .middleSample:hover{
     cursor: pointer;
 }
-.middleBG{
+.middleBG {
     background: radial-gradient(circle, rgb(127, 255, 146) 0%, rgba(255,255,255,0) 100%);
-
 }
+
 .middleSection{
     display: grid;
     min-height: 100vh;
@@ -124,4 +125,19 @@
     grid-template-columns: repeat(auto-fit,15rem);
     justify-content: center; 
     align-items: center; 
+}
+
+.dashmidContainer{
+    padding-top:130px;
+}
+.dashCardContainer{
+    display: grid;
+    column-gap: 150px;
+    grid-template-columns: repeat(auto-fit,10rem);
+    justify-content: center; 
+    align-items: center; 
+    row-gap: 50px;
+}
+.dashContainer{
+    background-color: rgb(19, 19, 2);
 }

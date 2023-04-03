@@ -2,7 +2,7 @@ import React, { useState , useRef , useEffect} from 'react'
 import {BsPlay,BsPause} from 'react-icons/bs'
 
 function Sound({
-    key,
+    keyy,
     src,
     title,
     logo,
@@ -15,10 +15,10 @@ function Sound({
   const [clickedIndex, setClickedIndex] = useState({});
   const audioRef = useRef(null)
 
-  const handleSoundPlay = (key)=>() => {
+  const handleSoundPlay = (keyy)=>() => {
     setClickedIndex(state => ({
                 ...state, 
-                [key]: !state[key] 
+                [keyy]: !state[keyy] 
               }));
     if (isPlaying) {
       onPause && onPause()
@@ -62,7 +62,7 @@ function Sound({
 
   return (
     <div className='cardSection'>
-    <div className='audioLogo' onClick={handleSoundPlay(key)}>
+    <div className='audioLogo' onClick={handleSoundPlay(keyy)}>
     {logo}
     </div>
     <h4 align="center" style={{margin:"15px",color:"whitesmoke"}}>{title}</h4>
@@ -73,7 +73,7 @@ function Sound({
     onChange={(e) => handleVolume(e)} 
     type="range"
     ></input>
-    {!clickedIndex[key] ? (
+    {!clickedIndex[keyy] ? (
     <BsPlay color="grey"/>
     ) : (
     <BsPause color="grey"/>

@@ -4,10 +4,17 @@ import React from 'react'
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="dashContainer">
+    <div className='dashNav'>
     <Nav 
     logout = {true}/>
+    </div>
+    <div className='dashmidContainer'>
+    <p align="center">Mix Match your audios!!</p>
+     <div>
     <Dash />
+    </div>
+    </div>
     </div>
   )
 }

@@ -8,7 +8,6 @@ import {TbBeach} from 'react-icons/tb'
 import { notSampledata } from '@/util/SData'
 
 function soundIcon() {
-  console.log(notSampledata)
   return (
     <div>
      <BsFillCloudRainFill size={70}/>
