@@ -25,6 +25,7 @@ function Sample() {
         data.map((el,i)=>{
           return (
              <Sound 
+             key={i}
               keyy = {i}
               {...el}
               src={el.uri}

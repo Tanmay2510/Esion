@@ -16,8 +16,12 @@ import walk from "../assets/sounds/walk_sound.mp3"
 import waves from "../assets/sounds/waves_sound.mp3"
 import whiteNoise from "../assets/sounds/whitenoise_sound.mp3"
 import wind from "../assets/sounds/wind_sound.mp3"
-import { BsCloudSnow, BsFire } from 'react-icons/bs'
-import { MdForest } from 'react-icons/md'
+import { BsCloudSnow, BsFire,BsFan ,BsCloudRain} from 'react-icons/bs'
+import { MdForest,MdOutlineLocalCafe } from 'react-icons/md'
+import {RiThunderstormsFill} from 'react-icons/ri'
+import {BiTrain,BiWalk,BiWind} from 'react-icons/bi'
+import {CgEditNoise} from 'react-icons/cg'
+import {GiNestBirds,GiCommercialAirplane,GiWaves,GiThreeLeaves,GiNightSky,GiRiver,GiSplashyStream} from 'react-icons/gi'
 export const data = [
     {
         logo:<BsFire size={110} color="white"/>,
@@ -39,82 +43,82 @@ export const data = [
 export const notSampledata = [
     ...data,
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<GiNestBirds size={110} color="white"/>,
         name:"Birds" ,
         uri:birds
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<GiCommercialAirplane size={110} color="white"/>,
         name:"Airplane" ,
         uri:airplane
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<MdOutlineLocalCafe size={110} color="white"/>,
         name:"Cafe" ,
         uri:cafe
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<BsFan size={110} color="white"/>,
         name:"Fan" ,
         uri:fan
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<BsFire size={110} color="white"/>,
         name:"Fire" ,
         uri:fire
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<GiThreeLeaves size={110} color="white"/>,
         name:"Leaves" ,
         uri:leaves
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<GiNightSky size={110} color="white"/>,
         name:"Night" ,
         uri:night
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<BsCloudRain size={110} color="white"/>,
         name:"Rain" ,
         uri:rain
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<GiRiver size={110} color="white"/>,
         name:"River" ,
         uri:river
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<GiSplashyStream size={110} color="white"/>,
         name:"Stream" ,
         uri:stream
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<RiThunderstormsFill size={110} color="white"/>,
         name:"Thunder" ,
         uri:thunder
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<BiTrain size={110} color="white"/>,
         name:"Train" ,
         uri:train
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<BiWalk size={110} color="white"/>,
         name:"Walking" ,
         uri:walk
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<GiWaves size={110} color="white"/>,
         name:"Waves" ,
         uri:waves
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<CgEditNoise size={110} color="white"/>,
         name:"White Noises" ,
         uri:whiteNoise
     },
     {
-        logo:<MdForest size={110} color="white"/>,
+        logo:<BiWind size={110} color="white"/>,
         name:"Wind" ,
         uri:wind
     }

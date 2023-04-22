@@ -139,5 +139,8 @@
     row-gap: 50px;
 }
 .dashContainer{
-    background-color: rgb(19, 19, 2);
+    background-color: rgb(190, 190, 52);
+}
+.cardSectionActive{
+    background-color: black;
 }

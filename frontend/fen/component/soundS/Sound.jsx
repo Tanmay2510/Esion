@@ -61,7 +61,7 @@ function Sound({
   }, [isPlaying, src]) 
 
   return (
-    <div className='cardSection'>
+    <div className={`cardSection ${isPlaying ? "cardSectionActive" : ""}`} >
     <div className='audioLogo' onClick={handleSoundPlay(keyy)}>
     {logo}
     </div>
