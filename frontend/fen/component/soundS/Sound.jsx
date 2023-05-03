@@ -59,13 +59,16 @@ function Sound({
       audioRef.current.pause()
     }
   }, [isPlaying, src]) 
-
+  const playlistAdd = (keyy) =>{
+    //open new pane 
+    console.log(keyy)
+  }
   return (
     <div className={`cardSection ${isPlaying ? "cardSectionActive" : ""}`} >
     <div className='audioLogo' onClick={handleSoundPlay(keyy)}>
     {logo}
     </div>
-    <h4 align="center" style={{margin:"15px",color:"whitesmoke"}}>{title}</h4>
+    <h4 align="center" style={{margin:"15px",color:"rgb(66, 153, 109)"}}>{title}</h4>
     <div className='audioControls'>
     <input
     min={0}
@@ -80,6 +83,7 @@ function Sound({
     )}
     
 </div>
+<button onClick={() => playlistAdd(keyy)}>Add to PlayList</button>
     </div>
   )
 }

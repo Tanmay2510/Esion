@@ -104,8 +104,11 @@
     height: 250px;
     border-radius: 50px;
     width:200px;
-    background: radial-gradient(circle, rgb(198, 244, 205) 0%, rgba(255,255,255,0) 100%);
+    border: 0px solid transparent;
+    transition: 1s ease-out;
+    background: radial-gradient(circle, rgb(198, 244, 205) 0%, rgba(255,255,255,0) 90%);
 }
+
 .audioControls{
     display: flex;
     justify-content: space-evenly;
@@ -142,5 +145,6 @@
     background-color: rgb(190, 190, 52);
 }
 .cardSectionActive{
-    background-color: black;
+        transition: 1s ease-in;
+        border:1px solid rgb(31, 232, 98);
 }

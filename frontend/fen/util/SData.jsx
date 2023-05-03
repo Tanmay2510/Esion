@@ -24,12 +24,12 @@ import {CgEditNoise} from 'react-icons/cg'
 import {GiNestBirds,GiCommercialAirplane,GiWaves,GiThreeLeaves,GiNightSky,GiRiver,GiSplashyStream} from 'react-icons/gi'
 export const data = [
     {
-        logo:<BsFire size={110} color="white"/>,
+        logo:<BsFire size={110}   color="white"/>,
         name:"Fire" ,
         uri:fire
     },
     {
-        logo:<BsCloudSnow size={110} color="white"/>,
+        logo:<BsCloudSnow size={110} color="white" />,
         name:"Snow" ,
         uri:snow
     },
