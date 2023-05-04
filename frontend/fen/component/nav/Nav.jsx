@@ -24,7 +24,9 @@ function Nav({logout}) {
     {
       logout ?
       <>
-      <nav className={navB ? "navv active" : "navv "}>
+      <nav className="navv"
+      // {navB ? "navv active" : "navv "}
+      >
         <h1>ESIN</h1>
         <img src={logo.src} style={{width:"5%"}}></img>
         <div className='innerNav'>
