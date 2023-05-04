@@ -101,7 +101,8 @@
 }
 
 .cardSection{
-    height: 250px;
+    min-height: 250px;
+    height: auto;
     border-radius: 50px;
     width:200px;
     border: 0px solid transparent;
@@ -133,10 +134,17 @@
 .dashmidContainer{
     padding-top:130px;
 }
+
+/* .side p{
+    position: sticky;
+} */
+.wholedash{
+    display: inline-flex;
+}
 .dashCardContainer{
     display: grid;
     column-gap: 150px;
-    grid-template-columns: repeat(auto-fit,10rem);
+    grid-template-columns: repeat(auto-fit,15rem);
     justify-content: center; 
     align-items: center; 
     row-gap: 50px;

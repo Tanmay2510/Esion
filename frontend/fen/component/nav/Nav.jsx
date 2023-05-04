@@ -20,17 +20,35 @@ function Nav({logout}) {
   }, [])
   
   return (
-    <nav className={navB ? "navv active" : "navv "}>
+    <div>
+    {
+      logout ?
+      <>
+      <nav className={navB ? "navv active" : "navv "}>
+        <h1>ESIN</h1>
+        <img src={logo.src} style={{width:"5%"}}></img>
+        <div className='innerNav'>
+        <button onClick={log}>Logout</button>
+        </div>
+        
+    </nav>
+    </>
+      :
+      <>
+      <nav className={navB ? "navv active" : "navv "}>
         <h1>ESION</h1>
         <img src={logo.src} style={{width:"5%"}}></img>
         <div className='innerNav'>
-        {
-          logout ? <button onClick={log}>Logout</button>: 
-        <button ><a href="#sample" style={{textDecoration:"none",color:"green"}}>Sample</a></button>
-
-        }
+<button style={{textDecoration:"none",color:"green"}}>Register</button>
+       
         </div>
     </nav>
+    </>
+    }
+    
+    </div>
+
   )
 }
 export default Nav
+

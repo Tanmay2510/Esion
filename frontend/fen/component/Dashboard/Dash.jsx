@@ -1,6 +1,7 @@
 import React , {useState,useEffect} from 'react'
 import { notSampledata } from '@/util/SData'
 import Sound from '../soundS/Sound'
+
 function Dash() {
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
@@ -17,6 +18,8 @@ function Dash() {
     )
   }, [currentSoundIndex])
   return (
+    <div className='wholeDash'>
+
     <div className='dashCardContainer'>
       {
         notSampledata.map((el,i)=>{
@@ -46,6 +49,8 @@ function Dash() {
         })
       }
     </div>
+    </div>
+
   )
 }
 

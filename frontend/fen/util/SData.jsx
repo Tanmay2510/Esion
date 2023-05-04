@@ -62,11 +62,7 @@ export const notSampledata = [
         name:"Fan" ,
         uri:fan
     },
-    {
-        logo:<BsFire size={110} color="white"/>,
-        name:"Fire" ,
-        uri:fire
-    },
+    
     {
         logo:<GiThreeLeaves size={110} color="white"/>,
         name:"Leaves" ,
