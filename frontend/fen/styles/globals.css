@@ -138,11 +138,13 @@
 /* .side p{
     position: sticky;
 } */
-.wholedash{
-    display: inline-flex;
+.wholeDash{
+    display: flex;
 }
+
 .dashCardContainer{
-    display: grid;
+    flex: 1;
+    display: grid !important;
     column-gap: 150px;
     grid-template-columns: repeat(auto-fit,15rem);
     justify-content: center; 
