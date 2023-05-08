@@ -2,6 +2,7 @@ import useAuth from '@/hook/useAuth'
 import { hanldeLogout } from '@/manager/API';
 import React, { useState ,useEffect} from 'react'
 import logo from '../../assets/images/logo.png'
+import SideNav from './SideNav';
 function Nav({logout}) {
   const [navB,setNavB] = useState(false);
   const {userDispatch} = useAuth();
@@ -18,22 +19,22 @@ function Nav({logout}) {
   useEffect(() => {
     window.addEventListener('scroll',changeBG);
   }, [])
+      // {navB ? "navv active" : "navv "}
   
   return (
     <div>
     {
       logout ?
       <>
-      <nav className="navv"
-      // {navB ? "navv active" : "navv "}
-      >
-        <h1>ESIN</h1>
-        <img src={logo.src} style={{width:"5%"}}></img>
-        <div className='innerNav'>
-        <button onClick={log}>Logout</button>
-        </div>
+      <header>
+      <h1>ESION</h1>
+      <img src={logo.src} style={{width:"5%"}}></img>
+      <button onClick={log}  >Logout</button>
+
+      </header>
+      <SideNav />
+
         
-    </nav>
     </>
       :
       <>

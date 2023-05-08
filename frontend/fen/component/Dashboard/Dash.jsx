@@ -19,9 +19,7 @@ function Dash() {
   }, [currentSoundIndex])
   return (
     <div className='wholeDash'>
-    <div className='side'>
-    <p>TDIFHDSIODFDS</p>
-    </div>
+    
     <div className='dashCardContainer'>
       {
         notSampledata.map((el,i)=>{
