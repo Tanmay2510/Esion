@@ -62,13 +62,17 @@ body{
     background: black;
     position: absolute;
     height: 100%;
+    left:-100%;
     padding-top: 50px;
+    padding-right: 50px;
     transition: all 1s;
 } 
-ul{
-    padding:0;
-
+.sideNav.active{
+    left:0;
 }
+/* ul{
+    left:1rem;
+} */
 ul li{
     list-style-type: none;
     width:150px;
@@ -81,6 +85,10 @@ ul li a{
     padding:10px;
     border-radius: 6px;
     transition: all 0.7s;
+}
+ul li a svg{
+    margin-right: 20px;
+    width: 15px;
 }
 header{
     height: 80px;
@@ -99,9 +107,10 @@ header{
 
 }
 header button{
-    height: 35px;
-    width: 100px;
+    height: 40px;
+    width: 120px;
     transition: all 0.5s;
+    font-size: 20px;
     background-color: white;
 }
 
@@ -112,12 +121,14 @@ header h1:hover , header button:hover{
     color:rgb(66, 153, 109);
     transition: all 0.5s;
 }
-ul li a:hover{
+ul li a:hover , ul li a:active{
     background-color: #ccd1da57;
     color:rgb(66, 153, 109);
     transition: all 0.7s;
 }
-
+/* .sideNav ul li{
+    background-color: white;
+} */
 .stl{
     font-size: 17px;
 }
@@ -210,6 +221,12 @@ ul li a:hover{
     padding-top:40px;
     margin-left: 18%;
     transition: all 1s;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.dashmidContainer::-webkit-scrollbar { 
+    display: none; 
 }
 
 
@@ -227,7 +244,8 @@ ul li a:hover{
     row-gap: 50px;
 }
 .dashContainer{
-    background-color: rgb(190, 190, 52);
+    background-color: rgb(8, 52, 35);
+    
 }
 .cardSectionActive{
         transition: 1s ease-in;

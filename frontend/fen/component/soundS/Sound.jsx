@@ -63,6 +63,8 @@ function Sound({
     //open new pane 
     console.log(keyy)
   }
+// <button onClick={() => playlistAdd(keyy)}>Add to PlayList</button>
+
   return (
     <div className={`cardSection ${isPlaying ? "cardSectionActive" : ""}`} >
     <div className='audioLogo' onClick={handleSoundPlay(keyy)}>
@@ -83,7 +85,6 @@ function Sound({
     )}
     
 </div>
-<button onClick={() => playlistAdd(keyy)}>Add to PlayList</button>
     </div>
   )
 }
