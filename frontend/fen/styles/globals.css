@@ -73,23 +73,30 @@ body{
 /* ul{
     left:1rem;
 } */
+
 ul li{
     list-style-type: none;
     width:150px;
+   
 }
-ul li a{
+.insideButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul li button{
+    background:transparent;
     color:white;
     text-decoration: none;
     font-size:15px;
+    width:150px;
+    border:0px transparent;
     display: block;
     padding:10px;
     border-radius: 6px;
     transition: all 0.7s;
 }
-ul li a svg{
-    margin-right: 20px;
-    width: 15px;
-}
+
 header{
     height: 80px;
     background:black;
@@ -104,7 +111,6 @@ header{
     padding-top:10px;
     padding-right: 5%;
     /* transition: all 5s; */
-
 }
 header button{
     height: 40px;
@@ -121,14 +127,12 @@ header h1:hover , header button:hover{
     color:rgb(66, 153, 109);
     transition: all 0.5s;
 }
-ul li a:hover , ul li a:active{
+ul li button:hover , ul li button:active{
     background-color: #ccd1da57;
     color:rgb(66, 153, 109);
     transition: all 0.7s;
 }
-/* .sideNav ul li{
-    background-color: white;
-} */
+
 .stl{
     font-size: 17px;
 }
@@ -251,3 +255,74 @@ ul li a:hover , ul li a:active{
         transition: 1s ease-in;
         border:1px solid rgb(31, 232, 98);
 }
+
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(200, 200, 200);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer {
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }

@@ -6,13 +6,13 @@ function SideNav() {
   return (
     <div className='sideNav active'>
     <ul>
-        <li className="li liactive"><a href="/Dashboard" ><RiPlayListFill/>Make Playlist</a></li>
+        <li className="li liactive"><button className='insideButton' >Make Playlist<RiPlayListFill/></button></li>
     </ul>
     <ul>
-    <li><a href="/Dashboard"><MdDeleteOutline/>Delete Playlist</a></li>
+    <li><button className='insideButton'>Delete Playlist<MdDeleteOutline/></button></li>
 </ul>
 <ul>
-<li><a href="/Dashboard"><MdOutlineLibraryMusic/>Your Playlist</a></li>
+<li><button className='insideButton'>Your Playlist<MdOutlineLibraryMusic/></button></li>
 </ul>
    
     </div>
