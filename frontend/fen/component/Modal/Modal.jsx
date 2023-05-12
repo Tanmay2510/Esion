@@ -28,7 +28,6 @@ function Modal({setOpenModal}) {
         >
           Cancel
         </button>
-        <button>Continue</button>
       </div>
     </div>
   </div>

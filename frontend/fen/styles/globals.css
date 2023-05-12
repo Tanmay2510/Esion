@@ -48,15 +48,7 @@ body{
     color:white;
     font-family: 'Mukta', sans-serif;
 }
-/* .newNav{
-    display: flex;
-    justify-content: space-between;
-}
-.newInnerNav{
-    display: flex;
-    /* margin:20px; */
-    
-/* } */ 
+
 .sideNav{
     width:200px;
     background: black;
@@ -70,9 +62,7 @@ body{
 .sideNav.active{
     left:0;
 }
-/* ul{
-    left:1rem;
-} */
+
 
 ul li{
     list-style-type: none;

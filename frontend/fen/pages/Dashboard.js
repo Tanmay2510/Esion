@@ -11,10 +11,11 @@ export default function Dashboard() {
     logout = {true}/>
     </div>
     <div className='dashmidContainer'>
+    {openModal && <Modal setOpenModal={setOpenModal} />}
+
     <button className='openModal' onClick={()=>{
       setOpenModal(true)
     }}style={{color:"black"}}>afd</button>
-    {openModal && <Modal setOpenModal={setOpenModal} />}
     <p align="center">Mix Match your audios!!</p>
      <div>
     <Dash />
