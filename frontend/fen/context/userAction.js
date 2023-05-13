@@ -25,10 +25,11 @@ export const setModal = (click)=>{
     return (state) =>{
         return{
             ...state,
-            sideNavClicked:click
+            sideNavClicked:!click
         }
     }
 }
+
 export const setLogin = (data) =>{
     router.push("/Dashboard")
 

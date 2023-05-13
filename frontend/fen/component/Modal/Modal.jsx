@@ -1,14 +1,19 @@
-import React from 'react'
+import React ,{useState,useEffect}from 'react'
+import useAuth from '@/hook/useAuth';
+import { setModal,setCancelModal } from '@/context/userAction';
+function Modal() {
+  const {userDispatch,sideNavClicked} = useAuth();
+  const handleClick = () =>{
+    userDispatch(setModal(sideNavClicked));
 
-function Modal({setOpenModal}) {
+  }
+
   return (
     <div className="modalBackground">
     <div className="modalContainer">
       <div className="titleCloseBtn">
         <button
-          onClick={() => {
-            setOpenModal(false);
-          }}
+          onClick={handleClick}
         >
           X
         </button>
@@ -21,9 +26,7 @@ function Modal({setOpenModal}) {
       </div>
       <div className="footer">
         <button
-          onClick={() => {
-            setOpenModal(false);
-          }}
+        
           id="cancelBtn"
         >
           Cancel
