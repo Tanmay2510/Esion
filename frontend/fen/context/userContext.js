@@ -3,7 +3,8 @@ export const UserStoreContext = createContext();
 
 const initialState ={
     login:"",
-    name:""
+    name:"",
+    sideNavClicked:false,
 }
 const userStoreReducer = (state, action) => {
     try {

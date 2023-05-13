@@ -21,6 +21,14 @@ export const setLogout = (data)=>{
         }
     }
 }
+export const setModal = (click)=>{
+    return (state) =>{
+        return{
+            ...state,
+            sideNavClicked:click
+        }
+    }
+}
 export const setLogin = (data) =>{
     router.push("/Dashboard")
 
