@@ -8,7 +8,11 @@ export default function Dashboard() {
   const {sideNavClicked} = useAuth();
   return (
     <div className="dashContainer">
-    {sideNavClicked && <Modal />}
+    {sideNavClicked && 
+      <Modal />
+
+    }
+
     <div className='dashNav'>
     <Nav 
     logout = {true}/>

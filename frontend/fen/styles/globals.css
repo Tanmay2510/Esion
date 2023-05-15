@@ -50,10 +50,11 @@ body{
 }
 
 .sideNav{
-    width:200px;
+    width:250px;
     background: black;
-    position: absolute;
-    height: 100%;
+    position: fixed;
+    min-height: 100%;
+
     left:-100%;
     padding-top: 50px;
     padding-right: 50px;
@@ -73,6 +74,8 @@ ul li{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 180px;
+    font-size: 18px;
 }
 ul li button{
     background:transparent;
@@ -89,7 +92,7 @@ ul li button{
 
 header{
     height: 80px;
-    background:black;
+    background-color:rgb(190, 29, 29);
     color:white;
     display: flex;
     width: 100%;
@@ -102,6 +105,11 @@ header{
     padding-right: 5%;
     /* transition: all 5s; */
 }
+.headerButton{
+    display: flex;
+    justify-content: flex-end;
+    
+}
 header button{
     height: 40px;
     width: 120px;
@@ -110,10 +118,17 @@ header button{
     background-color: white;
 }
 
-header h1{
-    transition: all 0.5s;
+.sideNavHead{
+    margin-bottom: 50px;
+    margin-top: -23px;
 }
-header h1:hover , header button:hover{
+.sideNavp{
+    transition: all 0.5s;
+    font-family: 'Rampart One', cursive;
+    color:white;
+
+}
+.sideNavp:hover , header button:hover{
     color:rgb(66, 153, 109);
     transition: all 0.5s;
 }
@@ -213,7 +228,7 @@ ul li button:hover , ul li button:active{
 
 .dashmidContainer{
     padding-top:40px;
-    margin-left: 18%;
+    margin-left: 20%;
     transition: all 1s;
     height: 100vh;
     overflow: hidden;
@@ -249,7 +264,7 @@ ul li button:hover , ul li button:active{
 .modalBackground {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(200, 200, 200);
+    background-color: rgba(200, 200, 200, 0.231);
     position: fixed;
     display: flex;
     justify-content: center;

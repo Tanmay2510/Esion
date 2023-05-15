@@ -26,13 +26,12 @@ function Nav({logout}) {
     {
       logout ?
       <>
-      <header>
-      <h1>ESION</h1>
-      <img src={logo.src} style={{width:"5%"}}></img>
+      <SideNav />
+
+      <header className="headerButton">
       <button onClick={log}  >Logout</button>
 
       </header>
-      <SideNav />
 
         
     </>
