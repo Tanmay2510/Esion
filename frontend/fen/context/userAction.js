@@ -21,13 +21,42 @@ export const setLogout = (data)=>{
         }
     }
 }
-export const setModal = (click)=>{
-    return (state) =>{
-        return{
-            ...state,
-            sideNavClicked:!click
+export const setModal = (click,whichOne)=>{
+    console.log(whichOne)
+
+    if(whichOne==="createPlaylistClicked"){
+        return (state) =>{
+            return{
+                ...state,
+                sideNavClicked:!click,
+                createPlaylistClicked:true,
+                deletePlaylistClicked:false,
+                yourPlaylistClicked:false
+            }
         }
     }
+    else if(whichOne==="deletePlaylistClicked"){
+        return (state) =>{
+            return{
+                ...state,
+                sideNavClicked:!click,
+                createPlaylistClicked:false,
+                deletePlaylistClicked:true,
+                yourPlaylistClicked:false
+            }
+        }
+    }else if(whichOne==="yourPlaylistClicked"){
+        return (state) =>{
+            return{
+                ...state,
+                sideNavClicked:!click,
+                createPlaylistClicked:false,
+                deletePlaylistClicked:false,
+                yourPlaylistClicked:true
+            }
+        }
+    }
+  
 }
 
 export const setLogin = (data) =>{

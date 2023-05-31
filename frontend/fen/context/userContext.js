@@ -5,6 +5,10 @@ const initialState ={
     login:"",
     name:"",
     sideNavClicked:false,
+    createPlaylistClicked:false,
+    deletePlaylistClicked:false,
+    yourPlaylistClicked:false,
+
 }
 const userStoreReducer = (state, action) => {
     try {

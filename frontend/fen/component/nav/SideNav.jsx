@@ -3,13 +3,12 @@ import {RiPlayListFill} from 'react-icons/ri'
 import {MdOutlineLibraryMusic,MdDeleteOutline} from 'react-icons/md'
 import useAuth from '@/hook/useAuth'
 import { setModal } from '@/context/userAction';
-import land from "../../assets/images/land.png";
-import Image from 'next/image';
+
 
 function SideNav() {
-  const {userDispatch,sideNavClicked} = useAuth();
-  const handleClick = () =>{
-    userDispatch(setModal(sideNavClicked));
+  const {userDispatch,sideNavClicked,createPlaylistClicked,deletePlaylistClicked,yourPlaylistClicked} = useAuth();
+  const handleClick = (whichOne) => () =>{
+    userDispatch(setModal(sideNavClicked,whichOne));
 
   }
   
@@ -20,13 +19,15 @@ function SideNav() {
     </div>
 
     <ul>
-        <li className="li liactive"><button className='insideButton' onClick={handleClick}>Make Playlist<RiPlayListFill/></button></li>
+        <li className="li liactive"><button className='insideButton' onClick={handleClick(
+          "createPlaylistClicked"
+        )}>Make Playlist<RiPlayListFill/></button></li>
     </ul>
     <ul>
-    <li><button className='insideButton' onClick={handleClick}>Delete Playlist<MdDeleteOutline/></button></li>
+    <li><button className='insideButton' onClick={handleClick("deletePlaylistClicked")}>Delete Playlist<MdDeleteOutline/></button></li>
 </ul>
 <ul>
-<li><button className='insideButton' onClick={handleClick}>Your Playlist<MdOutlineLibraryMusic/></button></li>
+<li><button className='insideButton' onClick={handleClick("yourPlaylistClicked")}>Your Playlist<MdOutlineLibraryMusic/></button></li>
 </ul>
    
     </div>

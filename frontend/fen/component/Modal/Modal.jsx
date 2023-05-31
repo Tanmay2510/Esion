@@ -2,11 +2,12 @@ import React ,{useState,useEffect}from 'react'
 import useAuth from '@/hook/useAuth';
 import { setModal,setCancelModal } from '@/context/userAction';
 function Modal() {
-  const {userDispatch,sideNavClicked} = useAuth();
+  const {userDispatch,sideNavClicked,createPlaylistClicked,deletePlaylistClicked,yourPlaylistClicked} = useAuth();
+
   const handleClick = () =>{
     userDispatch(setModal(sideNavClicked));
-
   }
+  const [nextClicked,setNextClicked] = useState(false);
 
   return (
     <div className="modalBackground">
@@ -18,23 +19,94 @@ function Modal() {
           X
         </button>
       </div>
+      {
+        createPlaylistClicked && 
+        <>
+
       <div className="title">
-        <h1>Are You Sure You Want to Continue?</h1>
+
+        {nextClicked ?
+          <h1>Create Your Playlist</h1>
+
+
+           :
+        <h2>Here's how playlist work...</h2>
+
+        }
       </div>
       <div className="body">
-        <p>The next page looks amazing. Hope you want to go there!</p>
-      </div>
-      <div className="footer">
-        <button
+
+        {nextClicked ?
+          <>
+          <input type="text" placeholder='PlayList Name!!'></input>
+          
+          </>
+          
+
+             :
+             <>
+     
+                 <p>All the sounds that are playing at the moment will be added to your playlist with 
+                 your favourite name..</p>
+                 </>
+          }
+          </div>
+
+          <div className="footer">
+     
+          {
+            nextClicked ? 
+            <>
+            <button
+            id="SaveBtn"
+            >
+              Save
+            </button>
+            </>
         
-          id="cancelBtn"
-        >
-          Cancel
-        </button>
-      </div>
+            :
+            <>
+            <button
+            onClick={()=>setNextClicked(true)}
+            id="NextBtn"
+            >
+              Next
+            </button>
+            </>
+
+          }
+       
+          </div>
+    
+
+       
+        </>
+
+      }
+      {
+        deletePlaylistClicked && 
+        <h1> delete?</h1>
+
+      }
+      {
+        yourPlaylistClicked && 
+        <h1> playlist?</h1>
+
+      }
+    
+      
     </div>
   </div>
   )
 }
 
 export default Modal
+
+// <div className="footer">
+//         <button
+        
+//           id="saveBtn"
+//         >
+//           Save
+//         </button>
+//       </div>

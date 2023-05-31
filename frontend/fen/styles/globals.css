@@ -299,6 +299,15 @@ ul li button:hover , ul li button:active{
     font-size: 25px;
     cursor: pointer;
   }
+  .body input {
+border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  text-align: center;
+  }
+  .body input::placeholder{
+    text-align: center;
+  }
   
   .modalContainer .body {
     flex: 50%;
@@ -328,6 +337,6 @@ ul li button:hover , ul li button:active{
     cursor: pointer;
   }
   
-  #cancelBtn {
+  #saveBtn {
     background-color: crimson;
   }
