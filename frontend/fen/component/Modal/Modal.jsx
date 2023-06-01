@@ -2,10 +2,17 @@ import React ,{useState,useEffect}from 'react'
 import useAuth from '@/hook/useAuth';
 import { setModal,setCancelModal } from '@/context/userAction';
 function Modal() {
-  const {userDispatch,sideNavClicked,createPlaylistClicked,deletePlaylistClicked,yourPlaylistClicked} = useAuth();
-
+  const {userDispatch,sideNavClicked,createPlaylistClicked,deletePlaylistClicked,yourPlaylistClicked,savePlayListClicked} = useAuth();
+  const [playName,setPlayName] = useState("")
   const handleClick = () =>{
     userDispatch(setModal(sideNavClicked));
+  }
+  const handleSaveClick = () =>{
+    userDispatch(setSave())
+  }
+  const handleName = (e) =>{
+    e.preventDefault();
+    setPlayName(e.target.value)
   }
   const [nextClicked,setNextClicked] = useState(false);
 
@@ -38,7 +45,9 @@ function Modal() {
 
         {nextClicked ?
           <>
-          <input type="text" placeholder='PlayList Name!!'></input>
+          <input type="text" placeholder='PlayList Name!!' name="playlist"
+          value={playName} 
+          onChange={handleName}></input>
           
           </>
           
@@ -59,6 +68,7 @@ function Modal() {
             <>
             <button
             id="SaveBtn"
+            onClick={handleSaveClick}
             >
               Save
             </button>

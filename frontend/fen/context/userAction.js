@@ -59,6 +59,17 @@ export const setModal = (click,whichOne)=>{
   
 }
 
+export const setPlaylist = (data)=>{
+        return(state) =>{
+            return {
+                ...state,
+                currentName:[data]
+            }
+        }
+}
+export const setSave = (data)=>{
+    
+}
 export const setLogin = (data) =>{
     router.push("/Dashboard")
 

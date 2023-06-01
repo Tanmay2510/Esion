@@ -8,6 +8,8 @@ const initialState ={
     createPlaylistClicked:false,
     deletePlaylistClicked:false,
     yourPlaylistClicked:false,
+    savePlayListClicked:false,
+    currentName:[],
 
 }
 const userStoreReducer = (state, action) => {

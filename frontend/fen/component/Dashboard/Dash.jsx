@@ -1,9 +1,12 @@
 import React , {useState,useEffect} from 'react'
 import { notSampledata } from '@/util/SData'
 import Sound from '../soundS/Sound'
+import useAuth from '@/hook/useAuth'
+import { setPlaylist } from '@/context/userAction';
 
 
 function Dash() {
+  const {userDispatch,currentName} = useAuth();
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
 
@@ -18,6 +21,10 @@ function Dash() {
       )
     )
   }, [currentSoundIndex])
+  useEffect(()=>{
+    userDispatch(setPlaylist(playingSounds)); 
+  },[]) // do some condition only on modal save click
+  console.log(currentName)
   return (
     <div className='wholeDash'>
     <div className='dashCardContainer'>
