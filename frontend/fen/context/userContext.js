@@ -2,13 +2,13 @@ import { createContext, useReducer } from "react";
 export const UserStoreContext = createContext();
 
 const initialState ={
+     userId:null,
     login:"",
     name:"",
     sideNavClicked:false,
     createPlaylistClicked:false,
     deletePlaylistClicked:false,
     yourPlaylistClicked:false,
-    savePlayListClicked:false,
     currentName:[],
 
 }

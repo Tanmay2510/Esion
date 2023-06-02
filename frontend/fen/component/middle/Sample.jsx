@@ -1,13 +1,7 @@
-import React , {useState,useEffect} from 'react'
-import { notSampledata } from '@/util/SData'
+import { data } from '@/util/SData'
+import React, {  useState,useEffect } from 'react'
 import Sound from '../soundS/Sound'
-import useAuth from '@/hook/useAuth'
-import { setPlaylist } from '@/context/userAction';
-
-
-function Dash() {
-  const {userDispatch,userId} = useAuth();
-  console.log(userId)
+function Sample() {
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
 
@@ -22,18 +16,17 @@ function Dash() {
       )
     )
   }, [currentSoundIndex])
-  useEffect(()=>{
-    userDispatch(setPlaylist(playingSounds)); 
-  },[playingSounds]) // do some condition only on modal save click
+ 
+  
   return (
-    <div className='wholeDash'>
-    <div className='dashCardContainer'>
+    <div className='middleBG' id="sample">
+    <div className='middleSection'>
       {
-        notSampledata.map((el,i)=>{
-            return (
-              <Sound 
-              key = {i}
-              keyy={i}
+        data.map((el,i)=>{
+          return (
+             <Sound 
+             key={i}
+              keyy = {i}
               {...el}
               src={el.uri}
               title={el.name}
@@ -50,17 +43,14 @@ function Dash() {
                 setPlayingSounds(newPlayingSounds)
               }
             }
-              
-              />
-            )
+             />
+
+          )
         })
       }
+      
+       </div>
     </div>
-
-
-    </div>
-
   )
 }
-
-export default Dash
+export default Sample

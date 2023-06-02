@@ -1,14 +1,16 @@
 import React ,{useState,useEffect}from 'react'
 import useAuth from '@/hook/useAuth';
-import { setModal,setCancelModal } from '@/context/userAction';
+
+import { setModal, setSave } from '@/context/userAction';
 function Modal() {
-  const {userDispatch,sideNavClicked,createPlaylistClicked,deletePlaylistClicked,yourPlaylistClicked,savePlayListClicked} = useAuth();
+  const {userDispatch,sideNavClicked,createPlaylistClicked,
+    deletePlaylistClicked,yourPlaylistClicked,currentName} = useAuth();
   const [playName,setPlayName] = useState("")
   const handleClick = () =>{
     userDispatch(setModal(sideNavClicked));
   }
   const handleSaveClick = () =>{
-    userDispatch(setSave())
+    userDispatch(setSave(playName,currentName))
   }
   const handleName = (e) =>{
     e.preventDefault();

@@ -29,6 +29,7 @@ const handleRegister = (req,res) =>{
                         req.session.name = user.Name;
                         req.session.email = email;
                         res.json({
+                            id:user._id,
                             login:true,
                             message:"User registered",
                             Name:name,
@@ -47,8 +48,10 @@ const handleLogin = (req,res) =>{
                     if(result===true){
                         req.session.name = user.Name;
                         req.session.email = email;
+
                         res.json({
                             login:true,
+                            id:user._id,
                             message:"User Found!!",
                             Name:user.Name
                     })

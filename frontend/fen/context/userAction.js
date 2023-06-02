@@ -2,16 +2,17 @@ import useRouter from "next/router"
 let router = useRouter;
 export const setRegister = (data) =>{
     router.push("/Dashboard")
+    console.log(data)
     return (state)=>{
         return{
             ...state,
+            userId:data.id,
             login:data.login,
             name:data.Name
         }
     }
 }
 export const setLogout = (data)=>{
-    console.log(data)
     router.push("/")
     return (state) =>{
         return {
@@ -67,8 +68,9 @@ export const setPlaylist = (data)=>{
             }
         }
 }
-export const setSave = (data)=>{
-    
+export const setSave = (playName,playData)=>{
+    console.log(playName)
+    console.log(playData)
 }
 export const setLogin = (data) =>{
     router.push("/Dashboard")
@@ -76,6 +78,7 @@ export const setLogin = (data) =>{
       return (state)=>{
         return{
             ...state,
+            userId:data.id,
             login:data.login,
             name:data.Name
         }
