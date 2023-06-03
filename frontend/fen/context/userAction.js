@@ -1,7 +1,10 @@
+import useAuth from "@/hook/useAuth";
 import useRouter from "next/router"
 let router = useRouter;
+const {id} = useAuth();
 export const setRegister = (data) =>{
     router.push("/Dashboard")
+    // router.push("/users/"+id)
     console.log(data)
     return (state)=>{
         return{
@@ -74,6 +77,7 @@ export const setSave = (playName,playData)=>{
 }
 export const setLogin = (data) =>{
     router.push("/Dashboard")
+    // router.push("/users/"+id)
 
       return (state)=>{
         return{
