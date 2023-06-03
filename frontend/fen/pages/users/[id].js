@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Modal from '@/component/Modal/Modal'
 
 import useAuth from '@/hook/useAuth'
-export default function Dashboard() {
+export default function DynamicPage() {
 
   const {sideNavClicked} = useAuth();
   return (
