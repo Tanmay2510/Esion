@@ -3,6 +3,7 @@ let router = useRouter;
 export const setRegister = (data) =>{
     // router.push("/Dashboard")
     router.push("/users/"+data.id)
+    localStorage.setItem("userId",data.id)
     console.log(data)
     return (state)=>{
         return{
@@ -15,6 +16,7 @@ export const setRegister = (data) =>{
 }
 export const setLogout = (data)=>{
     router.push("/")
+    localStorage.removeItem('userId')
     return (state) =>{
         return {
             ...state,
@@ -76,6 +78,8 @@ export const setSave = (playName,playData)=>{
 export const setLogin = (data) =>{
     // router.push("/Dashboard")
     router.push("/users/"+data.id)
+    localStorage.setItem("userId",data.id)
+
 
       return (state)=>{
         return{

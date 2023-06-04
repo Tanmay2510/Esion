@@ -26,7 +26,6 @@ function Nav({logout}) {
     {
       logout ?
       <>
-      <SideNav />
 
       <header className="headerButton">
       <button onClick={log}  >Logout</button>

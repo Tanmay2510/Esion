@@ -52,10 +52,10 @@ body{
 .sideNav{
     width:250px;
     background: black;
-    position: fixed;
+    /* position: fixed; */
     min-height: 100%;
 
-    left:-100%;
+    /* left:-100%; */
     padding-top: 50px;
     padding-right: 50px;
     transition: all 1s;
@@ -228,7 +228,7 @@ ul li button:hover , ul li button:active{
 
 .dashmidContainer{
     padding-top:40px;
-    margin-left: 20%;
+    /* margin-left: 20%; */
     transition: all 1s;
     height: 100vh;
     overflow: hidden;
@@ -298,6 +298,15 @@ ul li button:hover , ul li button:active{
     border: none;
     font-size: 25px;
     cursor: pointer;
+  }
+  .dashNav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+  }
+  .noModalCover{
+    display: flex;
   }
   .body input {
 border: 0;

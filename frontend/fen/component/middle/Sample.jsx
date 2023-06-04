@@ -44,11 +44,9 @@ function Sample() {
               }
             }
              />
-
           )
         })
       }
-      
        </div>
     </div>
   )

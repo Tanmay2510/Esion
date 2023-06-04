@@ -50,21 +50,15 @@ function Modal() {
           <input type="text" placeholder='PlayList Name!!' name="playlist"
           value={playName} 
           onChange={handleName}></input>
-          
           </>
-          
-
              :
              <>
-     
                  <p>All the sounds that are playing at the moment will be added to your playlist with 
                  your favourite name..</p>
                  </>
           }
           </div>
-
           <div className="footer">
-     
           {
             nextClicked ? 
             <>
@@ -75,7 +69,6 @@ function Modal() {
               Save
             </button>
             </>
-        
             :
             <>
             <button
@@ -85,40 +78,21 @@ function Modal() {
               Next
             </button>
             </>
-
           }
-       
           </div>
-    
-
-       
         </>
-
       }
       {
         deletePlaylistClicked && 
         <h1> delete?</h1>
-
       }
       {
         yourPlaylistClicked && 
         <h1> playlist?</h1>
-
       }
-    
-      
     </div>
   </div>
   )
 }
 
 export default Modal
-
-// <div className="footer">
-//         <button
-        
-//           id="saveBtn"
-//         >
-//           Save
-//         </button>
-//       </div>

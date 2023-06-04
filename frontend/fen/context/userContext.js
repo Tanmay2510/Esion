@@ -2,7 +2,7 @@ import { createContext, useReducer } from "react";
 export const UserStoreContext = createContext();
 
 const initialState ={
-     userId:null,
+    userId:null,
     login:"",
     name:"",
     sideNavClicked:false,
@@ -10,7 +10,6 @@ const initialState ={
     deletePlaylistClicked:false,
     yourPlaylistClicked:false,
     currentName:[],
-
 }
 const userStoreReducer = (state, action) => {
     try {
