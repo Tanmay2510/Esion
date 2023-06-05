@@ -20,7 +20,6 @@ const handleRegister = (req,res) =>{
                 })
                 user.save(err=>{
                     if(err){
-                        console.log(err)
                         res.json({
                             login:false,
                             message:"Error"
@@ -42,6 +41,7 @@ const handleRegister = (req,res) =>{
     })
 }
 const handleLogin = (req,res) =>{
+    console.log(req.params)
         const {email,password} = req.body;
         User.findOne({email:email},(err,user)=>{
             if(user){
@@ -80,4 +80,13 @@ const handleLogout = (req,res)=>{
             message:"User logged out"
     })
 }
-module.exports={handleRegister,handleLogin,handleLogout};
+const handlePlaylist = (req,res)=>{
+
+    const id = req.headers.cookie.substring(7, req.headers.cookie.indexOf(";"));
+    // console.log(typeof(req.headers.cookie))
+    User.findById({_id:id},(err,user)=>{
+        console.log(user)
+    })
+
+}
+module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist};

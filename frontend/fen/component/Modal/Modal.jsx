@@ -8,10 +8,16 @@ function Modal() {
     deletePlaylistClicked,yourPlaylistClicked,currentName} = useAuth();
   const [playName,setPlayName] = useState("")
   const handleClick = () =>{
-    userDispatch(setModal(sideNavClicked));
+    userDispatch(setModal(sideNavClicked,"X"));
   }
   const handleSaveClick = () =>{
-    userDispatch(handlePlaylist(playName,currentName,userDispatch))
+   
+    if(playName!==""){
+
+   handlePlaylist(playName,currentName,userDispatch)
+   userDispatch(setModal(sideNavClicked,"Save"))
+  }
+
   }
   const handleName = (e) =>{
     e.preventDefault();

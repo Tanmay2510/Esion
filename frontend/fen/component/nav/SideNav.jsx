@@ -6,7 +6,7 @@ import { setModal } from '@/context/userAction';
 
 
 function SideNav() {
-  const {userDispatch,sideNavClicked,createPlaylistClicked,deletePlaylistClicked,yourPlaylistClicked} = useAuth();
+  const {userDispatch,sideNavClicked} = useAuth();
   const handleClick = (whichOne) => () =>{
     userDispatch(setModal(sideNavClicked,whichOne));
 

@@ -54,6 +54,13 @@ export const setModal = (click,whichOne)=>{
                 yourPlaylistClicked:true
             }
         }
+    }else if(whichOne==="X" || whichOne==="Save"){
+        return (state) =>{
+            return {
+                ...state,
+                sideNavClicked:!click
+            }
+        }
     }
   
 }
@@ -62,7 +69,7 @@ export const setPlaylist = (data)=>{
         return(state) =>{
             return {
                 ...state,
-                currentName:[data]
+                currentName:data
             }
         }
 }

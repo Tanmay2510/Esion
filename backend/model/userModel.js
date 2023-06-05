@@ -14,7 +14,9 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    userPlaylist:[]
+        
 })
 const User = new mongoose.model("User",userSchema);
 
