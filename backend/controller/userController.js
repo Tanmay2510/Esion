@@ -28,6 +28,7 @@ const handleRegister = (req,res) =>{
                     }else{
                         req.session.name = user.Name;
                         req.session.email = email;
+                        res.setHeader('Set-Cookie',`userId=${user._id}`)
                         res.json({
                             id:user._id,
                             login:true,
@@ -48,7 +49,7 @@ const handleLogin = (req,res) =>{
                     if(result===true){
                         req.session.name = user.Name;
                         req.session.email = email;
-
+                        res.setHeader('Set-Cookie',`userId=${user._id}`)
                         res.json({
                             login:true,
                             id:user._id,
@@ -72,6 +73,7 @@ const handleLogin = (req,res) =>{
 }
 const handleLogout = (req,res)=>{
     res.clearCookie('sessionId')
+    res.clearCookie('userId')
     req.session.destroy();
     res.send({
             login:false,

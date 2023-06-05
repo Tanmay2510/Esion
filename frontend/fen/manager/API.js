@@ -11,6 +11,18 @@ export const handleregister = (user,dispatch) =>{
 
 }
 
+export const handlePlaylist = (dataName,dataCurrent,dispatch)=>{
+  
+    const  playlist = {
+        dataName: [dataCurrent]
+    } 
+    console.log(playlist)
+    // axios.post(BASE_URL+"/register",user,{withCredentials:true})
+    // .then( res => {
+    //     dispatch(setRegister(res.data))
+    // })
+}
+
 export const hanldeLogout = (dispatch) =>{
     axios.get(BASE_URL+"/logout",{withCredentials:true}).then((res)=>{
         dispatch(setLogout(res));

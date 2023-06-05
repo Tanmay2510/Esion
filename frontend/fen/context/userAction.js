@@ -66,10 +66,7 @@ export const setPlaylist = (data)=>{
             }
         }
 }
-export const setSave = (playName,playData)=>{
-    console.log(playName)
-    console.log(playData)
-}
+
 export const setLogin = (data) =>{
     router.push("/users/"+data.id)
 

@@ -1,7 +1,8 @@
 import React ,{useState,useEffect}from 'react'
 import useAuth from '@/hook/useAuth';
 
-import { setModal, setSave } from '@/context/userAction';
+import { setModal } from '@/context/userAction';
+import { handlePlaylist } from '@/manager/API';
 function Modal() {
   const {userDispatch,sideNavClicked,createPlaylistClicked,
     deletePlaylistClicked,yourPlaylistClicked,currentName} = useAuth();
@@ -10,7 +11,7 @@ function Modal() {
     userDispatch(setModal(sideNavClicked));
   }
   const handleSaveClick = () =>{
-    userDispatch(setSave(playName,currentName))
+    userDispatch(handlePlaylist(playName,currentName,userDispatch))
   }
   const handleName = (e) =>{
     e.preventDefault();

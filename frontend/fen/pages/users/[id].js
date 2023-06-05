@@ -1,6 +1,6 @@
 import Dash from '@/component/Dashboard/Dash'
 import Nav from '@/component/nav/Nav'
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from '@/component/Modal/Modal'
 import SideNav from '@/component/nav/SideNav'
 import useAuth from '@/hook/useAuth'
