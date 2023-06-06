@@ -14,15 +14,19 @@
 body{
     margin:0;
 }
-.UnderNavCont{
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 100px;
+.userCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgb(255,255,255,0) 35%, rgba(127, 255, 146)100%);
+    height: 100vh;
 }
+
 .ReglogCont{
     width:450px;
     padding:20px;
     min-height: 500px;
+   
     height: auto;
     background: rgba(127, 163, 141, 0.249);
     border: 2px solid rgba(6, 163, 116, 0.66);
@@ -52,10 +56,7 @@ body{
 .sideNav{
     width:250px;
     background: black;
-    /* position: fixed; */
     min-height: 100%;
-
-    /* left:-100%; */
     padding-top: 50px;
     padding-right: 50px;
     transition: all 1s;
@@ -173,9 +174,21 @@ ul li button:hover , ul li button:active{
     border-bottom-style: ridge;
     background-color: rgb(176, 247, 186);
 }
+.lottie{
+    height: 550px;
+
+}
+.UnderNavCont{
+  display: flex;
+  /* justify-content: space-evenly; */
+  margin-top: 150px;
+  margin-bottom: -100px;
+  align-items: flex-start;
+}
 .Usection {
     width: 500px;
-    margin-right: 10px;
+    margin-left: 150px;
+    /* margin-right: 50px; */
     color: rgb(66, 153, 109);
     font-family: 'Shantell Sans', cursive;
 }

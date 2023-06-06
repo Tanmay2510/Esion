@@ -7,9 +7,7 @@ function Reglog() {
   const {userDispatch} = useAuth();
   const [isFlipped,setIsFlipped] = useState(false);
   return (
-   <div className='ReglogCont' 
-   
-   >
+   <div className='ReglogCont'    >
    {
       isFlipped ? 
       <Register 

@@ -11,6 +11,9 @@ export const setRegister = (data) =>{
         }
     }
 }
+export const setNewUser = () =>{
+    router.push("/User")
+}
 export const setLogout = (data)=>{
     router.push("/")
     return (state) =>{
