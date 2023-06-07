@@ -15,7 +15,9 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    userPlaylist:[]
+    userPlaylist:{ type : Array , "default" : [] }
+
+
         
 })
 const User = new mongoose.model("User",userSchema);

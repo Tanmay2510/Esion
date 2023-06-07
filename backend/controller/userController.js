@@ -83,11 +83,18 @@ const handleLogout = (req,res)=>{
     })
 }
 const handlePlaylist = (req,res)=>{
-
+    console.log(req.body)
     const id = req.headers.cookie.substring(7, req.headers.cookie.indexOf(";"));
-    // console.log(typeof(req.headers.cookie))
-    User.findById({_id:id},(err,user)=>{
-        console.log(user)
+        User.findByIdAndUpdate({_id:id},{userPlaylist: `${req.body}`}, function(err, result){
+
+            if(err){
+                res.send(err)
+            }
+            else{
+                console.log(result)
+                res.send(result)
+            }
+      
     })
 
 }
