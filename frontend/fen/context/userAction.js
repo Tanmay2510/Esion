@@ -80,7 +80,6 @@ export const setPlaylist = (data)=>{
 export const setLogin = (data) =>{
     router.push("/users/"+data.id)
 
-
       return (state)=>{
         return{
             ...state,

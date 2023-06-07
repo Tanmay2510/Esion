@@ -6,8 +6,7 @@ import { setPlaylist } from '@/context/userAction';
 
 
 function Dash() {
-  const {userDispatch,userId} = useAuth();
-  console.log(userId)
+  const {userDispatch} = useAuth();
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
 

@@ -4,7 +4,7 @@ import {motion} from "framer-motion"
 import Login from './login/Login'
 import useAuth from '../../hook/useAuth';
 function Reglog() {
-  const {userDispatch} = useAuth();
+  const {userDispatch,userId} = useAuth();
   const [isFlipped,setIsFlipped] = useState(false);
   return (
    <div className='ReglogCont'    >

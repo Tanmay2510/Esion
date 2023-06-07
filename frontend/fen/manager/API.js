@@ -13,10 +13,11 @@ export const handleregister = (user,dispatch) =>{
 
 export const handlePlaylist = (dataName,dataCurrent,dispatch)=>{
     const playlist = {
-        [dataName] : [dataCurrent] 
+        name:dataName,
+        data:dataCurrent
     }
   
-    axios.post(BASE_URL+"/playList",playlist,{withCredentials:true})
+    axios.patch(BASE_URL+"/playList",playlist,{withCredentials:true})
     .then( res => {
         // console.log(res)
         // dispatch(setRegister(res.data))
