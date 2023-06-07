@@ -17,6 +17,8 @@ const handleRegister = (req,res) =>{
                     Name:name,
                     email:email,
                     password:hash,
+                   playName:"adsf",
+                    playData:[]
                 })
                 user.save(err=>{
                     if(err){
@@ -83,19 +85,14 @@ const handleLogout = (req,res)=>{
     })
 }
 const handlePlaylist = (req,res)=>{
-    console.log(req.body)
     const id = req.headers.cookie.substring(7, req.headers.cookie.indexOf(";"));
-        User.findByIdAndUpdate({_id:id},{userPlaylist: `${req.body}`}, function(err, result){
+    const nam=req.body.name;
+    const dat=req.body.data;
+    console.log(typeof(nam))
+    User.findByIdAndUpdate({
+        '_id':id},
+        {$set :{'userPlaylist':{'playName':nam}}})
 
-            if(err){
-                res.send(err)
-            }
-            else{
-                console.log(result)
-                res.send(result)
-            }
-      
-    })
 
 }
 module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist};

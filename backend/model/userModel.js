@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const userSchema = new mongoose.Schema({
     // _id:Schema.Types.ObjectId,
     Name:{
@@ -15,7 +14,14 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    userPlaylist:{ type : Array , "default" : [] }
+    userPlaylist:[{
+        playName:String,
+        playData:[]
+    }
+    ]
+     
+        
+    
 
 
         

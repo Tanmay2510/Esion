@@ -4,5 +4,5 @@ const {handleRegister,handleLogin,handleLogout,handlePlaylist} = require("../con
 router.post('/register',handleRegister);
 router.post('/login',handleLogin);
 router.get('/logout',handleLogout)
-router.post('/playList',handlePlaylist)
+router.patch('/playList',handlePlaylist)
 module.exports = router;
