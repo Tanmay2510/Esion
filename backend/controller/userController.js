@@ -17,9 +17,15 @@ const handleRegister = (req,res) =>{
                     Name:name,
                     email:email,
                     password:hash,
-                   playName:"adsf",
-                    playData:[]
+                    userPlaylist:[
+                        {
+                            playName:"",
+                            playData:[]
+                        }
+                    ]
+                  
                 })
+      
                 user.save(err=>{
                     if(err){
                         res.json({
@@ -88,11 +94,15 @@ const handlePlaylist = (req,res)=>{
     const id = req.headers.cookie.substring(7, req.headers.cookie.indexOf(";"));
     const nam=req.body.name;
     const dat=req.body.data;
-    console.log(typeof(nam))
+ 
     User.findByIdAndUpdate({
         '_id':id},
-        {$set :{'userPlaylist':{'playName':nam}}})
-
+        {$set :{
+            'userPlaylist':
+            {'playName':nam,'playData':dat},
+            }},(err,res)=>{
+            console.log(res)
+        })
 
 }
 module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist};

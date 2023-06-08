@@ -9,10 +9,10 @@ export default function middleware(req,res){
     req.cookies.get('userId').value
     : null
     let url = req.url;
-    if(!cook && url.includes(`/users/${id}`)){
+    if(!cook && url.includes(`/users/`)){
         return NextResponse.redirect("http://localhost:3000/");
     }
-    else if(cook && url === "http://localhost:3000/"){
+    else if((cook && url === "http://localhost:3000/") || (cook && url ==="http://localhost:3000/User")){
         return NextResponse.redirect(`http://localhost:3000/users/${id}`)
     }
 }

@@ -5,7 +5,7 @@ export const setRegister = (data) =>{
     return (state)=>{
         return{
             ...state,
-            userId:data.id,
+            theId:data.id,
             login:data.login,
             name:data.Name
         }
@@ -83,7 +83,7 @@ export const setLogin = (data) =>{
       return (state)=>{
         return{
             ...state,
-            userId:data.id,
+            theId:data.id,
             login:data.login,
             name:data.Name
         }

@@ -2,7 +2,7 @@ import { createContext, useReducer } from "react";
 export const UserStoreContext = createContext();
 
 const initialState ={
-    userId:null,
+    theId:"",
     login:"",
     name:"",
     sideNavClicked:false,
