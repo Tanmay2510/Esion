@@ -17,12 +17,12 @@ const handleRegister = (req,res) =>{
                     Name:name,
                     email:email,
                     password:hash,
-                    userPlaylist:[
-                        {
-                            playName:"",
-                            playData:[]
-                        }
-                    ]
+                    // userPlaylist:[
+                    //     {
+                    //         playName:"",
+                    //         playData:[]
+                    //     }
+                    // ]
                   
                 })
       
@@ -91,18 +91,40 @@ const handleLogout = (req,res)=>{
     })
 }
 const handlePlaylist = (req,res)=>{
-    const id = req.headers.cookie.substring(7, req.headers.cookie.indexOf(";"));
-    const nam=req.body.name;
-    const dat=req.body.data;
- 
+    const id = req.params.gid
+    const obj = {
+        playName:req.body.name,
+        playData:req.body.data
+    }
     User.findByIdAndUpdate({
         '_id':id},
-        {$set :{
-            'userPlaylist':
-            {'playName':nam,'playData':dat},
-            }},(err,res)=>{
-            console.log(res)
+        {$push :{
+            'userPlaylist':obj
+            // {'playName':nam,'playData':dat},
+            }},(err,result)=>{
+                if(err){
+                    console.log(err)
+                }else{
+                    res.json({  
+                        thid:id,
+                        saved:true,
+                    })
+                }
         })
 
 }
-module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist};
+const handlePlaylistData = (req,res)=>{
+    const id = req.params.gid
+
+    User.findById({'_id':id},(err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.json({
+                theData:result.userPlaylist,
+                got:true
+            })
+        }
+    })
+}
+module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist,handlePlaylistData};

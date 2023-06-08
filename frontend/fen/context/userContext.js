@@ -10,6 +10,9 @@ const initialState ={
     deletePlaylistClicked:false,
     yourPlaylistClicked:false,
     currentName:[],
+    savedPlay:false,
+    deletePlay:false,
+    thePlaylists:[]
 }
 const userStoreReducer = (state, action) => {
     try {

@@ -1,29 +1,36 @@
 import React ,{useState,useEffect}from 'react'
 import useAuth from '@/hook/useAuth';
-
 import { setModal } from '@/context/userAction';
-import { handlePlaylist } from '@/manager/API';
+import { handlePlaylist,getPlaylist } from '@/manager/API';
 function Modal() {
   const {userDispatch,sideNavClicked,createPlaylistClicked,
-    deletePlaylistClicked,yourPlaylistClicked,currentName} = useAuth();
+    deletePlaylistClicked,yourPlaylistClicked,currentName,thePlaylists} = useAuth();
+
   const [playName,setPlayName] = useState("")
+  const [nextClicked,setNextClicked] = useState(false);
+
+  console.log(thePlaylists)
+    useEffect(()=>{
+      if(yourPlaylistClicked){
+        getPlaylist(userDispatch)
+          // ,theId)
+      }
+    },[yourPlaylistClicked])
+
+
   const handleClick = () =>{
     userDispatch(setModal(sideNavClicked,"X"));
   }
   const handleSaveClick = () =>{
-   
-    if(playName!==""){
-
-   handlePlaylist(playName,currentName,userDispatch)
-   userDispatch(setModal(sideNavClicked,"Save"))
-  }
-
+      if(playName!==""){
+       handlePlaylist(playName,currentName,userDispatch)
+       userDispatch(setModal(sideNavClicked,"Save"))
+      }
   }
   const handleName = (e) =>{
     e.preventDefault();
     setPlayName(e.target.value)
   }
-  const [nextClicked,setNextClicked] = useState(false);
 
   return (
     <div className="modalBackground">
@@ -91,11 +98,37 @@ function Modal() {
       }
       {
         deletePlaylistClicked && 
-        <h1> delete?</h1>
+        <>
+        <div className="title">
+        <h1>Delete</h1>
+        </div>
+
+        <div className="body">
+        <p>Select Playlist which you want to delete</p>
+        </div>
+
+        <div className="footer">
+        <button
+        id="Deletebtn"
+        >
+          Delete
+        </button>
+        </div>
+
+        </>
       }
       {
         yourPlaylistClicked && 
-        <h1> playlist?</h1>
+        <>
+        <div className="title">
+        <h1>Your Playlist</h1>
+        </div>
+
+        <div className="body">
+        <p>Select Playlist which you want to delete</p>
+        </div>
+        
+        </>
       }
     </div>
   </div>

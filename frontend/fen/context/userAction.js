@@ -2,6 +2,7 @@ import useRouter from "next/router"
 let router = useRouter;
 export const setRegister = (data) =>{
     router.push("/users/"+data.id)
+    localStorage.setItem('userId',data.id)
     return (state)=>{
         return{
             ...state,
@@ -16,6 +17,7 @@ export const setNewUser = () =>{
 }
 export const setLogout = (data)=>{
     router.push("/")
+    localStorage.clear()
     return (state) =>{
         return {
             ...state,
@@ -67,6 +69,25 @@ export const setModal = (click,whichOne)=>{
     }
   
 }
+export const setPlaylistClient = (data) =>{
+    return(state) =>{
+        return {
+            ...state,
+            thePlaylists:data.theData
+        }
+    }
+}
+
+
+export const isSave = (data)=>{
+    return(state) =>{
+        return {
+            ...state,
+            // theId:data.thid,
+            savedPlay:data.saved
+        }
+    }
+}
 
 export const setPlaylist = (data)=>{
         return(state) =>{
@@ -79,7 +100,7 @@ export const setPlaylist = (data)=>{
 
 export const setLogin = (data) =>{
     router.push("/users/"+data.id)
-
+    localStorage.setItem('userId',data.id)
       return (state)=>{
         return{
             ...state,

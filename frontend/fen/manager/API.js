@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setLogin, setRegister , setLogout} from "../context/userAction";
+import { setLogin, setRegister , setLogout,isSave,setPlaylistClient} from "../context/userAction";
 
 const BASE_URL = "http://localhost:3001";
 
@@ -11,16 +11,25 @@ export const handleregister = (user,dispatch) =>{
 
 }
 
+export const getPlaylist = (dispatch)=>{
+    const gid = localStorage.getItem('userId')
+    axios.get(BASE_URL+"/playList/"+gid,{withCrdentials:true})
+    .then(res=>{
+        dispatch(setPlaylistClient(res.data))
+    })
+}
+
 export const handlePlaylist = (dataName,dataCurrent,dispatch)=>{
     const playlist = {
         name:dataName,
         data:dataCurrent
     }
+    const gid = localStorage.getItem('userId')
   
-    axios.patch(BASE_URL+"/playList",playlist,{withCredentials:true})
+    axios.patch(BASE_URL+"/playList/"+gid,playlist,{withCredentials:true})
     .then( res => {
-        // console.log(res)
-        // dispatch(setRegister(res.data))
+        dispatch(isSave(res))
+      
     })
 }
 
