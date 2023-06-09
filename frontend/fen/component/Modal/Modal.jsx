@@ -67,7 +67,7 @@ function Modal() {
           </>
              :
              <>
-                 <p>All the sounds that are playing at the moment will be added to your playlist with 
+                 <p align="justify">All the sounds that are playing at the moment will be added to your playlist with 
                  your favourite name..</p>
                  </>
           }

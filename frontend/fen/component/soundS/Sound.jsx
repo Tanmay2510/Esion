@@ -69,7 +69,7 @@ function Sound({
     <div className='audioLogo' onClick={handleSoundPlay(keyy)}>
     {logo}
     </div>
-    <h4 align="center" style={{margin:"15px",color:"rgb(66, 153, 109)"}}>{title}</h4>
+    <h4 align="center" style={{margin:"15px",color:"white"}}>{title}</h4>
     <div className='audioControls'>
     <input
     min={0}
@@ -78,9 +78,9 @@ function Sound({
     type="range"
     ></input>
     {!clickedIndex[keyy] ? (
-    <BsPlay color="grey"/>
+    <BsPlay color="white"/>
     ) : (
-    <BsPause color="grey"/>
+    <BsPause color="white"/>
     )}
     
 </div>

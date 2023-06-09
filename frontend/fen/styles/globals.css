@@ -55,7 +55,8 @@ body{
 
 .sideNav{
     width:250px;
-    background: black;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px;
+ 
     min-height: 100%;
     padding-top: 50px;
     padding-right: 50px;
@@ -93,7 +94,9 @@ ul li button{
 
 header{
     height: 80px;
-    background-color:rgb(190, 29, 29);
+    /* background-color:rgb(190, 29, 29); */
+    /* border-bottom: 1px solid white; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
     color:white;
     display: flex;
     width: 100%;
@@ -130,15 +133,39 @@ header button{
 
 }
 .sideNavp:hover , header button:hover{
-    color:rgb(66, 153, 109);
+
     transition: all 0.5s;
 }
+
 ul li button:hover , ul li button:active{
     background-color: #ccd1da57;
-    color:rgb(66, 153, 109);
+    /* color:rgb(66, 153, 109); */
     transition: all 0.7s;
 }
+.logBut{
+    border:0px;
+    animation: myanimationBut 30s infinite;
+    border-radius: 25px;
+}
 
+
+@keyframes myanimationBut {
+    0% {
+        color:  rgb(26, 188, 156);
+    }
+    25%{
+        color:  rgb(124, 59, 110);
+    }
+    50%{
+       color:  rgb(211, 84, 0);
+    }
+    75%{
+        color: rgb(152, 174, 96);
+    }
+    100% {
+      color: rgb(26, 188, 156);
+    }
+  }
 .stl{
     font-size: 17px;
 }
@@ -215,7 +242,7 @@ ul li button:hover , ul li button:active{
     width:200px;
     border: 0px solid transparent;
     transition: 1s ease-out;
-    background: radial-gradient(circle, rgb(198, 244, 205) 0%, rgba(255,255,255,0) 90%);
+    background: rgba(196, 205, 245, 0.097);
 }
 
 .audioControls{
@@ -266,18 +293,27 @@ ul li button:hover , ul li button:active{
     row-gap: 50px;
 }
 .dashContainer{
-    background-color: rgb(8, 52, 35);
+    width:100%;
+    height:100%;
+    animation: myanimation 30s infinite;
     
 }
+@keyframes myanimation {
+    0% {background-color: rgb(26, 188, 156);}
+    25%{background-color: rgb(124, 59, 110);}
+    50%{background-color:rgb(211, 84, 0);}
+    75%{background-color: rgb(152, 174, 96);}
+    100% {background-color: rgb(26, 188, 156);}
+  }
 .cardSectionActive{
         transition: 1s ease-in;
-        border:1px solid rgb(31, 232, 98);
+        border:1px solid rgba(186, 216, 196, 0.702);
 }
 
 .modalBackground {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(200, 200, 200, 0.231);
+    background-color: rgba(200, 200, 200, 0.73);
     position: fixed;
     display: flex;
     justify-content: center;
@@ -288,6 +324,7 @@ ul li button:hover , ul li button:active{
     width: 500px;
     height: 500px;
     border-radius: 12px;
+    /* animation:myanimation; */
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;

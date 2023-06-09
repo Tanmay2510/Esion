@@ -49,7 +49,6 @@ const handleRegister = (req,res) =>{
     })
 }
 const handleLogin = (req,res) =>{
-    console.log(req.params)
         const {email,password} = req.body;
         User.findOne({email:email},(err,user)=>{
             if(user){

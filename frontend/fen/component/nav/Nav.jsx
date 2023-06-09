@@ -31,7 +31,7 @@ function Nav({logout}) {
       <>
 
       <header className="headerButton">
-      <button onClick={log}  >Logout</button>
+      <button onClick={log}  className="logBut">Logout</button>
 
       </header>
 
@@ -43,7 +43,7 @@ function Nav({logout}) {
         <h1>ESION</h1>
         <img src={logo.src} style={{width:"5%"}}></img>
         <div className='innerNav'>
-<button style={{textDecoration:"none",color:"green"}}v onClick={hanldeNewUser}>Start</button>
+<button  onClick={hanldeNewUser}>Start</button>
        
         </div>
     </nav>

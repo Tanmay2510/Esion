@@ -3,8 +3,8 @@ import { setLogin, setRegister , setLogout,isSave,setPlaylistClient} from "../co
 
 const BASE_URL = "http://localhost:3001";
 
-export const handleregister = (user,dispatch) =>{
-    axios.post(BASE_URL+"/register",user,{withCredentials:true})
+export const handleregister = async (user,dispatch) =>{
+    await axios.post(BASE_URL+"/register",user,{withCredentials:true})
             .then( res => {
                 dispatch(setRegister(res.data))
             })
@@ -40,11 +40,11 @@ export const hanldeLogout = (dispatch) =>{
 }
 
 
-export const handlelogin = (user,dispatch)=>{
-    axios.post(BASE_URL+"/login",user,{withCredentials:true})
+export const handlelogin = async (user,dispatch)=>{
+    const r = await axios.post(BASE_URL+"/login",user,{withCredentials:true})
     .then( res => {
+        console.log(res)
         dispatch(setLogin(res.data))
 
     })
-    
 }

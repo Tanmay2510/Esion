@@ -1,16 +1,30 @@
 import useRouter from "next/router"
 let router = useRouter;
 export const setRegister = (data) =>{
-    router.push("/users/"+data.id)
-    localStorage.setItem('userId',data.id)
-    return (state)=>{
-        return{
-            ...state,
-            theId:data.id,
-            login:data.login,
-            name:data.Name
+    if(data.login){
+        router.push("/users/"+data.id)
+        localStorage.setItem('userId',data.id)
+        return (state)=>{
+            return{
+                ...state,
+                theId:data.id,
+                login:data.login,
+                name:data.Name,
+                Msg:data.message
+
+            }
+        }
+    }else{
+        return (state)=>{
+            return{
+                ...state,
+                login:data.login,
+                Msg:data.message
+
+            }
         }
     }
+   
 }
 export const setNewUser = () =>{
     router.push("/User")
@@ -99,14 +113,27 @@ export const setPlaylist = (data)=>{
 }
 
 export const setLogin = (data) =>{
-    router.push("/users/"+data.id)
-    localStorage.setItem('userId',data.id)
-      return (state)=>{
-        return{
-            ...state,
-            theId:data.id,
-            login:data.login,
-            name:data.Name
+    if(data.login){
+        router.push("/users/"+data.id)
+        localStorage.setItem('userId',data.id)
+          return (state)=>{
+            return{
+                ...state,
+                theId:data.id,
+                login:data.login,
+                name:data.Name,
+                Msg:data.message
+
+            }
+        }
+    }else{
+        return (state)=>{
+            return{
+                ...state,
+                login:data.login,
+                Msg:data.message
+            }
         }
     }
+  
 }

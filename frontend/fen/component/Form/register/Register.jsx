@@ -1,35 +1,59 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Form from 'react-bootstrap/Form';
 import {motion } from 'framer-motion'
 import { handleregister } from '../../../manager/API';
+import useAuth from '@/hook/useAuth';
 function Register({dispatch,setIsFlipped,isFlipped}) {
+  const {Msg} = useAuth();
   const [ user, setUser] = useState({
     email:"",
     name:"",
     password:"",
     reEnterPassword: "",
 })
+const [isValidReg,setisValidReg] = useState(false);
+const [formErrors,setFormErrors] = useState({
+  pass:"",
+})
+const [finH,setfinH] = useState(false) 
+useEffect(()=>{
+  if(finH){
+   if(Msg==="User already registered"){
+              setisValidReg(true)
+    }else if(Msg === "User Found!!"){
+      setisValidReg(false)
+    }
+          setFormErrors({
+            pass:Msg
+          })
+          setUser({
+            email:"",
+            name:"",
+            password:"",
+            reEnterPassword: "",
+        })
+          setfinH(false)
+  }
+
+},[finH])
 const handleChange = e => {
     const { name, value } = e.target
+    setisValidReg(false)
+
     setUser({
         ...user,
         [name]: value
     })
 }
-const register = (e) => {
+const register = async (e) => {
   e.preventDefault();
   const {  email, name,password, reEnterPassword,} = user;
   if(  email && name && password && (password === reEnterPassword) ){
-      handleregister(user,dispatch)
-  } else {
-      alert("invalid input")
-  }
-  setUser({
-      email:"",
-      name:"",
-      password:"",
-      reEnterPassword: "",
-  })
+     await handleregister(user,dispatch)
+  setfinH(true)
+
+  } 
+ 
 }
   return (
     <motion.div
@@ -43,7 +67,8 @@ const register = (e) => {
     <Form.Group className="mb-3 stl" controlId="formBasicEmail">
       <Form.Label >Email address</Form.Label>
       <Form.Control type="email" placeholder="Enter email" name="email" value={user.email} onChange={handleChange} />
-    </Form.Group>
+      {isValidReg && <p style={{color:"red"}}>{formErrors.pass}</p>}
+      </Form.Group>
     <Form.Group className="mb-3 stl" controlId="formBasicPassword">
       <Form.Label>Name</Form.Label>
       <Form.Control type="text" placeholder="Your Full Name" name="name" value={user.name} onChange={handleChange} />

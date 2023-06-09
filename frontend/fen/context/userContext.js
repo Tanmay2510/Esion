@@ -3,7 +3,8 @@ export const UserStoreContext = createContext();
 
 const initialState ={
     theId:"",
-    login:"",
+    login:null,
+    Msg:"",
     name:"",
     sideNavClicked:false,
     createPlaylistClicked:false,
