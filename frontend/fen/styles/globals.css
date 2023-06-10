@@ -369,11 +369,12 @@ border: 0;
   }
   
   .modalContainer .body {
-    flex: 50%;
+    flex: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.7rem;
+    flex-direction: column;
     text-align: center;
   }
   

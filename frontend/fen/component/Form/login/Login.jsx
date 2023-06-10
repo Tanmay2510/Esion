@@ -16,17 +16,31 @@ function Login({dispatch,setIsFlipped,isFlipped}) {
 
 const [finH,setfinH] = useState(false) 
 const [isValidPss,setisValidPss] = useState(false);
-const [isValidReg,setisValidReg] = useState(false);
-
+// const [isValidReg,setisValidReg] = useState(false);
+const [isValid,setIsValid] = useState({
+  isValPas:false,
+  isValReg:false
+})
 useEffect(()=>{
   if(finH){
   if( Msg==="Password didn't match"){
-              setisValidPss(true)
+              // setisValidPss(true)
+              setIsValid({
+                isValPas:true
+              })
     }else if(Msg==="User not registered"){
-              setisValidReg(true)
+              setIsValid({
+                isValReg:true
+              })
+              // setisValidReg(true)
     }else if(Msg === "User Found!!"){
-      setisValidPss(false)
-      setisValidReg(false)
+     
+      setIsValid({
+        isValReg:false,
+        isValPas:false
+      })
+      // setisValidPss(false)
+      // setisValidReg(false)
     }
           setFormErrors({
             pass:Msg
@@ -42,8 +56,12 @@ useEffect(()=>{
 
 const handleChange = e => {
   const { name, value } = e.target
-  setisValidPss(false)
-  setisValidReg(false)
+  // setisValidPss(false)
+  // setisValidReg(false)
+  setIsValid({
+    isValReg:false,
+    isValPas:false
+  })
 
   setUser({
       ...user,
@@ -70,13 +88,13 @@ const hanldeLogin = async (e) => {
     <Form.Group className="mb-3 stl" controlId="formBasicEmail">
       <Form.Label >Email address</Form.Label>
       <Form.Control type="email" name="email" value={user.email} onChange={handleChange}  placeholder="Enter email" />
-      {isValidReg && <p style={{color:"red"}}>{formErrors.pass}</p>}
+      {isValid.isValReg && <p style={{color:"red"}}>{formErrors.pass}</p>}
 
       </Form.Group>
     <Form.Group className="mb-3 stl" controlId="formBasicPassword">
       <Form.Label>Password</Form.Label>
       <Form.Control type="password" placeholder="Password"  name="password" value={user.password} onChange={handleChange}/>
-      {isValidPss && <p style={{color:"red"}}>{formErrors.pass}</p>}
+      {isValid.isValPas && <p style={{color:"red"}}>{formErrors.pass}</p>}
       </Form.Group>
     <div className="d-grid gap-2">
     <button 

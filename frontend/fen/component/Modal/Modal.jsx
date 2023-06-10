@@ -7,13 +7,13 @@ function Modal() {
     deletePlaylistClicked,yourPlaylistClicked,currentName,thePlaylists} = useAuth();
 
   const [playName,setPlayName] = useState("")
+  const [isValName,setIsValName] = useState(false)
   const [nextClicked,setNextClicked] = useState(false);
-
+  
   console.log(thePlaylists)
     useEffect(()=>{
       if(yourPlaylistClicked){
         getPlaylist(userDispatch)
-          // ,theId)
       }
     },[yourPlaylistClicked])
 
@@ -23,13 +23,19 @@ function Modal() {
   }
   const handleSaveClick = () =>{
       if(playName!==""){
+        setIsValName(false)
        handlePlaylist(playName,currentName,userDispatch)
        userDispatch(setModal(sideNavClicked,"Save"))
+      }else{
+        setIsValName(true)
+
       }
   }
   const handleName = (e) =>{
     e.preventDefault();
     setPlayName(e.target.value)
+    setIsValName(false)
+
   }
 
   return (
@@ -64,6 +70,10 @@ function Modal() {
           <input type="text" placeholder='PlayList Name!!' name="playlist"
           value={playName} 
           onChange={handleName}></input>
+          <br></br>
+          {isValName &&
+          <p style={{color:"red",fontSize:"20px"}}>Add Playlist Name!!</p>
+          }
           </>
              :
              <>
