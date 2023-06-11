@@ -59,10 +59,7 @@ function Sound({
       audioRef.current.pause()
     }
   }, [isPlaying, src]) 
-  // const playlistAdd = (keyy) =>{
-  //   //open new pane 
-  //   console.log(keyy)
-  // }
+ 
 
   return (
     <div className={`cardSection ${isPlaying ? "cardSectionActive" : ""}`} >

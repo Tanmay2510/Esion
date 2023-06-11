@@ -67,9 +67,6 @@ export const setModal = (click,whichOne)=>{
         return (state) =>{
             return{
                 ...state,
-                sideNavClicked:!click,
-                createPlaylistClicked:false,
-                deletePlaylistClicked:false,
                 yourPlaylistClicked:true
             }
         }

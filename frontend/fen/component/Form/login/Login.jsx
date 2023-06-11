@@ -32,15 +32,13 @@ useEffect(()=>{
               setIsValid({
                 isValReg:true
               })
-              // setisValidReg(true)
     }else if(Msg === "User Found!!"){
      
       setIsValid({
         isValReg:false,
         isValPas:false
       })
-      // setisValidPss(false)
-      // setisValidReg(false)
+  
     }
           setFormErrors({
             pass:Msg
@@ -56,8 +54,7 @@ useEffect(()=>{
 
 const handleChange = e => {
   const { name, value } = e.target
-  // setisValidPss(false)
-  // setisValidReg(false)
+
   setIsValid({
     isValReg:false,
     isValPas:false

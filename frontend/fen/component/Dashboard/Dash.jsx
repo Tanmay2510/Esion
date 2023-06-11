@@ -3,13 +3,15 @@ import { notSampledata } from '@/util/SData'
 import Sound from '../soundS/Sound'
 import useAuth from '@/hook/useAuth'
 import { setPlaylist } from '@/context/userAction';
+// import { Draggable } from 'react-drag-reorder';
 
 
 function Dash() {
   const {userDispatch} = useAuth();
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
-
+  console.log(currentSoundIndex)
+  console.log(playingSounds) //mtlb
   useEffect(() => {
     setPlayingSounds(
       currentSoundIndex.reduce(
@@ -54,6 +56,7 @@ function Dash() {
             )
         })
       }
+
     </div>
 
 

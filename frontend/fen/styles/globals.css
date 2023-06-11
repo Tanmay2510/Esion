@@ -355,9 +355,24 @@ ul li button:hover , ul li button:active{
     width: 100%;
 
   }
+  .eveIdx{
+    animation: rgba(78, 107, 177, 0.398);
+  }
+  .oddIdx{
+    background-color: rgba(203, 108, 172, 0.404);
+  }
   .noModalCover{
     display: flex;
   }
+  .playTable{
+    width: 100%;
+  }
+  .playTable tr{
+    border: 1px;
+  }
+ .playTable td {  
+    border: 1px solid black;  
+  }  
   .body input {
 border: 0;
   border-bottom: 2px solid gray;
