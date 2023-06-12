@@ -10,8 +10,7 @@ function Dash() {
   const {userDispatch} = useAuth();
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
-  console.log(currentSoundIndex)
-  console.log(playingSounds) //mtlb
+
   useEffect(() => {
     setPlayingSounds(
       currentSoundIndex.reduce(
@@ -40,7 +39,7 @@ function Dash() {
               title={el.name}
               logo={el.logo}
               isActive={currentSoundIndex.includes(i)}
-              isPlaying={playingSounds[i]}
+              isPlaying={playingSounds[i]}  //for true or false
               onPlay={() =>
                 setPlayingSounds({ ...playingSounds, [i]: true })
               }

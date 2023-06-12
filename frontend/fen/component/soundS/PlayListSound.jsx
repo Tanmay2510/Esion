@@ -1,9 +1,12 @@
-import { notSampledata } from '@/util/SData'
-import React from 'react'
+import React, { useState , useRef , useEffect} from 'react'
 
-function PlayListSound({nam,dat}) {
- console.log(nam)
- console.log(dat)
+function PlayListSound({nam,dat,keyy, handle}) {
+  console.log(handle)
+ const MAX = 20;
+ const audioRef = useRef(null)
+ const [play,setplay] = useState(null);
+ const handleClickKey = (i) =>()=>{
+ }
   return (
     <div>
     <div className="cardSection" >
@@ -16,7 +19,7 @@ function PlayListSound({nam,dat}) {
     type="range"
     ></input>
 
-        <button>Play</button>
+        <button onClick={handleClickKey(keyy)}>Play</button>
     
 </div>
     </div>

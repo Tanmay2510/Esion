@@ -14,9 +14,9 @@ function Sound({
   const MAX = 20;
   const [clickedIndex, setClickedIndex] = useState({});
   const audioRef = useRef(null)
-
   const handleSoundPlay = (keyy)=>() => {
     setClickedIndex(state => ({
+
                 ...state, 
                 [keyy]: !state[keyy] 
               }));
@@ -26,7 +26,6 @@ function Sound({
       onPlay && onPlay()
     }
   }
-  
   function handleVolume(e) {
     const { value } = e.target;
     const volume = Number(value) / MAX;

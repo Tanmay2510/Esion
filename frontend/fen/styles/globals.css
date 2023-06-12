@@ -38,6 +38,13 @@ body{
 .Reglog{
     display: inline-grid;
 }
+.innerNav  button {
+  border:0px;
+  border-radius: 25px;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+}
 .but{
     margin-top: 10px;
     padding:10px;
@@ -120,6 +127,9 @@ header button{
     transition: all 0.5s;
     font-size: 20px;
     background-color: white;
+    border: 0px;
+    animation: myanimationBut 30s infinite;
+    border-radius: 25px;
 }
 
 .sideNavHead{
@@ -142,11 +152,7 @@ ul li button:hover , ul li button:active{
     /* color:rgb(66, 153, 109); */
     transition: all 0.7s;
 }
-.logBut{
-    border:0px;
-    animation: myanimationBut 30s infinite;
-    border-radius: 25px;
-}
+
 
 
 @keyframes myanimationBut {
