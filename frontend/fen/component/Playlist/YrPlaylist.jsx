@@ -10,79 +10,48 @@ function YrPlaylist() {
           getPlaylist(userDispatch)
         }
       },[yourPlaylistClicked])
-      const audioRef = useRef(null)
-  
-  
-      const [clickedIndex, setClickedIndex] = useState({});
-      const [audData,setAudData] =  useState(null)
-      const [isPlay,setIsPlay] = useState(false);
-      const handleClickKey = (key) =>()=>{
-        setClickedIndex(state => ({
-
-          ...state, 
-          [key]: !state[key] 
-        }));
-        setAudData(state=>({
-          ...state,
-          src:thePlaylists[key].playData
-        }))
-      }
-      useEffect(()=>{
-        if(!audioRef.current){
-          const srcArr =  Object.values(audData.src)
-          const datKeys = Object.keys(srcArr[0])
-          // notSampledata.map((el,i)=>{
-          //     if(datKeys===i){
-          //       console.log(el.name)
-          //     }
-          // })
-          const n1 = datKeys.filter((el,i)=>{
-            console.log(notSampledata[el].name)
-            // return notSampledata[el].name
-          })
-            // console.log(n1)
-          // notSampledata.map((el,i)=>{
-          //   if
-          // })
-        }
-      })
+      const [currentSoundIndex, setCurrentSoundIndex] = useState([])
+      const [playingSounds, setPlayingSounds] = useState({})
+      useEffect(() => {
+        setPlayingSounds(
+          currentSoundIndex.reduce(
+            (newPlayingSounds, audioIndex) => {
+              newPlayingSounds[audioIndex] = true
+              return newPlayingSounds
+            },
+            {}
+          )
+        )
+      }, [currentSoundIndex])
   return (
     <div>
     {
-        thePlaylists.map((el,i)=>{
-            return(
-              <div>
-    <div className="cardSection" >
-    <h4 align="center" style={{margin:"15px",color:"white"}}>{el.playName}</h4>
-    <div className='audioControls'>
-    <input
-    min={0}
-    max={100}
-    // onChange={(e) => handleVolume(e)} 
-    type="range"
-    ></input>
-        {
-          clickedIndex[i] ? 
-        <button onClick={handleClickKey(i)}>Pausee</button>
-          :
-        <button onClick={handleClickKey(i)}>Play</button>
+      thePlaylists.map((el,i)=>{
+            return (
 
-        }
-    
-</div>
-    </div>
-    </div>
-                // <PlayListSound 
-                // nam={el.playName}
-                // dat={el.playData}
-                // key={i}
-                // keyy={i}
-                // handle={()=>
-                //   setIsClick({})
-                // }
-                // />
+                <PlayListSound 
+                nam={el.playName}
+                dat={el.playData}
+                key={i}
+                keyy={i}
+                isActive={currentSoundIndex.includes(i)}
+              isPlaying={playingSounds[i]}  //for true or false
+              onPlay={() =>
+                setPlayingSounds({ ...playingSounds, [i]: true })
+              }
+              onPause={
+                () => {
+                const newPlayingSounds = { ...playingSounds }
+                delete newPlayingSounds[i]
+                setPlayingSounds(newPlayingSounds)
+              }
+            }
+
+                />
             )
-        })
+
+      })
+            
     }
     
     </div>

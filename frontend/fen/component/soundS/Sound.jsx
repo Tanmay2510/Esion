@@ -11,12 +11,12 @@ function Sound({
     onPlay,
     onPause
 }) {
+
   const MAX = 20;
   const [clickedIndex, setClickedIndex] = useState({});
   const audioRef = useRef(null)
   const handleSoundPlay = (keyy)=>() => {
     setClickedIndex(state => ({
-
                 ...state, 
                 [keyy]: !state[keyy] 
               }));
