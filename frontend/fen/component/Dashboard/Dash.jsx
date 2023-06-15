@@ -41,7 +41,7 @@ function Dash() {
               isActive={currentSoundIndex.includes(i)}
               isPlaying={playingSounds[i]}  //for true or false
               onPlay={() =>
-                setPlayingSounds({ ...playingSounds, [i]: true })
+               setPlayingSounds({ ...playingSounds, [i]: true })
               }
               onPause={
                 () => {

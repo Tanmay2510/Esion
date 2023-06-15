@@ -1,9 +1,19 @@
 import useAuth from '@/hook/useAuth'
 import { getPlaylist } from '@/manager/API';
-import React, { useState  , useEffect,useRef} from 'react'
+import React, { useState  , useEffect} from 'react'
 import PlayListSound from '../soundS/PlayListSound';
-import { notSampledata } from '@/util/SData';
+import Slider from "react-slick";
+import { ur } from '@/util/SData';
+
 function YrPlaylist() {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+  };
     const {userDispatch,yourPlaylistClicked,thePlaylists} = useAuth();
     useEffect(()=>{
         if(yourPlaylistClicked){
@@ -23,12 +33,22 @@ function YrPlaylist() {
           )
         )
       }, [currentSoundIndex])
+     
+
+      // useEffect(() => {
+      //   ur.forEach((songUrl) => {
+      //     const audio = new Audio(songUrl);
+      //     audio.play();
+      //   });
+      // }, [ur]);
+     
   return (
-    <div>
+    <div className="aboveSlide">
+ 
+   
     {
       thePlaylists.map((el,i)=>{
             return (
-
                 <PlayListSound 
                 nam={el.playName}
                 dat={el.playData}
@@ -48,13 +68,14 @@ function YrPlaylist() {
             }
 
                 />
-            )
+            ) 
 
       })
             
     }
-    
+
     </div>
+
   )
 }
 

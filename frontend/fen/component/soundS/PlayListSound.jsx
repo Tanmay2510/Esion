@@ -18,47 +18,20 @@ function PlayListSound({nam,dat,keyy, isActive,
     ...state, 
     [key]: !state[key] 
   }));
-
-  if (isPlaying) {
-    onPause && onPause()
-  } else {
-    onPlay && onPlay()
-  }
   setAudData(state=>({
     ...state,
     src:thePlaylists[key].playData
   }))
-}
-
-useEffect(() => {
-  if (!audioRef.current) {
-      const audio = new Audio(src[0])
-      audioRef.current = audio
-      audio.loop = true
-}
-  if (isActive) {
-    audioRef.current.play()
-    onPlay && onPlay()
-  } else {
-    audioRef.current.pause()
-    onPause && onPause()
-  }
-
-}, [isActive, src])
-
-useEffect(() => {
-  if (!audioRef.current) {
-    const audio = new Audio(src[0])
-    audioRef.current = audio
-    audio.loop = true
-}
   if (isPlaying) {
-    audioRef.current.play()
+    console.log("Yha pe pause")
+    onPause && onPause()
   } else {
-    audioRef.current.pause()
+    console.log("Yha pe play")
+    onPlay && onPlay()
   }
-}, [isPlaying, src]) 
-console.log(src)
+  
+
+}
 useEffect(()=>{
   if(audData!==null ){
     
@@ -70,6 +43,52 @@ useEffect(()=>{
 
   }
 },[clickedIndex])
+console.log(src)
+
+
+function handleVolume(e) {
+const { value } = e.target;
+const volume = Number(value) / MAX;
+audioRef.current.volume = volume;
+}
+useEffect(() => {
+console.log("Yha pe active")
+
+if (!audioRef.current) {
+  const audio = new Audio(src)
+  audioRef.current = audio
+  audio.loop = true
+}
+if (isActive) {
+  audioRef.current.play()
+  onPlay && onPlay()
+} else {
+  audioRef.current.pause()
+  onPause && onPause()
+}
+}, [isActive])
+
+useEffect(() => {
+src.forEach((songUrl)=>{
+  // if (!audioRef.current) {
+    const audio = new Audio(songUrl)
+    audio.play()
+    // audioRef.current = audio
+    // audioRef.current.play()
+
+    // audio.loop = true
+  // }
+  // if (isPlaying) {
+  //   audioRef.current.play()
+  // } else {
+  //   audioRef.current.pause()
+  // }
+})
+
+
+}, [isPlaying]) 
+
+
   return (
     <div>
     <div className="cardSection" >
