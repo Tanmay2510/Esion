@@ -20,6 +20,7 @@ function Sound({
                 ...state, 
                 [keyy]: !state[keyy] 
               }));
+
     if (isPlaying) {
       onPause && onPause()
     } else {

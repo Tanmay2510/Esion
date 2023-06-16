@@ -35,17 +35,10 @@ function YrPlaylist() {
       }, [currentSoundIndex])
      
 
-      // useEffect(() => {
-      //   ur.forEach((songUrl) => {
-      //     const audio = new Audio(songUrl);
-      //     audio.play();
-      //   });
-      // }, [ur]);
+      
      
   return (
     <div className="aboveSlide">
- 
-   
     {
       thePlaylists.map((el,i)=>{
             return (
@@ -66,7 +59,6 @@ function YrPlaylist() {
                 setPlayingSounds(newPlayingSounds)
               }
             }
-
                 />
             ) 
 

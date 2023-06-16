@@ -4,7 +4,7 @@ import {motion} from "framer-motion"
 import { handlelogin } from '../../../manager/API';
 import useAuth from '@/hook/useAuth';
 function Login({dispatch,setIsFlipped,isFlipped}) {
-  const {login,Msg} = useAuth();
+  const {Msg} = useAuth();
 
   const [formErrors,setFormErrors] = useState({
     pass:"",
@@ -15,8 +15,6 @@ function Login({dispatch,setIsFlipped,isFlipped}) {
 })
 
 const [finH,setfinH] = useState(false) 
-const [isValidPss,setisValidPss] = useState(false);
-// const [isValidReg,setisValidReg] = useState(false);
 const [isValid,setIsValid] = useState({
   isValPas:false,
   isValReg:false
@@ -24,7 +22,6 @@ const [isValid,setIsValid] = useState({
 useEffect(()=>{
   if(finH){
   if( Msg==="Password didn't match"){
-              // setisValidPss(true)
               setIsValid({
                 isValPas:true
               })

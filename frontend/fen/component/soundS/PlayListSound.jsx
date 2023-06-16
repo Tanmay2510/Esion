@@ -23,15 +23,14 @@ function PlayListSound({nam,dat,keyy, isActive,
     src:thePlaylists[key].playData
   }))
   if (isPlaying) {
-    console.log("Yha pe pause")
     onPause && onPause()
   } else {
-    console.log("Yha pe play")
     onPlay && onPlay()
   }
   
 
 }
+
 useEffect(()=>{
   if(audData!==null ){
     
@@ -43,7 +42,6 @@ useEffect(()=>{
 
   }
 },[clickedIndex])
-console.log(src)
 
 
 function handleVolume(e) {
@@ -52,40 +50,37 @@ const volume = Number(value) / MAX;
 audioRef.current.volume = volume;
 }
 useEffect(() => {
-console.log("Yha pe active")
 
-if (!audioRef.current) {
-  const audio = new Audio(src)
-  audioRef.current = audio
-  audio.loop = true
-}
-if (isActive) {
-  audioRef.current.play()
-  onPlay && onPlay()
-} else {
-  audioRef.current.pause()
-  onPause && onPause()
-}
+  src.forEach((songUrl)=>{
+    if (audioRef.current) {
+      const audio = new Audio(songUrl)
+      audioRef.current=audio
+      audio.loop = true
+    }
+    if (isActive) {
+      audioRef.current.play()
+      onPlay && onPlay()
+    } else {
+      audioRef.current.pause()
+      onPause && onPause()
+    }
+  })
+
 }, [isActive])
 
 useEffect(() => {
 src.forEach((songUrl)=>{
-  // if (!audioRef.current) {
+  if (!audioRef.current) {
     const audio = new Audio(songUrl)
-    audio.play()
-    // audioRef.current = audio
-    // audioRef.current.play()
-
-    // audio.loop = true
-  // }
-  // if (isPlaying) {
-  //   audioRef.current.play()
-  // } else {
-  //   audioRef.current.pause()
-  // }
+    audioRef.current=audio
+    audio.loop = true
+  }
+  if (isPlaying) {
+    audioRef.current.play()
+  } else {
+    audioRef.current.pause()
+  }
 })
-
-
 }, [isPlaying]) 
 
 
