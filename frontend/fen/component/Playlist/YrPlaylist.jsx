@@ -3,10 +3,8 @@ import { getPlaylist } from '@/manager/API';
 import React, { useState  , useEffect} from 'react'
 import PlayListSound from '../soundS/PlayListSound';
 import Slider from "react-slick";
-import { ur } from '@/util/SData';
-
 function YrPlaylist() {
-  const settings = {
+  const setting = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -39,6 +37,8 @@ function YrPlaylist() {
      
   return (
     <div className="aboveSlide">
+    <Slider {...setting}>
+
     {
       thePlaylists.map((el,i)=>{
             return (
@@ -65,8 +65,10 @@ function YrPlaylist() {
       })
             
     }
+    </Slider>
 
     </div>
+
 
   )
 }

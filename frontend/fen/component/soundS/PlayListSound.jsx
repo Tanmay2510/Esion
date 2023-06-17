@@ -9,10 +9,12 @@ function PlayListSound({nam,dat,keyy, isActive,
 
  const MAX = 20;
  const {thePlaylists} = useAuth();
+ const [isEse,setEse] = useState(false)
  const [audData,setAudData] =  useState(null)
  const [clickedIndex, setClickedIndex] = useState({});
  const audioRef = useRef(null)
  const [src,setSrc] = useState([])
+
  const handleClickKey = (key) =>()=>{
   setClickedIndex(state => ({
     ...state, 
@@ -22,18 +24,19 @@ function PlayListSound({nam,dat,keyy, isActive,
     ...state,
     src:thePlaylists[key].playData
   }))
+  setEse(!isEse)
+}
+
+useEffect(()=>{
   if (isPlaying) {
     onPause && onPause()
   } else {
     onPlay && onPlay()
   }
-  
-
-}
+},[isEse])
 
 useEffect(()=>{
   if(audData!==null ){
-    
     const srcArr =  Object.values(audData.src)
     const datKeys = Object.keys(srcArr[0])
     datKeys.filter((el,i)=>{
@@ -46,13 +49,13 @@ useEffect(()=>{
 
 function handleVolume(e) {
 const { value } = e.target;
-const volume = Number(value) / MAX;
+const volume = Math.min(1,(value / MAX));
 audioRef.current.volume = volume;
 }
-useEffect(() => {
 
+useEffect(() => {
   src.forEach((songUrl)=>{
-    if (audioRef.current) {
+    if (!audioRef.current) {
       const audio = new Audio(songUrl)
       audioRef.current=audio
       audio.loop = true
@@ -65,7 +68,6 @@ useEffect(() => {
       onPause && onPause()
     }
   })
-
 }, [isActive])
 
 useEffect(() => {
@@ -92,12 +94,9 @@ src.forEach((songUrl)=>{
     <input
     min={0}
     max={100}
-    // onChange={(e) => handleVolume(e)} 
+    onChange={(e) => handleVolume(e)} 
     type="range"
     ></input>
-
-     
-
           <button onClick={handleClickKey(keyy)}> 
           Play
         

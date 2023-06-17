@@ -39,11 +39,6 @@ export const data = [
         uri:forest
     }
 ];
-export const ur =[
-    walk,
-    cafe,
-  
-]
 
 export const notSampledata = [
     ...data,
