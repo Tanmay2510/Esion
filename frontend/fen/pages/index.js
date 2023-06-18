@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import Nav from '@/component/nav/Nav'
 import US from '@/component/uppserSideSection/US'
-import Reglog from '../component/Form/Reglog'
 import Sample from '@/component/middle/Sample'
 import land from '@/assets/lottie/land.json'
 import Lottie from "lottie-react"
@@ -21,7 +20,9 @@ export default function Home() {
     </div>
     <div className='bottomSection'>
     <Sample />
+    
     </div>
+    
     </div>      
     </>
   )

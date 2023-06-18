@@ -4,13 +4,40 @@ import React, { useState  , useEffect} from 'react'
 import PlayListSound from '../soundS/PlayListSound';
 import Slider from "react-slick";
 function YrPlaylist() {
-  const setting = {
-    dots: true,
+  var setting = {
+    arrows:true,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          arrows:true,
+
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
     const {userDispatch,yourPlaylistClicked,thePlaylists} = useAuth();
     useEffect(()=>{
@@ -37,7 +64,7 @@ function YrPlaylist() {
      
   return (
     <div className="aboveSlide">
-    <Slider {...setting}>
+    <Slider {...setting} className='rSlide'>
 
     {
       thePlaylists.map((el,i)=>{

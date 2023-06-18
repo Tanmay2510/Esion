@@ -1,6 +1,7 @@
 import useAuth from '@/hook/useAuth';
 import { notSampledata } from '@/util/SData';
 import React, { useState , useRef , useEffect} from 'react'
+import {BsMusicNoteList} from 'react-icons/bs'
 
 function PlayListSound({nam,dat,keyy, isActive,
   isPlaying,
@@ -87,7 +88,6 @@ src.forEach((songUrl)=>{
 
 
   return (
-    <div>
     <div className="cardSection" >
     <h4 align="center" style={{margin:"15px",color:"white"}}>{nam}</h4>
     <div className='audioControls'>
@@ -97,15 +97,15 @@ src.forEach((songUrl)=>{
     onChange={(e) => handleVolume(e)} 
     type="range"
     ></input>
-          <button onClick={handleClickKey(keyy)}> 
-          Play
-        
-          </button>
-        
+         
+      <BsMusicNoteList color="white" 
+    onClick={handleClickKey(keyy)}
+      
+      />
+     
      
     
 </div>
-    </div>
     </div>
   )
 }
