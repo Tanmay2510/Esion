@@ -32,8 +32,6 @@ body{
 .rSlide:before {
   left: 0;
   background:inherit;
-
-
 } 
  .rSlide:after {
   right: 0;
@@ -92,7 +90,6 @@ body{
 .sideNav{
     width:250px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px;
- 
     min-height: 100%;
     padding-top: 50px;
     padding-right: 50px;
@@ -130,8 +127,6 @@ ul li button{
 
 header{
     height: 80px;
-    /* background-color:rgb(190, 29, 29); */
-    /* border-bottom: 1px solid white; */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
     color:white;
     display: flex;
@@ -178,7 +173,6 @@ header button{
 
 ul li button:hover , ul li button:active{
     background-color: #ccd1da57;
-    /* color:rgb(66, 153, 109); */
     transition: all 0.7s;
 }
 
@@ -242,7 +236,6 @@ ul li button:hover , ul li button:active{
 }
 .UnderNavCont{
   display: flex;
-  /* justify-content: space-evenly; */
   margin-top: 150px;
   margin-bottom: -100px;
   align-items: flex-start;
@@ -250,7 +243,6 @@ ul li button:hover , ul li button:active{
 .Usection {
     width: 500px;
     margin-left: 150px;
-    /* margin-right: 50px; */
     color: rgb(66, 153, 109);
     font-family: 'Shantell Sans', cursive;
 }
@@ -308,7 +300,6 @@ ul li button:hover , ul li button:active{
 
 .dashmidContainer{
     padding-top:40px;
-    /* margin-left: 20%; */
     transition: all 1s;
     height: 100vh;
     overflow: hidden;
@@ -361,7 +352,6 @@ ul li button:hover , ul li button:active{
     width: 500px;
     height: 500px;
     border-radius: 12px;
-    /* animation:myanimation; */
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;

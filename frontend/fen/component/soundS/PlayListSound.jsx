@@ -97,7 +97,6 @@ src.forEach((songUrl)=>{
     onChange={(e) => handleVolume(e)} 
     type="range"
     ></input>
-         
       <BsMusicNoteList color="white" 
     onClick={handleClickKey(keyy)}
       
