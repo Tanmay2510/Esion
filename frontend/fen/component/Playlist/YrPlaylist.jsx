@@ -60,10 +60,9 @@ function YrPlaylist() {
       }, [currentSoundIndex])
      
 
-      
-     
   return (
-    <div className="aboveSlide">
+    
+     <div>
     <Slider {...setting} className='rSlide'>
 
     {
