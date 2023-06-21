@@ -100,7 +100,7 @@ body{
 }
 
 
-ul li{
+ul li , .sideDropLI{
     list-style-type: none;
     width:150px;
    
@@ -111,8 +111,10 @@ ul li{
     align-items: center;
     width: 180px;
     font-size: 18px;
+    transition: all 0.7s;
+
 }
-ul li button{
+ul li button {
     background:transparent;
     color:white;
     text-decoration: none;
@@ -166,12 +168,33 @@ header button{
     color:white;
 
 }
+
 .sideNavp:hover , header button:hover{
 
     transition: all 0.5s;
 }
-
-ul li button:hover , ul li button:active{
+.sideDropLI{
+  display: flex;
+  justify-content: space-between;
+    /* background:transparent;
+    color:white;
+    text-decoration: none;
+    font-size:15px;
+    width:135px;
+    border:0px transparent;
+    /* display: block; */
+    /* padding:10px;
+    border-radius: 6px;
+    transition: all 0.7s; */ 
+}
+.sideDrop{
+  margin:5px;
+  transition: all 0.7s;
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+}
+ul li button:hover , ul li button:active ,.sideDropLI:hover,.insideButtonActive{
     background-color: #ccd1da57;
     transition: all 0.7s;
 }
@@ -340,6 +363,7 @@ ul li button:hover , ul li button:active{
 
 .modalBackground {
     width: 100vw;
+    z-index: 1000;
     height: 100vh;
     background-color: rgba(200, 200, 200, 0.73);
     position: fixed;

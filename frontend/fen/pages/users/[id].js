@@ -2,7 +2,7 @@ import Dash from '@/component/Dashboard/Dash'
 import Nav from '@/component/nav/Nav'
 import React from 'react'
 import Modal from '@/component/Modal/Modal'
-import SideNav from '@/component/nav/SideNav'
+import SideNav from '@/component/nav/sideNav/SideNav'
 import useAuth from '@/hook/useAuth'
 import YrPlaylist from '@/component/Playlist/YrPlaylist'
 export default function DynamicPage() {

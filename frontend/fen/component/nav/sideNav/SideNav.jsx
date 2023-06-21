@@ -1,15 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {RiPlayListFill} from 'react-icons/ri'
 import {MdOutlineLibraryMusic,MdDeleteOutline} from 'react-icons/md'
 import useAuth from '@/hook/useAuth'
 import { setModal } from '@/context/userAction';
+import SideDrop from './sideDrop';
 
 
 function SideNav() {
   const {userDispatch,sideNavClicked} = useAuth();
+  const [isDel,setIsDel] = useState(false)
   const handleClick = (whichOne) => () =>{
     userDispatch(setModal(sideNavClicked,whichOne));
 
+  }
+  const handleClickDel = () =>{
+    setIsDel(!isDel)
   }
   
   return (
@@ -19,12 +24,18 @@ function SideNav() {
     </div>
 
     <ul>
-        <li className="li liactive"><button className='insideButton' onClick={handleClick(
+        <li ><button className='insideButton' onClick={handleClick(
           "createPlaylistClicked"
         )}>Make Playlist<RiPlayListFill/></button></li>
     </ul>
     <ul>
-    <li><button className='insideButton' onClick={handleClick("deletePlaylistClicked")}>Delete Playlist<MdDeleteOutline/></button></li>
+    <li><button 
+    className={`insideButton ${isDel ? "insideButtonActive" : ""}`}
+  
+     onClick={handleClickDel}>Delete Playlist<MdDeleteOutline/></button></li>
+    {
+      isDel && <SideDrop />
+    }
 </ul>
 <ul>
 <li><button className='insideButton' onClick={handleClick("yourPlaylistClicked")}>Your Playlist<MdOutlineLibraryMusic/></button></li>

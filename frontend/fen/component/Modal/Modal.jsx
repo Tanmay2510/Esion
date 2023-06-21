@@ -26,7 +26,7 @@ function Modal() {
       }
 
       {
-        deletePlaylistClicked && <Delete />
+        // deletePlaylistClicked && <Delete />
       }
      
     </div>

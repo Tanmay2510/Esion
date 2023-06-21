@@ -1,7 +1,7 @@
 import useAuth from '@/hook/useAuth';
 import { notSampledata } from '@/util/SData';
 import React, { useState , useRef , useEffect} from 'react'
-import {BsMusicNoteList} from 'react-icons/bs'
+import {Bs1Circle, BsMusicNoteList} from 'react-icons/bs'
 
 function PlayListSound({nam,dat,keyy, isActive,
   isPlaying,
@@ -13,7 +13,6 @@ function PlayListSound({nam,dat,keyy, isActive,
  const [isEse,setEse] = useState(false)
  const [audData,setAudData] =  useState(null)
  const [clickedIndex, setClickedIndex] = useState({});
- const [deleteIndex,setDeleteIndex] = useState([]);
  const audioRef = useRef(null)
  const [src,setSrc] = useState([])
 
@@ -86,17 +85,9 @@ src.forEach((songUrl)=>{
   }
 })
 }, [isPlaying]) 
-const handleDelete = (i)=>() =>{
-  setDeleteIndex(...deleteIndex,i)
-}
-const [items,setItems] = useState([]);
-function addIt(){
-  setItems([...items,{
-    id:items.length
-  }])
-}
 
-console.log(deleteIndex)
+
+
   return (
     <div className="cardSection" >
     <h4 align="center" style={{margin:"15px",color:"white"}}>{nam}</h4>
@@ -112,10 +103,7 @@ console.log(deleteIndex)
       
       />
      
-    
 </div>
-<input type="checkbox" onClick={handleDelete(keyy)}></input>
-<button onClick={addIt}>add</button>
     </div>
   )
 }
