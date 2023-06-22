@@ -28,14 +28,19 @@ function SideNav() {
           "createPlaylistClicked"
         )}>Make Playlist<RiPlayListFill/></button></li>
     </ul>
-    <ul>
-    <li><button 
+    <ul >
+    <li 
+    className={` ${isDel ? "delLI" : ""}`}
+    
+    ><button 
     className={`insideButton ${isDel ? "insideButtonActive" : ""}`}
   
-     onClick={handleClickDel}>Delete Playlist<MdDeleteOutline/></button></li>
-    {
+     onClick={handleClickDel}>Delete Playlist<MdDeleteOutline/></button>
+     {
       isDel && <SideDrop />
     }
+     </li>
+   
 </ul>
 <ul>
 <li><button className='insideButton' onClick={handleClick("yourPlaylistClicked")}>Your Playlist<MdOutlineLibraryMusic/></button></li>
