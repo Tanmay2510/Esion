@@ -88,7 +88,7 @@ body{
 }
 
 .sideNav{
-    width:250px;
+    width:320px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px;
     min-height: 100%;
     padding-top: 50px;
@@ -103,21 +103,21 @@ body{
 ul li , .sideDropLI{
     list-style-type: none;
     width:150px;
-  transition: all 0.7s;
+  /* transition: all 0.7s; */
 
    
 }
-.insideButtonActive{
-  transition: all 0.7s;
+/* .insideButtonActive{
+  transition: all 2s;
   
-}
+} */
 .insideButton{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 180px;
     font-size: 18px;
-    transition: all 0.7s;
+    /* transition: all 0.7s; */
 
 }
 ul li button {
@@ -188,31 +188,21 @@ header button{
     font-size:15px;
     width:135px;
     border:0px transparent;
-    /* display: block; */
     padding:10px;
     border-radius: 6px;
-    transition: all 0.7s; 
+    margin-bottom: 5px;
 }
-
 .delLI{
   background-color: #ccd1da57;
   width: max-content;
   border-radius: 10px;
-  transition: ease-out 0.7s;
-
-
+ 
 }
-.sideDropLI, .sideDropUL{
-  transition: ease-in-out 0.7s;
 
-}
 .sideDrop{
-
   margin:5px;
-  height: 100px;
   overflow: hidden;
   overflow-y: scroll;
-  transition: ease-in-out 0.7s;
   width: 100%;
 }
 .sideDrop::-webkit-scrollbar { 

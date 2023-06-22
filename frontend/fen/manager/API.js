@@ -18,7 +18,12 @@ export const getPlaylist = (dispatch)=>{
         dispatch(setPlaylistClient(res.data))
     })
 }
-
+export const handleDel = (dispatch,deldata)=>{
+    const gid = localStorage.getItem('userId')
+    axios.delete(BASE_URL+"/playList/"+gid,deldata,{withCrdentials:true})
+    .then(res=>{
+    })
+}
 export const handlePlaylist = (dataName,dataCurrent,dispatch)=>{
     const playlist = {
         name:dataName,

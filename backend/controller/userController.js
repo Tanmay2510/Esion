@@ -126,4 +126,9 @@ const handlePlaylistData = (req,res)=>{
         }
     })
 }
-module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist,handlePlaylistData};
+
+const handleDeletePlaylist = (req,res)=>{
+    console.log(req.body)
+}
+
+module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist,handlePlaylistData,handleDeletePlaylist};
