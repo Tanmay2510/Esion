@@ -128,7 +128,14 @@ const handlePlaylistData = (req,res)=>{
 }
 
 const handleDeletePlaylist = (req,res)=>{
-    console.log(req.body)
+    const id = req.params.gid;
+    const playDelData = req.body;
+    User.findById({'_id':id},(err,result)=>{
+      const a = result.userPlaylist.filter((el,i)=>{
+        return i !== playDelData[i]
+      })
+
+    })
 }
 
 module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist,handlePlaylistData,handleDeletePlaylist};

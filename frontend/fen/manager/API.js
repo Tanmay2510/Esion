@@ -20,7 +20,8 @@ export const getPlaylist = (dispatch)=>{
 }
 export const handleDel = (dispatch,deldata)=>{
     const gid = localStorage.getItem('userId')
-    axios.delete(BASE_URL+"/playList/"+gid,deldata,{withCrdentials:true})
+    console.log(deldata)
+    axios.patch(BASE_URL+"/delplayList/"+gid, deldata ,{withCrdentials:true})
     .then(res=>{
     })
 }

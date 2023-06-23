@@ -7,6 +7,6 @@ router.post('/login',handleLogin);
 router.get('/logout',handleLogout);
 router.patch('/playList/:gid',handlePlaylist);
 router.get('/playList/:gid',handlePlaylistData);
-router.delete('/playList/:gid',handleDeletePlaylist);
+router.patch('/delplayList/:gid',handleDeletePlaylist);
 
 module.exports = router;

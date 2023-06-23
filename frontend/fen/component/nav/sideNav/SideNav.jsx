@@ -10,6 +10,7 @@ import { handleDel } from '@/manager/API';
 function SideNav() {
   const {userDispatch,sideNavClicked} = useAuth();
   const [isDel,setIsDel] = useState(false)
+  const [isCall,setIsCall] = useState(false);
   const [isCK,setIsCK] = useState([])
   const handleClick = (whichOne) => () =>{
     userDispatch(setModal(sideNavClicked,whichOne));
@@ -19,8 +20,9 @@ function SideNav() {
     setIsDel(!isDel)
   }
   useEffect(()=>{
-    if(isCK.length !==0){
+    if(isCK.length !==0 && isDel === false){
       handleDel(userDispatch,isCK);
+      setIsCK([])
     }
   },[isDel])
   return (
