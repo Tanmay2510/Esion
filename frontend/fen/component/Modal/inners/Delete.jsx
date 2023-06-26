@@ -2,8 +2,6 @@ import useAuth from '@/hook/useAuth'
 import React from 'react'
 
 function Delete() {
-  const {thePlaylists} = useAuth();
-  console.log(thePlaylists)
   return (
     <>
     <div className="title">

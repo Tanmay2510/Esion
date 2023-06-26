@@ -13,7 +13,9 @@ const initialState ={
     currentName:[],
     savedPlay:false,
     deletePlay:false,
-    thePlaylists:[]
+    thePlaylists:[],
+    dataDeleted:null,
+    forAgain:false,
 }
 const userStoreReducer = (state, action) => {
     try {

@@ -130,11 +130,15 @@ const handlePlaylistData = (req,res)=>{
 const handleDeletePlaylist = (req,res)=>{
     const id = req.params.gid;
     const playDelData = req.body;
-    User.findById({'_id':id},(err,result)=>{
-      const a = result.userPlaylist.filter((el,i)=>{
-        return i !== playDelData[i]
-      })
-
+    User.findByIdAndUpdate({'_id':id},{"$pull": {'userPlaylist':{
+        'playName':{$in: playDelData}}}},(err,result)=>{
+            if(err){
+                console.log(err)
+            }else{
+                res.json({
+                    delete:true
+                })
+            }
     })
 }
 

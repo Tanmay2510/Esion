@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setLogin, setRegister , setLogout,isSave,setPlaylistClient} from "../context/userAction";
+import { setLogin, setRegister , setLogout,isSave,setPlaylistClient,setDelete} from "../context/userAction";
 
 const BASE_URL = "http://localhost:3001";
 
@@ -23,9 +23,14 @@ export const handleDel = (dispatch,deldata)=>{
     console.log(deldata)
     axios.patch(BASE_URL+"/delplayList/"+gid, deldata ,{withCrdentials:true})
     .then(res=>{
+        dispatch(setDelete(res.data))
     })
 }
 export const handlePlaylist = (dataName,dataCurrent,dispatch)=>{
+    if(Object.keys(dataCurrent).length===0){
+        return;
+    }
+    console.log("Here")
     const playlist = {
         name:dataName,
         data:dataCurrent

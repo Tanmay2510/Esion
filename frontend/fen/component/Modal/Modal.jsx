@@ -5,15 +5,10 @@ import Delete from './inners/Delete';
 import Create from './inners/Create';
 function Modal() {
   const {userDispatch,sideNavClicked,createPlaylistClicked,
-    deletePlaylistClicked} = useAuth();
-
- 
-  
+    } = useAuth();
   const handleClick = () =>{
     userDispatch(setModal(sideNavClicked,"X"));
   }
-  
-
   return (
     <div className="modalBackground">
     <div className="modalContainer">

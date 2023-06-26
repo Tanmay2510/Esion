@@ -39,12 +39,12 @@ function YrPlaylist() {
       }
     ]
   };
-    const {userDispatch,yourPlaylistClicked,thePlaylists} = useAuth();
+    const {userDispatch,yourPlaylistClicked,thePlaylists,forAgain} = useAuth();
     useEffect(()=>{
-        if(yourPlaylistClicked){
+        // if(yourPlaylistClicked){
           getPlaylist(userDispatch)
-        }
-      },[yourPlaylistClicked])
+        // }
+      },[yourPlaylistClicked,thePlaylists,forAgain])
       const [currentSoundIndex, setCurrentSoundIndex] = useState([])
       const [playingSounds, setPlayingSounds] = useState({})
       useEffect(() => {

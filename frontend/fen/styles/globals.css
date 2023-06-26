@@ -120,7 +120,8 @@ ul li , .sideDropLI{
     /* transition: all 0.7s; */
 
 }
-ul li button {
+ul li button{
+/* .ulli li button  */
     background:transparent;
     color:white;
     text-decoration: none;
@@ -208,7 +209,7 @@ header button{
 .sideDrop::-webkit-scrollbar { 
   display: none; 
 }
-ul li button:hover , ul li button:active ,.sideDropLI:hover{
+.insideButton:hover , .insideButton:active ,.sideDropLI:hover{
     background-color: #ccd1da57;
     transition: all 0.7s;
 }

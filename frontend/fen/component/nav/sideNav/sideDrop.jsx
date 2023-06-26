@@ -1,15 +1,15 @@
 import useAuth from '@/hook/useAuth'
 import { motion } from 'framer-motion';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function SideDrop({setIt,itIS}) {
    const {thePlaylists} = useAuth();
-  const handleDel = (i) =>(e)=>{
+  const handleDel = (name) =>(e)=>{
     if(e.target.checked){
-      setIt([...itIS,i]);
+      setIt([...itIS,name]);
     }else{
       setIt(itIS.filter((el)=>{
-         return el !== i
+         return el !== name
       }))
     }
 
@@ -27,7 +27,7 @@ function SideDrop({setIt,itIS}) {
             className='sideDropLI' 
             key={i}>{el.playName} 
             <input type="checkbox"
-            onChange={handleDel(i)}
+            onChange={handleDel(el.playName)}
             ></input>
             </li>
 

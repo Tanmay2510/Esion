@@ -4,10 +4,11 @@ import Sound from '../soundS/Sound'
 import useAuth from '@/hook/useAuth'
 import { setPlaylist } from '@/context/userAction';
 // import { Draggable } from 'react-drag-reorder';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function Dash() {
-  const {userDispatch} = useAuth();
+  const {userDispatch,createPlaylistClicked} = useAuth();
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
 
@@ -22,12 +23,22 @@ function Dash() {
       )
     )
   }, [currentSoundIndex])
+  console.log()
+  useEffect(()=>{
+    if(createPlaylistClicked && Object.keys(playingSounds).length === 0){
+      toast.info("Add some sounds...");
+      console.log("H")
+    }
+
+  },[createPlaylistClicked])
   useEffect(()=>{
     userDispatch(setPlaylist(playingSounds)); 
   },[playingSounds]) // do some condition only on modal save click
   return (
     <div className='wholeDash'>
+
     <div className='dashCardContainer'>
+
       {
         notSampledata.map((el,i)=>{
             return (
@@ -57,6 +68,7 @@ function Dash() {
       }
 
     </div>
+    <ToastContainer />
 
 
     </div>

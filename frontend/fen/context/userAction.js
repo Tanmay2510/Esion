@@ -89,6 +89,15 @@ export const setPlaylistClient = (data) =>{
     }
 }
 
+export const setDelete = (click)=>{
+    return(state)=>{
+        return {
+            ...state,
+            dataDeleted:click.delete,
+            forAgain:!click
+        }
+    }
+}
 
 export const isSave = (data)=>{
     return(state) =>{
