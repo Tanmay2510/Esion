@@ -10,15 +10,11 @@ import { motion } from 'framer-motion';
 import { handleDel } from '@/manager/API';
 import { ToastContainer, toast } from 'react-toastify';
 function SideNav() {
-  const {userDispatch,sideNavClicked,thePlaylists} = useAuth();
+  const {userDispatch,yourPlaylistClicked,sideNavClicked,thePlaylists} = useAuth();
   const [isDel,setIsDel] = useState(false)
   const [isCK,setIsCK] = useState([""])
-  const handleClick = (whichOne) => () =>{
-    userDispatch(setModal(sideNavClicked,whichOne));
-    console.log(thePlaylists.length)
-    if(thePlaylists.length === 0 && whichOne=== "yourPlaylistClicked"){
-      toast.info("Explore and create playlist!!",{containerId: 'P'})
-    }
+  const handleClick =  (whichOne) => () =>{
+     userDispatch(  setModal(sideNavClicked,whichOne));
   }
   const handleClickDel = () =>{
     setIsDel(!isDel)
@@ -27,11 +23,18 @@ function SideNav() {
     if(isCK.length !==0 && isDel === false){
       handleDel(userDispatch,isCK);
       setIsCK([])
-    }else if(isDel == true && isCK.length == 0){
-      toast.info("Click on Your Playlist First!",{containerId: 'D'});
+    }else if(isDel == true && isCK.length == 0 ){
+      if(!yourPlaylistClicked){
+        toast.info("Click on Your Playlist First to see some!",{containerId: 'D'});
 
+      }
+      // else if(yourPlaylistClicked&&thePlaylists.length!==0){
+      //   toast.info("Create some playlist!",{containerId: 'C'});
+
+      // }
     } 
   },[isDel])
+
   return (
     <div className='sideNav active'>
     <div className="sideNavHead">
@@ -66,6 +69,8 @@ function SideNav() {
    
 </motion.ul>
 <ToastContainer enableMultiContainer containerId={'D'}/>
+<ToastContainer enableMultiContainer containerId={'C'}/>
+
 <ToastContainer enableMultiContainer containerId={'P'} />
 
 

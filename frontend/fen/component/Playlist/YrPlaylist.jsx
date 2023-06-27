@@ -3,6 +3,7 @@ import { getPlaylist } from '@/manager/API';
 import React, { useState  , useEffect} from 'react'
 import PlayListSound from '../soundS/PlayListSound';
 import Slider from "react-slick";
+
 function YrPlaylist() {
   var setting = {
     arrows:true,
@@ -41,10 +42,9 @@ function YrPlaylist() {
   };
     const {userDispatch,yourPlaylistClicked,thePlaylists,forAgain} = useAuth();
     useEffect(()=>{
-        // if(yourPlaylistClicked){
-          getPlaylist(userDispatch)
-        // }
-      },[yourPlaylistClicked,thePlaylists,forAgain])
+             getPlaylist(userDispatch)
+      },[yourPlaylistClicked,forAgain,thePlaylists])
+     
       const [currentSoundIndex, setCurrentSoundIndex] = useState([])
       const [playingSounds, setPlayingSounds] = useState({})
       useEffect(() => {
@@ -62,6 +62,7 @@ function YrPlaylist() {
   return (
     
      <div className='aboveSlide'>
+
     <Slider {...setting} className='rSlide'>
 
     {

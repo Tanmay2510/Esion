@@ -8,10 +8,10 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 function Dash() {
-  const {userDispatch,createPlaylistClicked} = useAuth();
+  const {userDispatch,createPlaylistClicked,sideNavClicked} = useAuth();
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
-
+  const [phir,setphir] = useState(false)
   useEffect(() => {
     setPlayingSounds(
       currentSoundIndex.reduce(
@@ -23,14 +23,14 @@ function Dash() {
       )
     )
   }, [currentSoundIndex])
-  console.log()
   useEffect(()=>{
-    if(createPlaylistClicked && Object.keys(playingSounds).length === 0){
-      toast.info("Add some sounds...");
-      console.log("H")
+    if(createPlaylistClicked && Object.keys(playingSounds).length === 0 && phir){
+      toast.info("Mix and play some sounds...");
     }
+    setphir(!phir)
 
-  },[createPlaylistClicked])
+
+  },[sideNavClicked,playingSounds])
   useEffect(()=>{
     userDispatch(setPlaylist(playingSounds)); 
   },[playingSounds]) // do some condition only on modal save click

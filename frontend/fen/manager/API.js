@@ -11,9 +11,9 @@ export const handleregister = async (user,dispatch) =>{
 
 }
 
-export const getPlaylist = (dispatch)=>{
-    const gid = localStorage.getItem('userId')
-    axios.get(BASE_URL+"/playList/"+gid,{withCrdentials:true})
+export const getPlaylist = async (dispatch)=>{
+    const gid =  localStorage.getItem('userId')
+    const r = await axios.get(BASE_URL+"/playList/"+gid,{withCrdentials:true})
     .then(res=>{
         dispatch(setPlaylistClient(res.data))
     })
@@ -30,7 +30,6 @@ export const handlePlaylist = (dataName,dataCurrent,dispatch)=>{
     if(Object.keys(dataCurrent).length===0){
         return;
     }
-    console.log("Here")
     const playlist = {
         name:dataName,
         data:dataCurrent
@@ -54,7 +53,6 @@ export const hanldeLogout = (dispatch) =>{
 export const handlelogin = async (user,dispatch)=>{
     const r = await axios.post(BASE_URL+"/login",user,{withCredentials:true})
     .then( res => {
-        console.log(res)
         dispatch(setLogin(res.data))
 
     })

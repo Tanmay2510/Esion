@@ -90,6 +90,7 @@ export const setPlaylistClient = (data) =>{
 }
 
 export const setDelete = (click)=>{
+    console.log("DELETED")
     return(state)=>{
         return {
             ...state,
