@@ -12,9 +12,12 @@ import { ToastContainer, toast } from 'react-toastify';
 function SideNav() {
   const {userDispatch,yourPlaylistClicked,sideNavClicked,thePlaylists} = useAuth();
   const [isDel,setIsDel] = useState(false)
+  const [some,setsome] = useState(false)
+
   const [isCK,setIsCK] = useState([""])
   const handleClick =  (whichOne) => () =>{
-     userDispatch(  setModal(sideNavClicked,whichOne));
+    setsome(!some)
+     userDispatch(  setModal(sideNavClicked,whichOne,some));
   }
   const handleClickDel = () =>{
     setIsDel(!isDel)
@@ -26,6 +29,9 @@ function SideNav() {
     }else if(isDel == true && isCK.length == 0 ){
       if(!yourPlaylistClicked){
         toast.info("Click on Your Playlist First to see some!",{containerId: 'D'});
+
+      }else if(yourPlaylistClicked && thePlaylists.length===0){
+        toast.info("No Playlist",{containerId: 'D'});
 
       }
       // else if(yourPlaylistClicked&&thePlaylists.length!==0){

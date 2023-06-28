@@ -40,7 +40,7 @@ export const setLogout = (data)=>{
         }
     }
 }
-export const setModal = (click,whichOne)=>{
+export const setModal = (click,whichOne,x)=>{
 
     if(whichOne==="createPlaylistClicked"){
         return (state) =>{
@@ -49,7 +49,8 @@ export const setModal = (click,whichOne)=>{
                 sideNavClicked:!click,
                 createPlaylistClicked:true,
                 deletePlaylistClicked:false,
-                yourPlaylistClicked:false
+                yourPlaylistClicked:false,
+
             }
         }
     }
@@ -64,17 +65,30 @@ export const setModal = (click,whichOne)=>{
     //     }
     // }
     else if(whichOne==="yourPlaylistClicked"){
-        return (state) =>{
-            return{
-                ...state,
-                yourPlaylistClicked:true
+        if(x === false){
+            return (state) =>{
+                return{
+                    ...state,
+                    yourPlaylistClicked:true,
+                    yps:true
+                }
+            }
+        }else{
+            return (state) =>{
+                return{
+                    ...state,
+                    yourPlaylistClicked:true,
+                    yps:false
+                }
             }
         }
+       
     }else if(whichOne==="X" || whichOne==="Save"){
         return (state) =>{
             return {
                 ...state,
-                sideNavClicked:!click
+                sideNavClicked:!click,
+
             }
         }
     }
@@ -84,18 +98,19 @@ export const setPlaylistClient = (data) =>{
     return(state) =>{
         return {
             ...state,
-            thePlaylists:data.theData
+            thePlaylists:data.theData,
+            rend:true
         }
     }
 }
 
 export const setDelete = (click)=>{
-    console.log("DELETED")
     return(state)=>{
         return {
             ...state,
             dataDeleted:click.delete,
-            forAgain:!click
+            rend:false,
+
         }
     }
 }

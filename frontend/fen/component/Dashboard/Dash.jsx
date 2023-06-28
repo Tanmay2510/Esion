@@ -24,7 +24,7 @@ function Dash() {
     )
   }, [currentSoundIndex])
   useEffect(()=>{
-    if(createPlaylistClicked && Object.keys(playingSounds).length === 0 && phir){
+    if(createPlaylistClicked && Object.keys(playingSounds).length === 0 && !phir){
       toast.info("Mix and play some sounds...");
     }
     setphir(!phir)

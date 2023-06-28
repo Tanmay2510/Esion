@@ -3,6 +3,7 @@ import { getPlaylist } from '@/manager/API';
 import React, { useState  , useEffect} from 'react'
 import PlayListSound from '../soundS/PlayListSound';
 import Slider from "react-slick";
+import { ToastContainer, toast } from 'react-toastify';
 
 function YrPlaylist() {
   var setting = {
@@ -40,11 +41,19 @@ function YrPlaylist() {
       }
     ]
   };
-    const {userDispatch,yourPlaylistClicked,thePlaylists,forAgain} = useAuth();
+    const {userDispatch,yourPlaylistClicked,thePlaylists,rend,yps} = useAuth();
     useEffect(()=>{
-             getPlaylist(userDispatch)
-      },[yourPlaylistClicked,forAgain,thePlaylists])
-     
+      const a = (async()=>{
+        await getPlaylist(userDispatch)
+
+        // if(thePlaylists.length===0 && yps  ){
+        //   toast.info("Explore and create new playlists")
+
+        // }
+      })
+      a()
+      },[yourPlaylistClicked,rend,yps])
+    
       const [currentSoundIndex, setCurrentSoundIndex] = useState([])
       const [playingSounds, setPlayingSounds] = useState({})
       useEffect(() => {
@@ -62,7 +71,7 @@ function YrPlaylist() {
   return (
     
      <div className='aboveSlide'>
-
+<ToastContainer />
     <Slider {...setting} className='rSlide'>
 
     {
