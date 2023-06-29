@@ -204,6 +204,7 @@ header button{
   margin:5px;
   overflow: hidden;
   overflow-y: scroll;
+  max-height: 100px;
   width: 100%;
 }
 .sideDrop::-webkit-scrollbar { 

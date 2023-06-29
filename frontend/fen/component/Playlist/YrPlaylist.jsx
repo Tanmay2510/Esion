@@ -41,18 +41,25 @@ function YrPlaylist() {
       }
     ]
   };
+    const [isyps,setyps] = useState(false)
     const {userDispatch,yourPlaylistClicked,thePlaylists,rend,yps} = useAuth();
     useEffect(()=>{
       const a = (async()=>{
         await getPlaylist(userDispatch)
-
-        // if(thePlaylists.length===0 && yps  ){
-        //   toast.info("Explore and create new playlists")
-
-        // }
+        setyps(true)
       })
       a()
       },[yourPlaylistClicked,rend,yps])
+      useEffect(()=>{
+        if(isyps){
+            if(thePlaylists.length===0 && yourPlaylistClicked  ){
+          toast.info("Explore and create new playlists")
+
+        }
+      }
+
+        setyps(false)
+      },[isyps])
     
       const [currentSoundIndex, setCurrentSoundIndex] = useState([])
       const [playingSounds, setPlayingSounds] = useState({})

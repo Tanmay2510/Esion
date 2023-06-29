@@ -17,7 +17,7 @@ function SideDrop({setIt,itIS}) {
   return (
     <motion.div
     initial={{opacity:0,height:0}}
-    animate={{opacity:1,height:200}}
+    animate={{opacity:1,height:"auto"}}
     transition={{duration:1}}
     className='sideDrop'>
         <ul className='sideDropUL'>
