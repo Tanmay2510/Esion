@@ -6,7 +6,9 @@ import {Bs1Circle, BsMusicNoteList} from 'react-icons/bs'
 function PlayListSound({nam,dat,keyy, isActive,
   isPlaying,
   onPlay,
-  onPause}) {
+  onPause,
+  logo
+}) {
 
  const MAX = 20;
  const {thePlaylists} = useAuth();
@@ -90,6 +92,9 @@ src.forEach((songUrl)=>{
 
   return (
     <div className="cardSection" >
+    <div className="audioLogo play" >
+    {logo}
+    </div>
     <h4 align="center" style={{margin:"15px",color:"white"}}>{nam}</h4>
     <div className='audioControls'>
     <input

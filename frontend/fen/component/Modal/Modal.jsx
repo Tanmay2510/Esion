@@ -1,7 +1,6 @@
 import React from 'react'
 import useAuth from '@/hook/useAuth';
 import { setModal } from '@/context/userAction';
-import Delete from './inners/Delete';
 import Create from './inners/Create';
 function Modal() {
   const {userDispatch,sideNavClicked,createPlaylistClicked,
@@ -19,11 +18,6 @@ function Modal() {
         createPlaylistClicked && <Create />
      
       }
-
-      {
-        // deletePlaylistClicked && <Delete />
-      }
-     
     </div>
   </div>
   )

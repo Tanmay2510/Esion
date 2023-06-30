@@ -180,11 +180,13 @@ header button{
 
     transition: all 0.5s;
 }
+
 .sideDropLI{
   display: flex;
   justify-content: space-between;
      background:transparent;
     color:white;
+    overflow-wrap: anywhere;
     text-decoration: none;
     font-size:15px;
     width:135px;
@@ -199,12 +201,16 @@ header button{
   border-radius: 10px;
  
 }
-
+.del{
+  height: 0;
+  opacity: 0;
+  transition: all 1s;
+}
 .sideDrop{
   margin:5px;
   overflow: hidden;
   overflow-y: scroll;
-  max-height: 100px;
+  max-height: 200px;
   width: 100%;
 }
 .sideDrop::-webkit-scrollbar { 
@@ -300,13 +306,16 @@ header button{
     align-items: center;
     margin-top: 30px;
 }
-
+.play{
+  padding-top: 20px;
+}
 .cardSection{
     min-height: 250px;
     height: auto;
     border-radius: 50px;
     width:200px;
     border: 0px solid transparent;
+    word-wrap: break-word;
     transition: 1s ease-out;
     background: rgba(196, 205, 245, 0.097);
 }

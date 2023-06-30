@@ -10,18 +10,19 @@ import { motion } from 'framer-motion';
 import { handleDel } from '@/manager/API';
 import { ToastContainer, toast } from 'react-toastify';
 function SideNav() {
-  const {userDispatch,yourPlaylistClicked,sideNavClicked,thePlaylists} = useAuth();
+  const {userDispatch,yourPlaylistClicked,sideNavClicked,deletePlaylistClicked,thePlaylists} = useAuth();
   const [isDel,setIsDel] = useState(false)
   const [some,setsome] = useState(false)
-  const [dtt,setDTT] = useState(false)
   const [isCK,setIsCK] = useState([""])
   const handleClick =  (whichOne) => () =>{
     setsome(!some)
-     userDispatch(  setModal(sideNavClicked,whichOne,some));
+     userDispatch(setModal(sideNavClicked,whichOne,some));
+     if(whichOne==="deletePlaylistClicked"){
+      setIsDel(!isDel)
+
+     }
   }
-  const handleClickDel = () =>{
-    setIsDel(!isDel)
-  }
+
   useEffect(()=>{
     if(isCK.length !==0 && isDel === false){
       handleDel(userDispatch,isCK);
@@ -29,21 +30,22 @@ function SideNav() {
     }else if( isCK.length == 0 ){
 
       if(!yourPlaylistClicked ){
-        toast.info("Click on Your Playlist First to see some!",{containerId: 'D'});
-      }else if(yourPlaylistClicked && thePlaylists.length===0){
-        toast.info("No Playlist",{containerId: 'D'});
+        toast.info("Click on Your Playlist First to see some!",{containerId: 'D',
+        autoClose:1500
+      });
+      }else if(
+        // yourPlaylistClicked && 
+        thePlaylists.length===0){
+        toast.info("No Playlist",{
+          containerId: 'P',
+          autoClose:1500
+      });
 
       }
       
     } 
-    setDTT(!dtt)
   },[isDel])
-  // useEffect(()=>{
-  //   if(isCK.length===0){
-   
-
-  //   }
-  // },[dtt])
+ 
 
   return (
     <div className='sideNav active'>
@@ -59,12 +61,14 @@ function SideNav() {
     className='ulli'
     >
     <motion.li
-    className={` ${(isDel && thePlaylists.length!==0)   ? "delLI" : ""}`}
+    
+  
+    className={`  ${(isDel && thePlaylists.length!==0 && deletePlaylistClicked)   ? "delLI" : ""}`}
     ><button 
     className={`insideButton ${isDel  ? "insideButtonActive" : ""}`}
-     onClick={handleClickDel}>Delete Playlist<MdDeleteOutline/></button>
+     onClick={handleClick("deletePlaylistClicked")}>Delete Playlist<MdDeleteOutline/></button>
      {
-      (isDel && thePlaylists.length!==0) && 
+      (isDel && thePlaylists.length!==0 && deletePlaylistClicked) && 
       <SideDrop 
       setIt={setIsCK}
       itIS={isCK}
@@ -73,6 +77,8 @@ function SideNav() {
      </motion.li>
 </motion.ul>
 <ToastContainer enableMultiContainer containerId={'D'}/>
+<ToastContainer enableMultiContainer containerId={'P'}/>
+
 <ul
 className='ulli'>
 <li><button className='insideButton' onClick={handleClick("yourPlaylistClicked")}>Your Playlist<MdOutlineLibraryMusic/></button></li>

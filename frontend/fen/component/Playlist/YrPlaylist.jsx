@@ -4,8 +4,9 @@ import React, { useState  , useEffect} from 'react'
 import PlayListSound from '../soundS/PlayListSound';
 import Slider from "react-slick";
 import { ToastContainer, toast } from 'react-toastify';
-
+import {ic} from "../../assets/playIcons/ic"
 function YrPlaylist() {
+  
   var setting = {
     arrows:true,
     infinite: false,
@@ -41,6 +42,9 @@ function YrPlaylist() {
       }
     ]
   };
+
+
+ 
     const [isyps,setyps] = useState(false)
     const {userDispatch,yourPlaylistClicked,thePlaylists,rend,yps} = useAuth();
     useEffect(()=>{
@@ -53,14 +57,13 @@ function YrPlaylist() {
       useEffect(()=>{
         if(isyps){
             if(thePlaylists.length===0 && yourPlaylistClicked  ){
-          toast.info("Explore and create new playlists")
-
+          toast.info("Explore and create new playlists",{
+          autoClose:1500
+          })
         }
       }
-
         setyps(false)
       },[isyps])
-    
       const [currentSoundIndex, setCurrentSoundIndex] = useState([])
       const [playingSounds, setPlayingSounds] = useState({})
       useEffect(() => {
@@ -74,13 +77,11 @@ function YrPlaylist() {
           )
         )
       }, [currentSoundIndex])
-     
+
   return (
-    
      <div className='aboveSlide'>
 <ToastContainer />
     <Slider {...setting} className='rSlide'>
-
     {
       thePlaylists.map((el,i)=>{
             return (
@@ -101,6 +102,9 @@ function YrPlaylist() {
                 setPlayingSounds(newPlayingSounds)
               }
             }
+              logo={ic[i
+                // Math.floor(Math.random() * ic.length)
+              ]}
                 />
             ) 
 

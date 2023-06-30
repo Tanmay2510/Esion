@@ -45,7 +45,7 @@ const handleName = (e) =>{
       onChange={handleName}></input>
       <br></br>
       {isValName &&
-      <p style={{color:"red",fontSize:"20px"}}>Add Playlist Name!!</p>
+      <p style={{color:"red",fontSize:"20px"}}>Give a nice name..</p>
       }
       </>
          :

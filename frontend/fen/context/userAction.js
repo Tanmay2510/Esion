@@ -54,16 +54,15 @@ export const setModal = (click,whichOne,x)=>{
             }
         }
     }
-    // else if(whichOne==="deletePlaylistClicked"){
-    //     return (state) =>{
-    //         return{
-    //             ...state,
-    //             sideNavClicked:!click,
-    //             createPlaylistClicked:false,
-    //             deletePlaylistClicked:true,
-    //         }
-    //     }
-    // }
+    else if(whichOne==="deletePlaylistClicked"){
+        return (state) =>{
+            return{
+                ...state,
+                createPlaylistClicked:false,
+                deletePlaylistClicked:true,
+            }
+        }
+    }
     else if(whichOne==="yourPlaylistClicked"){
         if(x === false){
             return (state) =>{
