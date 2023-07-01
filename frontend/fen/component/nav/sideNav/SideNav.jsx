@@ -6,7 +6,7 @@ import {MdOutlineLibraryMusic,MdDeleteOutline} from 'react-icons/md'
 import useAuth from '@/hook/useAuth'
 import { setModal } from '@/context/userAction';
 import SideDrop from './sideDrop';
-import { motion } from 'framer-motion';
+import { motion , AnimatePresence} from 'framer-motion';
 import { handleDel } from '@/manager/API';
 import { ToastContainer, toast } from 'react-toastify';
 function SideNav() {
@@ -46,7 +46,15 @@ function SideNav() {
     } 
   },[isDel])
  
-
+  const variants = {
+   closed:{
+    initial:{opacity:0,height:0},
+    animate:{opacity:1,height:"auto"},
+    transition:{duration:1},
+    exit:{opacity:0,height:0}
+   }
+  }
+  
   return (
     <div className='sideNav active'>
     <div className="sideNavHead">
@@ -57,25 +65,27 @@ function SideNav() {
           "createPlaylistClicked"
         )}>Make Playlist<RiPlayListFill/></button></li>
     </ul>
-    <motion.ul
-    className='ulli'
-    >
-    <motion.li
-    
-  
-    className={`  ${(isDel && thePlaylists.length!==0 && deletePlaylistClicked)   ? "delLI" : ""}`}
+    <ul>
+    <li
+    className={
+      `${(isDel && thePlaylists.length!==0 && deletePlaylistClicked)   ? "delLI" : "del"}`}
     ><button 
     className={`insideButton ${isDel  ? "insideButtonActive" : ""}`}
      onClick={handleClick("deletePlaylistClicked")}>Delete Playlist<MdDeleteOutline/></button>
+     <AnimatePresence>
      {
       (isDel && thePlaylists.length!==0 && deletePlaylistClicked) && 
+   
       <SideDrop 
       setIt={setIsCK}
       itIS={isCK}
       />
+
     }
-     </motion.li>
-</motion.ul>
+    </AnimatePresence>
+
+     </li>
+</ul>
 <ToastContainer enableMultiContainer containerId={'D'}/>
 <ToastContainer enableMultiContainer containerId={'P'}/>
 

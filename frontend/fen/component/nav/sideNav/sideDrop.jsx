@@ -1,5 +1,5 @@
 import useAuth from '@/hook/useAuth'
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react'
 
 function SideDrop({setIt,itIS}) {
@@ -17,10 +17,12 @@ function SideDrop({setIt,itIS}) {
   return (
     <motion.div
     initial={{opacity:0,height:0}}
-    animate={{opacity:1,height:"auto"}}
-    transition={{duration:1}}
+   animate={{opacity:1,height:"auto"}}
+ exit={{opacity:0,height:0}}
+   transition={{duration:1}}
     className='sideDrop'>
-        <ul className='sideDropUL'>
+        <ul 
+        className='sideDropUL'>
         {thePlaylists.map((el,i)=>{
           return (
             <li
@@ -35,6 +37,8 @@ function SideDrop({setIt,itIS}) {
         })}
       </ul>
     </motion.div>
+
+
   )
 }
 

@@ -195,23 +195,25 @@ header button{
     border-radius: 6px;
     margin-bottom: 5px;
 }
+
 .delLI{
   background-color: #ccd1da57;
   width: max-content;
   border-radius: 10px;
- 
 }
 .del{
-  height: 0;
-  opacity: 0;
-  transition: all 1s;
+  width: max-content;
+  border-radius: 10px;
+  transition: 1s all ease-in-out;
 }
+
 .sideDrop{
   margin:5px;
   overflow: hidden;
   overflow-y: scroll;
   max-height: 200px;
   width: 100%;
+
 }
 .sideDrop::-webkit-scrollbar { 
   display: none; 
@@ -279,6 +281,9 @@ header button{
     height: 550px;
 
 }
+.slick-prev{
+  left: -50px;
+}
 .UnderNavCont{
   display: flex;
   margin-top: 150px;
@@ -311,6 +316,7 @@ header button{
 }
 .cardSection{
     min-height: 250px;
+    margin-left: 13px;
     height: auto;
     border-radius: 50px;
     width:200px;
@@ -318,6 +324,14 @@ header button{
     word-wrap: break-word;
     transition: 1s ease-out;
     background: rgba(196, 205, 245, 0.097);
+}
+.cardSection:hover{
+  background: rgba(196, 205, 245, 0.505);
+
+}
+.cardSectionAct{
+  background: rgba(196, 205, 245, 0.505);
+
 }
 .cardSectionActive{
 
@@ -360,9 +374,11 @@ header button{
 
 .wholeDash{
     display: flex;
+    padding-bottom: 20px;
 }
 
 .dashCardContainer{
+
     flex: 1;
     display: grid !important;
     column-gap: 150px;

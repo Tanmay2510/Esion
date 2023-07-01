@@ -5,6 +5,7 @@ import Modal from '@/component/Modal/Modal'
 import SideNav from '@/component/nav/sideNav/SideNav'
 import useAuth from '@/hook/useAuth'
 import YrPlaylist from '@/component/Playlist/YrPlaylist'
+import { AnimatePresence ,motion} from 'framer-motion'
 export default function DynamicPage() {
 
   const {sideNavClicked,yourPlaylistClicked} = useAuth();
@@ -20,7 +21,21 @@ export default function DynamicPage() {
     <Nav 
     logout = {true}/>
     <div className='dashmidContainer'>
-    {yourPlaylistClicked && <YrPlaylist />}
+    <AnimatePresence>
+    {yourPlaylistClicked && 
+
+      <motion.div
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+    exit={{opacity:0}}
+      transition={{duration:2}}
+      >
+      <YrPlaylist />
+      </motion.div>
+
+    }
+    </AnimatePresence>
+
     <p align="center">Mix Match your audios!!</p>
      <div>
     <Dash />

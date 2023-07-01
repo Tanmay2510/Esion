@@ -91,7 +91,7 @@ src.forEach((songUrl)=>{
 
 
   return (
-    <div className="cardSection" >
+    <div className={`cardSection ${isPlaying ? "cardSectionAct" : ""}`} >
     <div className="audioLogo play" >
     {logo}
     </div>
