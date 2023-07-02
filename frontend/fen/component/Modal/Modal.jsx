@@ -15,9 +15,11 @@ function Modal() {
         <button onClick={handleClick}>X</button>
       </div>
       {
-        createPlaylistClicked && <Create />
+        createPlaylistClicked && 
+        <Create />
      
       }
+
     </div>
   </div>
   )

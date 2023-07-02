@@ -11,35 +11,55 @@ export default function DynamicPage() {
   const {sideNavClicked,yourPlaylistClicked} = useAuth();
   return (
     <div className="dashContainer">
+    <AnimatePresence>
     {sideNavClicked && 
+      <motion.div
+      initial={{opacity:0,left:0}}
+      animate={{opacity:1,left:100}}
+    exit={{opacity:0,right:0}}
+      transition={{duration:0.5}}
+      >
       <Modal />
+      </motion.div>
 
     }
+    </AnimatePresence>
+
     <div className='noModalCover'>
     <SideNav />
     <div className='dashNav'>
     <Nav 
     logout = {true}/>
     <div className='dashmidContainer'>
-    <AnimatePresence>
-    {yourPlaylistClicked && 
+    <div className='midText'>
 
+    <p >Mix Match your audios!!</p>
+    </div>
+  
+    <AnimatePresence>
+
+    {yourPlaylistClicked && 
       <motion.div
-      initial={{opacity:0}}
-      animate={{opacity:1}}
-    exit={{opacity:0}}
-      transition={{duration:2}}
+      initial={{opacity:0,height:0}}
+      animate={{opacity:1,height:"auto"}}
+    exit={{opacity:0,height:0}}
+      transition={{duration:1}}
       >
+
       <YrPlaylist />
+
       </motion.div>
 
+
     }
+
     </AnimatePresence>
 
-    <p align="center">Mix Match your audios!!</p>
-     <div>
+     <motion.div
+     >
     <Dash />
-    </div>
+    </motion.div>
+
     </div>
     </div>
 

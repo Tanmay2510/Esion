@@ -1,8 +1,8 @@
 import useAuth from '@/hook/useAuth';
 import { notSampledata } from '@/util/SData';
+import { motion } from 'framer-motion';
 import React, { useState , useRef , useEffect} from 'react'
 import {Bs1Circle, BsMusicNoteList} from 'react-icons/bs'
-
 function PlayListSound({nam,dat,keyy, isActive,
   isPlaying,
   onPlay,
@@ -91,6 +91,7 @@ src.forEach((songUrl)=>{
 
 
   return (
+   
     <div className={`cardSection ${isPlaying ? "cardSectionAct" : ""}`} >
     <div className="audioLogo play" >
     {logo}
@@ -110,6 +111,8 @@ src.forEach((songUrl)=>{
      
 </div>
     </div>
+
+
   )
 }
 

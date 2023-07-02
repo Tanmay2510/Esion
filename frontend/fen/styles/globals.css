@@ -49,7 +49,14 @@ body{
 .aboveSlide{
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
+.midText p{
+  color:white;
+  text-align: center;
+  font-size: 40px;
+}
+
 .ReglogCont{
     width:450px;
     padding:20px;
@@ -327,6 +334,7 @@ header button{
 }
 .cardSection:hover{
   background: rgba(196, 205, 245, 0.505);
+  transform: scale(0.9);
 
 }
 .cardSectionAct{
