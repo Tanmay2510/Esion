@@ -3,8 +3,10 @@ import { getPlaylist } from '@/manager/API';
 import React, { useState  , useEffect} from 'react'
 import PlayListSound from '../soundS/PlayListSound';
 import Slider from "react-slick";
+import { motion } from 'framer-motion';
 import { ToastContainer, toast } from 'react-toastify';
 import {ic} from "../../assets/playIcons/ic"
+import { AnimatePresence, MotionConfig } from 'framer-motion';
 function YrPlaylist() {
   
   var setting = {
@@ -46,6 +48,7 @@ function YrPlaylist() {
 
  
     const [isyps,setyps] = useState(false)
+    const [show,setShow] = useState(false)
     const {userDispatch,yourPlaylistClicked,thePlaylists,rend,yps} = useAuth();
     useEffect(()=>{
       const a = (async()=>{
@@ -57,6 +60,7 @@ function YrPlaylist() {
       useEffect(()=>{
         if(isyps){
             if(thePlaylists.length===0 && yourPlaylistClicked  ){
+              setShow(true)
           toast.info("Explore and create new playlists",{
           autoClose:1500
           })
@@ -77,14 +81,26 @@ function YrPlaylist() {
           )
         )
       }, [currentSoundIndex])
+if(!show){
 
   return (
+    <motion.div 
+  
+    className='contPL'>
+    <div className='yourP hrp'>
+    <p>Your Playlists: </p>
+    </div>
+
      <div className='aboveSlide'>
+  
 <ToastContainer />
     <Slider {...setting} className='rSlide'>
+
     {
       thePlaylists.map((el,i)=>{
             return (
+
+              
                 <PlayListSound 
                 nam={el.playName}
                 dat={el.playData}
@@ -106,17 +122,23 @@ function YrPlaylist() {
                 // Math.floor(Math.random() * ic.length)
               ]}
                 />
+
             ) 
 
       })
             
+
     }
     </Slider>
 
-    </div>
 
+
+    </div>
+    </motion.div>
 
   )
+}
+
 }
 
 export default YrPlaylist

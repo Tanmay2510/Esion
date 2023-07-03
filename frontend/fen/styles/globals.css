@@ -16,6 +16,7 @@ body{
 }
 .rSlide{
   width: 900px;
+  display: flex;
 
 }
 
@@ -50,11 +51,38 @@ body{
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  margin-top: -15px;
 }
-.midText p{
+.contPL{
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+  background: rgba(56, 60, 75, 0.093);
+  
+  border-radius: 35px;
+  border-image: linear-gradient(0.25turn, rgba(56,2,155,0), rgb(232, 228, 230), rgba(56,2,155,0));
+  border-image-slice: 1;
+  width:100%;
+  margin-bottom: 50px;
+}
+.audioLogo:hover{
+  cursor: pointer;
+}
+.midText p::before {
+	content: '──';
+	margin-right: 0.6em;
+	color: white;
+}
+.midText p::after {
+	content: '──';
+	margin-left: 0.6em;
+	color: white;
+}
+
+.midText p , .yourP{
   color:white;
   text-align: center;
   font-size: 40px;
+
 }
 
 .ReglogCont{
@@ -275,6 +303,14 @@ header button{
     padding-top:10px;
     padding-right: 5%;
     transition: all 0.5s;
+}
+.navv h1 , .navv button{
+  color: rgb(44, 101, 73);
+  transition: all 0.5s;
+}
+.navv button:hover , .logBut:hover{
+  cursor: pointer;
+  scale: 1.1;
 }
 .navv.active{
     transition: all 0.5s;

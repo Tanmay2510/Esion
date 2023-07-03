@@ -12,11 +12,13 @@ export default function Home() {
     <div className='UpperSection'>
     <Nav />
     <div className='UnderNavCont'>
+
     <US />
     <Lottie animationData={land} loop={true}  className='lottie'
     autoPlay
 />
     </div>
+
     </div>
     <div className='bottomSection'>
     <Sample />

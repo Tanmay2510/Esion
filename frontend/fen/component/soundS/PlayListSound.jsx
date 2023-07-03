@@ -91,9 +91,13 @@ src.forEach((songUrl)=>{
 
 
   return (
-   
-    <div className={`cardSection ${isPlaying ? "cardSectionAct" : ""}`} >
-    <div className="audioLogo play" >
+   <motion.div
+   >
+    <div className={`cardSection ${isPlaying ? "cardSectionAct" : ""}`}
+    >
+    <div className="audioLogo play"
+    onClick={handleClickKey(keyy)}
+     >
     {logo}
     </div>
     <h4 align="center" style={{margin:"15px",color:"white"}}>{nam}</h4>
@@ -105,13 +109,13 @@ src.forEach((songUrl)=>{
     type="range"
     ></input>
       <BsMusicNoteList color="white" 
-    onClick={handleClickKey(keyy)}
       
       />
      
 </div>
     </div>
 
+    </motion.div>
 
   )
 }

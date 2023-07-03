@@ -8,7 +8,7 @@ import YrPlaylist from '@/component/Playlist/YrPlaylist'
 import { AnimatePresence ,motion} from 'framer-motion'
 export default function DynamicPage() {
 
-  const {sideNavClicked,yourPlaylistClicked} = useAuth();
+  const {sideNavClicked,yourPlaylistClicked,thePlaylists} = useAuth();
   return (
     <div className="dashContainer">
     <AnimatePresence>
@@ -39,12 +39,14 @@ export default function DynamicPage() {
     <AnimatePresence>
 
     {yourPlaylistClicked && 
+
       <motion.div
       initial={{opacity:0,height:0}}
       animate={{opacity:1,height:"auto"}}
     exit={{opacity:0,height:0}}
       transition={{duration:1}}
       >
+     
 
       <YrPlaylist />
 
