@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { useState , useRef , useEffect} from 'react'
 import {BsPlay,BsPause} from 'react-icons/bs'
 
@@ -62,7 +63,11 @@ function Sound({
  
 
   return (
-    <div className={`cardSection ${isPlaying ? "cardSectionActive" : ""}`} >
+    <motion.div 
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    
+    className={`cardSection ${isPlaying ? "cardSectionActive" : ""} someCS`} >
     <div className='audioLogo' onClick={handleSoundPlay(keyy)}>
     {logo}
     </div>
@@ -81,7 +86,7 @@ function Sound({
     )}
     
 </div>
-    </div>
+    </motion.div>
   )
 }
 

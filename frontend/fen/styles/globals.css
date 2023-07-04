@@ -343,7 +343,9 @@ header button{
     font-size: 30px;
 }
 
-.Usection h2{
+
+.Usection span{
+  display: inline-block;
     color: rgb(38, 133, 33);
     font-size: 75px;
     font-family: 'Rampart One', cursive;
@@ -367,7 +369,9 @@ header button{
     word-wrap: break-word;
     transition: 1s ease-out;
     background: rgba(196, 205, 245, 0.097);
+    position: relative;
 }
+
 .cardSection:hover{
   background: rgba(196, 205, 245, 0.505);
   transform: scale(0.9);

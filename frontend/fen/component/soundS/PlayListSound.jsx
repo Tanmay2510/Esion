@@ -1,6 +1,6 @@
 import useAuth from '@/hook/useAuth';
 import { notSampledata } from '@/util/SData';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState , useRef , useEffect} from 'react'
 import {Bs1Circle, BsMusicNoteList} from 'react-icons/bs'
 function PlayListSound({nam,dat,keyy, isActive,
@@ -92,8 +92,13 @@ src.forEach((songUrl)=>{
 
   return (
    <motion.div
+   initial={{opacity:0,x:"-100vw"}}
+   animate={{opacity:1,x:0}}
+   transition={{duration:0.5,delay:keyy*0.1}}
+   exit={{opacity:0,y:"-100vw"}}
+   
    >
-    <div className={`cardSection ${isPlaying ? "cardSectionAct" : ""}`}
+    <div className={`cardSection ${isPlaying ? "cardSectionAct" : ""} someCS`}
     >
     <div className="audioLogo play"
     onClick={handleClickKey(keyy)}
@@ -116,6 +121,7 @@ src.forEach((songUrl)=>{
     </div>
 
     </motion.div>
+
 
   )
 }

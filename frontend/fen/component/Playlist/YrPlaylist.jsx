@@ -85,7 +85,6 @@ if(!show){
 
   return (
     <motion.div 
-  
     className='contPL'>
     <div className='yourP hrp'>
     <p>Your Playlists: </p>
