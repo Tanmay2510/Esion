@@ -6,9 +6,9 @@
   background-size: cover;
   padding-top: 5px;
   padding-bottom: 55px;
-  border-bottom:5px solid rgb(5, 237, 133);
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-bottom:5px solid rgb(4, 205, 115);
+  /* border-bottom-left-radius: 50px; */
+  /* border-bottom-right-radius: 50px; */
 
 }
 body{
@@ -358,6 +358,38 @@ header button{
 }
 .play{
   padding-top: 20px;
+}
+.someshit{
+  height: 100vh;
+  /* background: linear-gradient(  rgb(5, 237, 133,1) 0%, rgba(255,255,255,0) 100%); */
+}
+.exBox{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top:100px;
+  row-gap: 50px;
+}
+.firstBox , .thirdBox{
+  border:1px solid black;
+  width: 800px;
+  margin-left: 400px;
+}
+.thirdBox img{
+  float: left;
+}
+.firstBox img{
+  float: left;
+}
+.secondBox{
+  border:1px solid black;
+  width:800px;
+  margin-left: 100px;
+
+
+}
+.secondBox img{
+  float: right;
 }
 .cardSection{
     min-height: 250px;

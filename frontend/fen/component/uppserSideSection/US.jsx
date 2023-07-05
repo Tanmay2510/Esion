@@ -5,9 +5,7 @@ function US() {
   const sent = "ESION".split("")
   return (
     <motion.div className='Usection'
-    initial={{x:"-100vw"}}
-    animate={{x:0}}
-    transition={{type:'spring',duration:1,bounce:0.3}}
+ 
     >
     {sent.map((el,i)=>{
       return (

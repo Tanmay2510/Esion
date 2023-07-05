@@ -7,10 +7,11 @@ import Lottie from "lottie-react"
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
+import Examp from '@/component/example/Examp'
 const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const {ref,inView} = useInView({
-    threshold:0.7
+    threshold:0.2
   })
   const animation = useAnimation()
 
@@ -19,7 +20,7 @@ export default function Home() {
       animation.start({
         x:0,
         transition:{
-          type:"spring",duration:1,bounce:0.3
+          type:"spring",duration:1,bounce:0.1,
         }
       })
      
@@ -29,30 +30,30 @@ export default function Home() {
         x:"-100vw"
       })
     }
-
+    
   },[inView])
   return (
     <>
     <div className='Whole'>
     <div className='UpperSection'>
     <Nav />
-    <div
-    ref={ref}
-    
-    className='UnderNavCont'>
     <motion.div
-    animate={animation}
-    >
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    transition={{duration:0.5}}
+    className='UnderNavCont'>
     <US />
+    <Lottie animationData={land} loop={true}  className='lottie'
+    autoPlay/>
+    </motion.div>
+    </div>
+    <div className='someshit'
+      ref = {ref}
+    >
+    <motion.div animate={animation}>
+      <Examp />
     </motion.div>
 
-    <Lottie animationData={land} loop={true}  className='lottie'
-    autoPlay
-/>
-    </div>
-
-    </div>
-    <div style={{height:"500px"}}>
     </div>
     <div className='bottomSection'>
     <Sample />
