@@ -373,7 +373,7 @@ header button{
 .firstBox , .thirdBox{
   border:1px solid black;
   width: 800px;
-  margin-left: 400px;
+  margin-left: 25vw;
 }
 .thirdBox img{
   float: left;

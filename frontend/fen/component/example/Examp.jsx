@@ -1,9 +1,11 @@
 import React from 'react'
 import logo from '../../assets/images/logo.png'
+import Reveal from '../reveal'
 
 function Examp() {
   return (
     <div className='exBox'>
+    <Reveal>
         <div className='firstBox'>
         <img src={logo.src} style={{width:"10%"}}></img>
 
@@ -17,6 +19,9 @@ function Examp() {
         </p>
 
         </div>  
+    </Reveal>
+
+      <Reveal>
         <div className='secondBox'>
         <img src={logo.src} style={{width:"10%"}}></img>
 
@@ -30,6 +35,8 @@ function Examp() {
         </p>
 
         </div>   
+      </Reveal>
+    <Reveal>
         <div className='thirdBox'>
         <img src={logo.src} style={{width:"10%"}}></img>
 
@@ -42,7 +49,9 @@ function Examp() {
         software like Aldus PageMaker includin
         </p>
 
-        </div>    
+        </div>   
+    </Reveal>
+
     </div>
   )
 }
