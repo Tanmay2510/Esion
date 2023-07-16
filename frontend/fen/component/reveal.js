@@ -7,7 +7,7 @@ const Reveal = ({
   children,
   className,
   variants = {
-    hidden: { opacity: 0, x: 75 },
+    hidden: { opacity: 0, x: -75 },
     visible: { opacity: 1, x: 0 },
   },
 }) => {

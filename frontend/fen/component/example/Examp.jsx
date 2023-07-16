@@ -1,5 +1,6 @@
 import React from 'react'
-import logo from '../../assets/images/logo.png'
+import secondBox from '@/assets/images/secondBox.svg'
+import firstBox from '@/assets/images/firstBox.svg'
 import Reveal from '../reveal'
 
 function Examp() {
@@ -7,50 +8,30 @@ function Examp() {
     <div className='exBox'>
     <Reveal>
         <div className='firstBox'>
-        <img src={logo.src} style={{width:"10%"}}></img>
-
+        <img src={firstBox.src} style={{width:"40%"}}></img>
+        <div className='firstBoxinner'>
+        <h1>Plug it in and Chill</h1>
         <p>
-        dustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-         It has survived not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the release of 
-        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-        software like Aldus PageMaker includin
+         No matter where you are, if you wanna concentrate,work or relax just plug it in!!
         </p>
+        </div>
 
         </div>  
     </Reveal>
 
       <Reveal>
         <div className='secondBox'>
-        <img src={logo.src} style={{width:"10%"}}></img>
-
+        <div className='secondBoxinner'>
+        <h1>Try out different combos</h1>
         <p>
-        dustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-         It has survived not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the release of 
-        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-        software like Aldus PageMaker includin
+         You can listen to different combinations and if you like make a playlist!!
         </p>
+        </div>
+        <img src={secondBox.src} style={{width:"40%"}}></img>
 
         </div>   
       </Reveal>
-    <Reveal>
-        <div className='thirdBox'>
-        <img src={logo.src} style={{width:"10%"}}></img>
-
-        <p>
-        dustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-         It has survived not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the release of 
-        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-        software like Aldus PageMaker includin
-        </p>
-
-        </div>   
-    </Reveal>
+  
 
     </div>
   )

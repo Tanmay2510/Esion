@@ -1,6 +1,7 @@
 import { color, motion , transform, useAnimationControls} from 'framer-motion'
 import React, { useState } from 'react'
 function Textspan({child}) {
+    console.log(child)
     const ctrl = useAnimationControls()
     const[ispl,setispl] = useState(false)
     const rubberBand = ()=>{

@@ -9,7 +9,6 @@ import { motion } from 'framer-motion'
 import Examp from '@/component/example/Examp'
 const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
-
   return (
     <>
     <div className='Whole'>
@@ -21,13 +20,15 @@ export default function Home() {
     transition={{duration:0.5}}
     className='UnderNavCont'>
     <US />
-    <div width="45vw">
-    <Lottie animationData={land} loop={true}  className='lottie'
+    <div  className='lottie'>
+    <Lottie animationData={land} loop={true}  
     autoPlay/>
     </div>
 
     </motion.div>
+
     </div>
+
     <div className='someshit'
     >
       <Examp />
@@ -37,7 +38,6 @@ export default function Home() {
     <Sample />
     
     </div>
-    
     </div>      
     </>
   )

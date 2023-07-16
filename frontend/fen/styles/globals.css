@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&family=Shantell+Sans&family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&display=swap');
 .UpperSection{
-  background-image: url("../assets/images/land.png");
+  background-image: url("../assets/images/landd.png");
   background-repeat:no-repeat;
   background-size: cover;
   padding-top: 5px;
-  padding-bottom: 55px;
-  border-bottom:5px solid rgb(4, 205, 115);
-  /* border-bottom-left-radius: 50px; */
-  /* border-bottom-right-radius: 50px; */
-
+  min-height: 60vw;
 }
 body{
     margin:0;
@@ -318,11 +315,10 @@ header button{
     border-bottom: 2px dotted rgba(9, 243, 95, 0.72);
      box-shadow:  rgb(9, 243, 95) 0px 3px 5px -2px;
     border-bottom-style: ridge;
-    background-color: rgb(176, 247, 186);
+    background-color:white;
 }
 .lottie{
-    height: 550px;
-
+    width: 45vw;
 }
 .slick-prev{
   left: -50px;
@@ -331,24 +327,35 @@ header button{
   display: flex;
   margin-top: 150px;
   margin-bottom: -100px;
-  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
 }
 .Usection {
-    width: 500px;
-    margin-left: 150px;
-    color: rgb(66, 153, 109);
-    font-family: 'Shantell Sans', cursive;
+    width: 650px;
+    margin-left: 100px;
+    color: rgb(255, 255, 255);
+  
+
 }
 .Usection p{
     font-size: 30px;
 }
 
 
-.Usection span{
+.Usection h1{
   display: inline-block;
-    color: rgb(38, 133, 33);
-    font-size: 75px;
-    font-family: 'Rampart One', cursive;
+    color: rgb(244, 248, 243);
+    font-size: 55px;
+    font-weight: 900;
+    
+}
+.secondLine{
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+hr{
+  border-top: 1px solid #8c8b8b;
 }
 .audioLogo{
     display: flex;
@@ -360,37 +367,48 @@ header button{
   padding-top: 20px;
 }
 .someshit{
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
+  margin-bottom: 150px;
   /* background: linear-gradient(  rgb(5, 237, 133,1) 0%, rgba(255,255,255,0) 100%); */
 }
 .exBox{
   position: relative;
   display: flex;
   flex-direction: column;
-  top:100px;
   row-gap: 50px;
 }
-.firstBox , .thirdBox{
-  border:1px solid black;
+.firstBox , .secondBox{
   width: 800px;
-  margin-left: 25vw;
+  margin-left: 20vw;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 60px;
 }
-.thirdBox img{
-  float: left;
+.firstBoxinner , .secondBoxinner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+
 }
-.firstBox img{
-  float: left;
+
+ .firstBoxinner p ,  .secondBoxinner p{
+  font-size: 20px;
 }
-.secondBox{
-  border:1px solid black;
+.firstBoxinner h1 ,  .secondBoxinner h1{
+  font-weight: 500;
+}
+
+/* {
   width:800px;
-  margin-left: 100px;
+  margin-left: 20vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  column-gap: 60px;
+} */
 
-
-}
-.secondBox img{
-  float: right;
-}
 .cardSection{
     min-height: 250px;
     margin-left: 13px;
