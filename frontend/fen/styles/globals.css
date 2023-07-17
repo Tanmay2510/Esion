@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&family=Shantell+Sans&family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap');
 .UpperSection{
   background-image: url("../assets/images/landd.png");
   background-repeat:no-repeat;
@@ -10,6 +11,7 @@
 }
 body{
     margin:0;
+    background-color: #e4f7d4;
 }
 .rSlide{
   width: 900px;
@@ -339,24 +341,24 @@ header button{
 }
 .Usection p{
     font-size: 30px;
+    color: #27875b;
 }
 
 
 .Usection h1{
   display: inline-block;
-    color: rgb(244, 248, 243);
+    color:#53977ed1;
     font-size: 55px;
     font-weight: 900;
     
 }
 .secondLine{
   font-family: 'Poppins', sans-serif;
-  font-size: 40px;
+  font-size: 50px;
+  color: #27875b;
   font-weight: 500;
 }
-hr{
-  border-top: 1px solid #8c8b8b;
-}
+
 .audioLogo{
     display: flex;
     justify-content: center;
@@ -369,7 +371,7 @@ hr{
 .someshit{
   min-height: 100vh;
   height: auto;
-  margin-bottom: 150px;
+  background-color: #f8fff2;
   /* background: linear-gradient(  rgb(5, 237, 133,1) 0%, rgba(255,255,255,0) 100%); */
 }
 .exBox{
@@ -400,15 +402,6 @@ hr{
   font-weight: 500;
 }
 
-/* {
-  width:800px;
-  margin-left: 20vw;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  column-gap: 60px;
-} */
-
 .cardSection{
     min-height: 250px;
     margin-left: 13px;
@@ -418,7 +411,7 @@ hr{
     border: 0px solid transparent;
     word-wrap: break-word;
     transition: 1s ease-out;
-    background: rgba(196, 205, 245, 0.097);
+    background: rgb(149 220 165 / 37%);
     position: relative;
 }
 
@@ -445,13 +438,45 @@ hr{
 .middleSample:hover{
     cursor: pointer;
 }
+#sample{
+  width: 100%;
+  aspect-ratio: 960/540;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .middleBG {
-    background: radial-gradient(circle, rgb(127, 255, 146) 0%, rgba(255,255,255,0) 100%);
+    display: flex;
+    
+    background-image: url('../assets/images/footerES.svg');
+    flex-direction: column;
+    padding-top: 80px;
+    row-gap: 100px;
+}
+.middleBG h3{
+  text-align: center;
+  color: white;
+  margin-top: 70px;
+}
+.middleBG h1{
+  text-align: center;
+  color: #27875b;
+  font-size: 65px;
+  font-family: 'Lumanosimo', cursive;
+}
+.middleBG h1::before {
+	content: '──';
+	margin-right: 0.6em;
+	color: #27875b;
+}
+.middleBG h1::after {
+	content: '──';
+	margin-left: 0.6em;
+	color: #27875b;
 }
 
 .middleSection{
     display: grid;
-    min-height: 100vh;
     column-gap: 150px;
     grid-template-columns: repeat(auto-fit,15rem);
     justify-content: center; 

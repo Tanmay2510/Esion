@@ -18,7 +18,7 @@ function US() {
     // })
   }
     <h1>Stuck at a noisy place?</h1>
-    <hr ></hr>
+    <hr style={{borderTop:"3px solid #27875b"}} ></hr>
     <h2  className='secondLine'>Work, Concentrate or Relax</h2>
     <p>Esion will easily help you out to cancel out all the unwanted noise and help you concentrate, chill and relax at your own combinatioin of soothing sounds
     </p>

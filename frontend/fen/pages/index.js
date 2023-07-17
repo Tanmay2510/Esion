@@ -34,6 +34,7 @@ export default function Home() {
       <Examp />
 
     </div>
+
     <div className='bottomSection'>
     <Sample />
     

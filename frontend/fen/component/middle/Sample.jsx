@@ -20,7 +20,8 @@ function Sample() {
   
   return (
     <div className='middleBG' id="sample">
-    <div className='middleSection'>
+    <h1 >Get a sneak peek</h1>
+    <div className='middleSection '>
       {
         data.map((el,i)=>{
           return (
@@ -48,7 +49,10 @@ function Sample() {
         })
       }
        </div>
+      <h3>Made with love</h3>
+
     </div>
+
   )
 }
 export default Sample
