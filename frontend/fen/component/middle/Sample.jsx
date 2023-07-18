@@ -27,12 +27,14 @@ function Sample() {
     <div className='middleBG' id="sample">
     <Reveal 
     >
+    <div className='middleBG2'>
     <h1 >Get a sneak peek</h1>
     <div className='middleSection '>
       {
         data.map((el,i)=>{
           return (
              <Sound 
+             classs="cardSec"
              key={i}
               keyy = {i}
               {...el}
@@ -58,10 +60,14 @@ function Sample() {
        </div>
        <div className='belowSamp'>
         <p>Loved it?</p>
-        <p>Tag along with other users by clicking on the button below</p>
+        <p align="center">Tag along with other users by 
+        <br></br> 
+         clicking on the button below</p>
         <button onClick={hanldeNewUser}> Get Started</button>
        </div>
         <h3>Made with love</h3>
+    </div>
+
         </Reveal>
 
     </div>

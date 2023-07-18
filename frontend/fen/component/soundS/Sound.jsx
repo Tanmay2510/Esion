@@ -3,6 +3,7 @@ import React, { useState , useRef , useEffect} from 'react'
 import {BsPlay,BsPause} from 'react-icons/bs'
 
 function Sound({
+  classs,
     keyy,
     src,
     title,
@@ -61,13 +62,13 @@ function Sound({
     }
   }, [isPlaying, src]) 
  
-
   return (
     <motion.div 
     initial={{opacity:0}}
     animate={{opacity:1}}
     
-    className={`cardSection ${isPlaying ? "cardSectionActive" : ""} someCS`} >
+    className={`
+    ${(classs==="cardSec") ? `cardSec ${isPlaying ? "cardActive" : ""} ` : `cardSection ${isPlaying ? "cardSectionActive" : ""}`} `} >
     <div className='audioLogo' onClick={handleSoundPlay(keyy)}>
     {logo}
     </div>
