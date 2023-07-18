@@ -1,14 +1,17 @@
 import Reglog from '@/component/Form/Reglog'
+import Nav from '@/component/nav/Nav';
 import useAuth from '@/hook/useAuth'
 import React from 'react'
 
 function User() {
-  const {Msg} = useAuth();
-  console.log(Msg)
   return (
+    <div className='allCont'>
+    <Nav where ="form" />
     <div className="userCont">
      <Reglog />
     </div>
+    </div>
+
   )
 }
 

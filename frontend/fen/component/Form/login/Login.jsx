@@ -96,7 +96,7 @@ const hanldeLogin = async (e) => {
      >
       Submit
     </button>
-    <h4 style={{textAlign:"center",margin:"1px"}} className="hh4">OR</h4>
+    <h4 style={{textAlign:"center",margin:"8px"}} className="hh4">OR</h4>
     <button 
     className='but stl'
     onClick={()=> setIsFlipped(!isFlipped)}>
