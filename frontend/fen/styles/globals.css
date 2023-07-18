@@ -8,10 +8,11 @@
   background-size: cover;
   padding-top: 5px;
   min-height: 60vw;
+  height: auto;
 }
 body{
     margin:0;
-    background-color: #e4f7d4;
+    background-color:#F8FFF2;
 }
 .rSlide{
   width: 900px;
@@ -338,27 +339,60 @@ header button{
     background-color:white;
 }
 .lottie{
-    width: 45vw;
+    width: 140vw;
 }
 .slick-prev{
   left: -50px;
 }
 .UnderNavCont{
   display: flex;
-  margin-top: 150px;
+  margin-top: 100px;
+  margin-left: 100px;
+
   margin-bottom: -100px;
   justify-content: space-around;
   align-items: center;
 }
+@media (max-width:700px) {
+  
+    .UnderNavCont{
+      flex-direction: column;
+      margin-left: 0;
+    }
+    .lottie{
+      width: 70vw;
+      margin-bottom: 50px;
+    }
+    .Usection{
+      margin: 30px;
+    }
+    /* .Usection h1{
+      font-size: 5vw;
+      
+  } */
+    /* .Usection p{
+      font-size: 3vw;
+  }
+.Usection h1{
+    font-size: 5vw;
+    
+}
+.secondLine{
+  font-size: 4vw;
+}
+.Usection{
+  /* margin-left:0; */
+  /* width: 500px; */
+/* } */ 
+}
 .Usection {
-    width: 650px;
-    margin-left: 100px;
+    width:auto;
     color: rgb(255, 255, 255);
   
 
 }
 .Usection p{
-    font-size: 30px;
+    font-size: 2vw;
     color: #27875b;
 }
 
@@ -366,13 +400,13 @@ header button{
 .Usection h1{
   display: inline-block;
     color:#53977ed1;
-    font-size: 55px;
+    font-size: 4vw;
     font-weight: 900;
     
 }
 .secondLine{
   font-family: 'Poppins', sans-serif;
-  font-size: 50px;
+  font-size: 3vw;
   color: #27875b;
   font-weight: 500;
 }
@@ -397,20 +431,33 @@ header button{
   display: flex;
   flex-direction: column;
   row-gap: 50px;
+  align-items: center;
 }
 .firstBox , .secondBox{
-  width: 800px;
-  margin-left: 20vw;
+  width: 80vw;
   display: flex;
   justify-content: space-between;
   column-gap: 60px;
+}
+@media (max-width:700px) {
+  .firstBox {
+    flex-direction: column;
+  }
+  .firstBox,.secondBox{
+    align-items: center;
+  }
+  .firstBoxinner p , .firstBoxinner h1, .secondBoxinner p, .secondBoxinner h1{
+    text-align: center;
+  }
+  .secondBox{
+    flex-direction: column-reverse;
+  }
 }
 .firstBoxinner , .secondBoxinner{
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
-
 }
 
  .firstBoxinner p ,  .secondBoxinner p{
@@ -488,7 +535,7 @@ header button{
   height: 40px;
   width: 200px;
   font-size: 20px;
-  color: wheat;
+  color: white;
   margin-top: 10px;
   background-color: #27875c66;
 }

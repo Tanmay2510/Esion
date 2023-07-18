@@ -2,6 +2,7 @@ import { data } from '@/util/SData'
 import React, {  useState,useEffect } from 'react'
 import Sound from '../soundS/Sound'
 import { setNewUser } from '@/context/userAction'
+import Reveal from '../reveal'
 function Sample() {
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
@@ -20,8 +21,12 @@ function Sample() {
   const hanldeNewUser = () =>{
     setNewUser();
   }
+ 
   return (
+    
     <div className='middleBG' id="sample">
+    <Reveal 
+    >
     <h1 >Get a sneak peek</h1>
     <div className='middleSection '>
       {
@@ -57,6 +62,7 @@ function Sample() {
         <button onClick={hanldeNewUser}> Get Started</button>
        </div>
         <h3>Made with love</h3>
+        </Reveal>
 
     </div>
 
