@@ -34,6 +34,7 @@ function Dash() {
     userDispatch(setPlaylist(playingSounds)); 
   },[playingSounds]) // do some condition only on modal save click
   return (
+    <>
     <div className={`${isHam ? "wholeDash zi": "wholeDash"}`}>
 
     <div className='dashCardContainer'>
@@ -71,6 +72,9 @@ function Dash() {
 
 
     </div>
+    <h3 style={{marginBottom:0,textAlign:"center",color:"white"}} >Made with &#10084; by Tanmay</h3>
+
+    </>
 
   )
 }

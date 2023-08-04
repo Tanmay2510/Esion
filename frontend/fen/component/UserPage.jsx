@@ -34,6 +34,7 @@ if(rend){
       <div className="userCont">
        <Reglog />
       </div>
+      <h3 style={{marginBottom:0,textAlign:"center"}} >Made with &#10084; by Tanmay</h3>
       </div>
       </>
     )

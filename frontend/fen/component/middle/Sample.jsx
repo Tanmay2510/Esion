@@ -65,7 +65,7 @@ function Sample() {
          clicking on the button below</p>
         <button onClick={hanldeNewUser}> Get Started</button>
        </div>
-        <h3>Made with love</h3>
+       <h3>Made with &#10084; by Tanmay</h3>
     </div>
 
         </Reveal>
