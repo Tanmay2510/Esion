@@ -58,7 +58,6 @@ const handleLogin = (req,res) =>{
                         req.session.email = email;
                         // res.setHeader('Set-Cookie',`userId=${user._id}; Max-Age=60*60*24`)
                         res.setHeader('Set-Cookie',`userId=${user._id}; Max-Age=${60*60*24}`)
-
                         res.json({
                             login:true,
                             id:user._id,
@@ -141,5 +140,21 @@ const handleDeletePlaylist = (req,res)=>{
             }
     })
 }
+const handleCheck = (req,res)=>{
+    const id = Object.values(req.body);
+    const gid = id.toString()
+    User.countDocuments({_id: gid}, function (err, count){ 
+        if(count>0){
+            res.json({
+                UserExists:true
+            })
+        }else{
+            res.json({
+                UserExists:false
+            })
+        }
+    }); 
 
-module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist,handlePlaylistData,handleDeletePlaylist};
+}
+
+module.exports={handleRegister,handleLogin,handleLogout,handlePlaylist,handlePlaylistData,handleDeletePlaylist,handleCheck};
