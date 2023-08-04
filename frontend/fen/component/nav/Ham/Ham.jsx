@@ -1,16 +1,14 @@
-import React,{useEffect, useState} from 'react'
 import {RiPlayListFill} from 'react-icons/ri'
-import 'react-toastify/dist/ReactToastify.css';
-
 import {MdOutlineLibraryMusic,MdDeleteOutline} from 'react-icons/md'
-import useAuth from '@/hook/useAuth'
 import { setModal } from '@/context/userAction';
-import SideDrop from './sideDrop';
+import React,{useEffect, useState} from 'react'
+import useAuth from '@/hook/useAuth'
+import SideDrop from '../sideNav/sideDrop';
 import { motion , AnimatePresence} from 'framer-motion';
 import { handleDel } from '@/manager/API';
 import { ToastContainer, toast } from 'react-toastify';
-function SideNav() {
-  const {userDispatch,yourPlaylistClicked,sideNavClicked,deletePlaylistClicked,thePlaylists,hamState} = useAuth();
+export default function Ham() {
+  const {userDispatch,yourPlaylistClicked,sideNavClicked,deletePlaylistClicked,thePlaylists,isHam} = useAuth();
   const [isDel,setIsDel] = useState(false)
   const [some,setsome] = useState(false)
   const [isCK,setIsCK] = useState([""])
@@ -59,21 +57,20 @@ useEffect(()=>{
     setOpen(false)
   }
 },[width])
-if(width>breakpoint){
   return (
-    <div className='sideNav'>
+    <div className='sideNavv'>
    
     <ul className='ulli'>
-        <li ><button className='insideButton' onClick={handleClick(
+        <li className='hamLI'><button className='indBut' onClick={handleClick(
           "createPlaylistClicked"
         )}>Make Playlist<RiPlayListFill/></button></li>
     </ul>
     <ul >
     <li
     className={
-      `${(isDel && thePlaylists.length!==0 && deletePlaylistClicked)   ? "delLI" : "del"}`}
+      `${(isDel && thePlaylists.length!==0 && deletePlaylistClicked)   ? "delLI" : "del"} hamLI`}
     ><button 
-    className={`insideButton ${isDel  ? "insideButtonActive" : ""}`}
+    className={`indBut ${isDel  ? "insideButtonActive" : ""}`}
      onClick={handleClick("deletePlaylistClicked")}>Delete Playlist<MdDeleteOutline/></button>
      <AnimatePresence>
      {
@@ -94,16 +91,12 @@ if(width>breakpoint){
 
 <ul
 className='ulli'>
-<li><button className='insideButton' onClick={handleClick("yourPlaylistClicked")}>Your Playlist<MdOutlineLibraryMusic/></button></li>
+<li
+className='hamLI'
+><button className='indBut' onClick={handleClick("yourPlaylistClicked")}>Your Playlist<MdOutlineLibraryMusic/></button></li>
 </ul>
 </div>
    
   )
-}
   
 }
-
-  
-
-
-export default SideNav

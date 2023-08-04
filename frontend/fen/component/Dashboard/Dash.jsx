@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 function Dash() {
-  const {userDispatch,createPlaylistClicked,sideNavClicked} = useAuth();
+  const {userDispatch,createPlaylistClicked,sideNavClicked,isHam} = useAuth();
   const [currentSoundIndex, setCurrentSoundIndex] = useState([])
   const [playingSounds, setPlayingSounds] = useState({})
   const [phir,setphir] = useState(false)
@@ -34,7 +34,7 @@ function Dash() {
     userDispatch(setPlaylist(playingSounds)); 
   },[playingSounds]) // do some condition only on modal save click
   return (
-    <div className='wholeDash'>
+    <div className={`${isHam ? "wholeDash zi": "wholeDash"}`}>
 
     <div className='dashCardContainer'>
 

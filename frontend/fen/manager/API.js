@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setLogin, setRegister , setLogout,isSave,setPlaylistClient,setDelete} from "../context/userAction";
+import { setLogin, setRegister , setLogout,isSave,setPlaylistClient,setDelete,setCheck,setHamState} from "../context/userAction";
 
 const BASE_URL = "http://localhost:3001";
 
@@ -9,6 +9,9 @@ export const handleregister = async (user,dispatch) =>{
                 dispatch(setRegister(res.data))
             })
 
+}
+export const handleHamState = (data,dispatch)=>{
+    dispatch(setHamState(data))
 }
 
 export const getPlaylist = async (dispatch)=>{
@@ -20,7 +23,6 @@ export const getPlaylist = async (dispatch)=>{
 }
 export const handleDel = (dispatch,deldata)=>{
     const gid = localStorage.getItem('userId')
-    console.log(deldata)
     axios.patch(BASE_URL+"/delplayList/"+gid, deldata ,{withCrdentials:true})
     .then(res=>{
         dispatch(setDelete(res.data))
@@ -53,7 +55,17 @@ export const hanldeLogout = (dispatch) =>{
 export const handlelogin = async (user,dispatch)=>{
     const r = await axios.post(BASE_URL+"/login",user,{withCredentials:true})
     .then( res => {
+        console.log(res)
         dispatch(setLogin(res.data))
 
     })
 }
+
+
+export const check = async (i,dispatch)=>{
+    const id = {'id':i}
+    await axios.post(BASE_URL+"/check",id,{withCrdentials:true})
+    .then(res=>{
+        dispatch(setCheck(res.data))
+    })
+} 

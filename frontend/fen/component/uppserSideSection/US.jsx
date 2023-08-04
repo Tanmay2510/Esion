@@ -2,10 +2,9 @@ import React from 'react'
 import Textspan from '../Textspan'
 import { motion } from 'framer-motion'
 function US() {
-  // const sent = "Stuck at a noisy place?".split("")
+  const sent = "Stuck at a noisy place?".split("")
   return (
     <motion.div className='Usection'
- 
     >
     {
     //   sent.map((letter,i)=>{
